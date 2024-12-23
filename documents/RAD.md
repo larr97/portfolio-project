@@ -13,7 +13,7 @@ The Web Developer Portfolio will include:
 - **Home Page**: A central hub presenting personal information, background, experience, education, certifications, project summaries, and links to GitHub, LinkedIn, and a contact form.
 - **Project Pages**: Individual detailed pages for each project, accessible through links from the summary list on the Home Page.
 - **Blog**: A section for sharing articles about the developer’s personal journey and professional insights.
-- **Process Documentation**: A section describing the portfolio creation process, including requirements elicitation, design, and implementation phases.
+- **Process Documentation**: A section describing the portfolio creation process, including requirements elicitation, analysis, design, and implementation phases.
 
 The system will be responsive and accessible, ensuring optimal user experience across devices and platforms. It will also include basic SEO optimizations to enhance discoverability.
 
@@ -56,16 +56,16 @@ The system will be responsive and accessible, ensuring optimal user experience a
 - Personal notes and previous portfolios for inspiration.
 - Design tools documentation:
   - [Figma](https://help.figma.com/hc/en-us)
+  - [Material Design 3](https://m3.material.io)
 - Web development frameworks and libraries documentation:
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
   - [Angular](https://angular.dev/overview)
   - [Angular Material](https://material.angular.io/)
-  - [Material Design](https://m3.material.io/get-started)
   - [Tailwind CSS](https://tailwindcss.com/docs/installation)
-  - [TypeScript](https://www.typescriptlang.org/docs/)
+  - [TypeScript](https://www.typescriptlang.org/docs)
 - Accessibility standards:
-  - [WCAG 2.1 guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  - [WCAG 2.1 guidelines](https://www.w3.org/WAI/standards-guidelines/wcag)
 - SEO best practices guidelines:
   - [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 
