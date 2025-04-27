@@ -1,14 +1,14 @@
-## Requirements Analysis Document for Web Developer Portfolio
+## Requirements Analysis Document for Software Engineer Portfolio
 
 ### 1. Introduction
 
 #### 1.1 Purpose of the System
 
-The purpose of the Web Developer Portfolio is to provide a personal online platform showcasing the skills, experience, and achievements of the web developer. It serves as a professional representation to potential employers, collaborators, and clients while also acting as a platform for personal branding and networking.
+The purpose of the Software Engineer Portfolio is to provide a personal online platform showcasing the skills, experience, and achievements of the Software Engineer. It serves as a professional representation to potential employers, collaborators, and clients while also acting as a platform for personal branding and networking.
 
 #### 1.2 Scope of the System
 
-The Web Developer Portfolio will include:
+The Software Engineer Portfolio will include:
 
 - **Home Page**: A central hub presenting personal information, background, experience, education, certifications, project summaries, and links to GitHub, LinkedIn, and a contact form.
 - **Project Pages**: Individual detailed pages for each project, accessible through links from the summary list on the Home Page.
@@ -22,11 +22,11 @@ The system will be responsive and accessible, ensuring optimal user experience a
 - The portfolio will focus on presenting professional information, projects, and blog posts.
 - It will not include features like advanced analytics, e-commerce capabilities, or integration with external APIs (unless specified in future requirements).
 
-**Intended Audience**:
+**Intended Audience**: 
 
 - Potential employers seeking to evaluate the developer’s skills and experience.
-- Collaborators and peers in the web development community interested in projects and technical insights.
-- Clients looking for web development services and expertise.
+- Collaborators and peers in the Software Engineer community interested in projects and technical insights.
+- Clients looking for Software Engineer services and expertise.
 
 #### 1.3 Objectives and Success Criteria of the Project
 
@@ -71,11 +71,11 @@ The system will be responsive and accessible, ensuring optimal user experience a
 
 #### 1.6 Overview
 
-This document outlines the initial requirements for developing a Web Developer Portfolio. This document aims to ensure a clear understanding of the project’s goals and deliverables among stakeholders, ensuring a successful development process.
+This document outlines the initial requirements for developing a Software Engineer Portfolio. This document aims to ensure a clear understanding of the project’s goals and deliverables among stakeholders, ensuring a successful development process.
 
 ### 2. Current System
 
-Currently, there is no existing portfolio system in place. This absence represents a significant gap in the professional and educational development of the web developer. Without a portfolio, it is challenging to effectively showcase technical skills, projects, and achievements to potential employers or collaborators. Additionally, the lack of a central platform limits opportunities for networking and personal branding.
+Currently, there is no existing portfolio system in place. This absence represents a significant gap in the professional and educational development of the Software Engineer. Without a portfolio, it is challenging to effectively showcase technical skills, projects, and achievements to potential employers or collaborators. Additionally, the lack of a central platform limits opportunities for networking and personal branding.
 
 The creation of a portfolio is essential to:
 
@@ -90,7 +90,7 @@ Developing this portfolio will address these needs and serve as a foundation for
 
 #### 3.1 Overview
 
-The proposed Web Developer Portfolio will be a dynamic and interactive platform designed to effectively showcase the developer’s personal and professional attributes. It will consist of multiple interconnected sections, ensuring both functionality and aesthetic appeal. The system will be built with modern web development technologies, emphasizing responsiveness, accessibility, and user engagement.
+The proposed Software Engineer Portfolio will be a dynamic and interactive platform designed to effectively showcase the developer’s personal and professional attributes. It will consist of multiple interconnected sections, ensuring both functionality and aesthetic appeal. The system will be built with modern web development technologies, emphasizing responsiveness, accessibility, and user engagement.
 
 #### 3.2 Functional Requirements
 
@@ -99,7 +99,7 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
   - Display personal information, including name, background, and professional summary.
   - Provide an overview of education, certifications, and work experience.
   - Showcase a summary list of projects with links to detailed pages.
-  - Include links to GitHub, LinkedIn, and a contact form.
+  - Include links to GitHub, LinkedIn, and Figma.
   - Implement a button to download the developer resume.
 
 - **Project Pages**:
@@ -110,7 +110,6 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 - **Blog**:
 
   - Allow the developer to post articles about their career journey and technical insights.
-  - Enable visitors to read and comment on posts (if comments are implemented).
 
 - **Process Documentation**:
 
@@ -176,9 +175,10 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 ##### 3.3.9 Legal
 
 - All content, including images and blog posts, must comply with copyright laws and use proper attribution when necessary.
-- The portfolio must include a privacy notice for the contact form, explaining data usage and retention.
 
 #### 3.4 System Models
+
+![Diagram](Actors.svg)
 
 ##### 3.4.1 Scenarios
 
@@ -187,7 +187,9 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 | **Participating Actor Instances** | recruiter\:Visitor                                                                                                                  |
 | **Flow of Events**                | 1. A recruiter visits the Home Page of the portfolio to read personal information and a summary of qualifications.                  |
 |                                   | 2. The recruiter navigates to the Project Pages to examine specific projects that align with the skills they are seeking.           |
-|                                   | 3. The recruiter uses the Contact Form or clicks on the LinkedIn profile link to connect with the Developer for further discussion. |
+|                                   | 3. The recruiter clicks on the LinkedIn profile link to connect with the Developer for further discussion.                          |
+
+---
 
 | **Scenario Name**                 | **peerDeveloperExploresBlog**                                                                                                      |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -196,6 +198,8 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 |                                   | 2. The peerDeveloper leaves a comment on a blog post (if comments are enabled) or shares the post via social media links.          |
 |                                   | 3. Inspired by the content, the peerDeveloper connects with the Developer on GitHub to explore open-source projects.               |
 
+---
+
 | **Scenario Name**                 | **developerUpdatesPortfolio**                                                               |
 | --------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Participating Actor Instances** | developer\:Developer                                                                        |
@@ -203,9 +207,37 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 |                                   | 2. Changes are saved, and the portfolio is updated to reflect the new content.              |
 |                                   | 3. The Developer verifies the updates for accuracy and functionality.                       |
 
-##### 3.4.2 Use Case Model
+---
 
-![Diagram](Actors.svg)
+| **Scenario Name**                 | **visitorChangesLanguage**                                                                                         |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Participating Actor Instances** | visitor\:Visitor                                                                                                   |
+| **Flow of Events**                | 1. A visitor lands on the portfolio and notices the default language is not their preferred choice.                |
+|                                   | 2. The visitor clicks on the language toggle button in the navigation bar.                                         |
+|                                   | 3. The portfolio updates instantly, displaying all content in the selected language.                               |
+|                                   | 4. The visitor continues to browse the portfolio in their preferred language without interruption.                 |
+
+---
+
+| **Scenario Name**                 | **visitorDownloadsResume**                                                                                           |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------- | 
+| **Participating Actor Instances** | visitor\:Visitor                                                                                                     |
+| **Flow of Events**                | 1. A visitor visits the Home Page of the portfolio and notices the "Download Resume" button prominently displayed.   |
+|                                   | 2. The visitor clicks the button, and the system initiates the download of the developer’s resume in PDF format.     |
+|                                   | 3. The visitor confirms the successful download and opens the file to review the developer’s qualifications offline. |
+
+---
+
+| **Scenario Name**                 | **visitorChangesTheme**                                                                                          |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Participating Actor Instances** | visitor\:Visitor                                                                                                 |
+| **Flow of Events**                | 1. A visitor lands on the portfolio and notices the default theme is set to light mode.                          |
+|                                   | 2. The visitor clicks on the "Change Theme" button/icon located in the navigation bar or footer.                 |
+|                                   | 3. The portfolio instantly switches to dark mode, applying the new theme across all pages.                       |
+|                                   | 4. The visitor continues browsing the portfolio with the updated theme, which persists during navigation.        |
+|                                   | 5. (Optional) The theme preference is saved for future visits using local storage or cookies.                    |
+
+##### 3.4.2 Use Case Model
 
 ![Diagram](UseCases.svg)
 
@@ -219,15 +251,55 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 | **Exit Conditions**               | The visitor gathers sufficient information to decide on contacting the developer.                                      |
 | **Quality Requirements**          | The system should load quickly and display clear, well-organized project details with accessible navigation features.  |
 
-| **Use Case Name**                 | **Visitor Explores Blog**                                                                                                      |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Participating Actors**          | Visitor                                                                                                                        |
-| **Flow of Events**                | 1. A visitor visits the Blog section to browse articles about development practices and career experiences.                    |
-|                                   | 2. The visitor leaves a comment on a blog post (if comments are enabled) or shares the post via social media links.            |
-|                                   | 3. Inspired by the content, the peer developer connects with the developer on GitHub.                                          |
-| **Entry Conditions**              | The blog section is live with published posts.                                                                                 |
-| **Exit Conditions**               | The peer developer gains insights and optionally connects with the developer through shared links or GitHub.                   |
-| **Quality Requirements**          | The blog should be easy to read, include social media sharing features, and comply with accessibility standards.               |
+---
+
+| **Use Case Name**                 | **Visitor Navigates Among Pages**                                                                                      |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Participating Actors**          | Visitor                                                                                                                |
+| **Flow of Events**                | 1. A visitor uses the navigation menu or page links to move between sections like Home, Projects, Blog, or Contact.    |
+|                                   | 2. The visitor explores each page as needed and returns to the Home Page.                                              |
+|                                   | 3. The system provides consistent navigation across all pages.                                                         |
+| **Entry Conditions**              | The visitor has landed on any page of the portfolio.                                                                   |
+| **Exit Conditions**               | The visitor navigates smoothly between sections and finds the desired content.                                         |
+| **Quality Requirements**          | Navigation should be intuitive, responsive, and consistent across devices and browsers.                                |
+
+---
+
+| **Use Case Name**                 | **Visitor Changes the Language**                                                                                       |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Participating Actors**          | Visitor                                                                                                                |
+| **Flow of Events**                | 1. The visitor clicks on the language toggle button in the navigation bar.                                             |
+|                                   | 2. The portfolio updates to display all content in the selected language.                                              |
+|                                   | 3. The visitor continues exploring the portfolio in their preferred language.                                          |
+| **Entry Conditions**              | The portfolio supports multiple languages, and the visitor can access the language toggle feature.                     |
+| **Exit Conditions**               | The portfolio updates to the selected language without errors.                                                         |
+| **Quality Requirements**          | The language toggle must work seamlessly, with translations accurate and consistent across all pages.                  |
+
+---
+
+| **Use Case Name**                 | **Visitor Changes the Theme**                                                                                          |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Participating Actors**          | Visitor                                                                                                                |
+| **Flow of Events**                | 1. The visitor clicks on the "Change Theme" button/icon in the navigation bar or footer.                               |
+|                                   | 2. The portfolio instantly switches between light and dark mode.                                                       |
+|                                   | 3. The theme preference persists during navigation and (optionally) across sessions.                                   |
+| **Entry Conditions**              | The visitor has access to the theme toggle feature, and the system supports multiple themes.                           |
+| **Exit Conditions**               | The portfolio updates to the selected theme consistently across all pages.                                             |
+| **Quality Requirements**          | Theme toggling must be fast and visually consistent, without affecting usability or accessibility.                      |
+
+---
+
+| **Use Case Name**                 | **Visitor Downloads Resume**                                                                                          |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Participating Actors**          | Visitor                                                                                                               |
+| **Flow of Events**                | 1. The visitor clicks on the "Download Resume" button on the Home Page.                                               |
+|                                   | 2. The system initiates the download of the resume in PDF format.                                                     |
+|                                   | 3. The visitor verifies the successful download and reviews the resume offline.                                       |
+| **Entry Conditions**              | The resume is uploaded to the portfolio and accessible via the download button.                                       |
+| **Exit Conditions**               | The visitor successfully downloads and accesses the resume.                                                           |
+| **Quality Requirements**          | The resume must download quickly and be formatted correctly for offline viewing.                                      |
+
+---
 
 | **Use Case Name**                 | **Developer Updates Portfolio**                                                                                                |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -243,16 +315,163 @@ The proposed Web Developer Portfolio will be a dynamic and interactive platform 
 
 ###### 3.4.3.1 Data dictionary
 
+| **Entity Object Name**  | **Description**                                                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Project**       | A piece of work or software developed by the Software Engineer to demonstrate skills and expertise. A project is identified by a unique ID and includes details such as title, description, technologies used, and a link to its live/demo version or repository. |
+| **Job**           | A professional role held by the developer in the past or present. A job entry is composed of a job title, company name, start and end dates, responsibilities, and achievements.      |
+| **Certification** | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates. |
+| **Education**     | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.          |
+| **Resume**        | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.   |
+| **BlogPost**      | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.            |
+
+---
+
+| **Boundary Object Name**           | **Description**                                                                                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked. |
+| **Language Button**          | A toggle or dropdown allowing users to switch the language of the portfolio (e.g., English to Spanish). Stores the selected language preference.         |
+| **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.   |
+
+---
+
+| **Control Object Name**            | **Description**                                                                                                                                                   |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Change Language Control**  | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                |
+| **Change Theme Control**     | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                    |
+| **Download Resume Control**  | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.                                   |
+
 ###### 3.4.3.2 Class diagrams
+
+![Diagram](ClassDiagram.svg)
 
 ##### 3.4.4 Dynamic models
 
 ![Diagram](SequenceDiagram.svg)
 
+**Note:** Change Language and Change Theme are basically the same but with different names. 
+
 ##### 3.4.5 User interface—navigational paths and screen mock-ups
+
+The user interface for this project has been designed and prototyped in Figma, providing a high-fidelity, interactive representation of the final product. This prototype closely mirrors the intended look and functionality of the actual website, offering a realistic preview of the user experience. The navigational paths within the prototype demonstrate how users will move through different sections of the application, ensuring intuitive flow and accessibility. By utilizing Figma, the design process remains flexible and collaborative, enabling quick iterations based on feedback. The screen mock-ups included here serve as both a visual guide and a reference for implementation. The full interactive prototype is available through the following [Figma Prototype](https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1).
+
+While creating the user interface for this project, inspiration was drawn from various design elements and layouts created by other designers. These elements helped inform the overall aesthetic and functionality of the interface. Credit is given to the original creators of the design components used, including the [Personal Portfolio Website Template](https://www.figma.com/design/vwKk5gg0WCOYL1erl907xl/Personal-Portfolio-Website-Template-%7C-Mobile---Desktop--Community-?node-id=327-868&p=f&t=ol5wxWbxYmCXXsLo-0) and the [Free Blog Template](https://www.figma.com/design/fwKpZLWDUB3j2kZ21AfO4Z/Free-Blog-Template-%7C-4-Theme-Blog-With-Complete-UI--Community-?node-id=0-1&p=f&t=ol5wxWbxYmCXXsLo-0) available on Figma. The designs have been modified and customized to suit the specific requirements of this project while maintaining the essence of the original inspirations. This ensures that the design is both original and respectful of existing work. Proper attribution has been provided within the final prototype and documentation.
 
 ### 4. Glossary
 
+## A
+- **Accessibility**: The practice of designing websites to be usable by people with disabilities, following guidelines such as WCAG 2.1.  
+- **Angular**: A TypeScript-based web application framework for building modern web applications.  
+- **Angular Material**: A UI component library for Angular that follows Google’s Material Design principles.  
+- **API (Application Programming Interface)**: A set of functions and protocols that allow different software systems to communicate.  
+
+## B
+- **Blog**: A section of the portfolio where the developer shares articles and insights.  
+- **BlogPost**: An article written by the developer, containing technical insights, personal experiences, or tutorials.  
+- **Boundary Object**: A term in system modeling referring to interface elements that facilitate interactions between users and the system.  
+
+## C
+- **Certification**: A formal recognition of a skill or expertise, issued by an organization.  
+- **Change Language Control**: The function responsible for switching the portfolio’s language dynamically.  
+- **Change Theme Control**: A system component that manages light and dark mode switching.  
+- **CSS (Cascading Style Sheets)**: A language used to style HTML content and define the visual presentation of a website.  
+
+## D
+- **Data Dictionary**: A structured repository of definitions for data elements used in the portfolio system.  
+- **Developer**: The owner and maintainer of the portfolio.  
+- **Download Resume Button**: A clickable element that allows users to download the developer’s resume in PDF format.  
+- **Download Resume Control**: The system function that handles resume download requests.  
+
+## E
+- **Education**: Details about the developer’s academic background, including degrees and institutions attended.  
+- **Error Handling**: The process of managing and responding to system errors, such as broken links or unavailable content.  
+- **Exit Conditions**: The state in which a use case is considered successfully completed.  
+
+## F
+- **Figma**: A design and prototyping tool used for UI/UX development.  
+- **Flow of Events**: A structured sequence of actions in a use case describing how a system behaves.  
+- **Functional Requirements**: Specific system features and functions that must be implemented.  
+
+## G
+- **GitHub**: A platform for hosting and managing source code using Git.  
+- **Google SEO Starter Guide**: A set of best practices provided by Google to optimize websites for search engines.  
+
+## H
+- **Home Page**: The main landing page of the portfolio, displaying personal information and project summaries.  
+- **HTML (HyperText Markup Language)**: The standard language used for structuring web pages.  
+
+## I
+- **Implementation Requirements**: Specifications on how the system should be built, including technologies and deployment platforms.  
+- **Interface**: The user-facing components of the system, such as buttons, forms, and navigation elements.  
+- **Intended Audience**: The primary users of the portfolio, such as recruiters, collaborators, and clients.  
+
+## J
+- **JavaScript**: A programming language used to create dynamic and interactive web applications.  
+- **Job**: A professional role held by the developer, including responsibilities and achievements.  
+
+## L
+- **Language Button**: A UI element that allows visitors to toggle between different languages.  
+- **Light/Dark Mode Button**: A UI control that lets users switch between light and dark themes.  
+
+## M
+- **Material Design 3**: A design language developed by Google that guides UI/UX design.  
+- **Media Optimization**: The process of compressing and optimizing images and videos to improve page load times.  
+- **Modular Design**: A software design principle where a system is broken down into independent, interchangeable components.  
+
+## N
+- **Navigation Menu**: A UI element that allows users to move between different sections of the portfolio.  
+- **Nonfunctional Requirements**: Requirements that define system quality attributes, such as usability, performance, and security.  
+
+## O
+- **Object Model**: A representation of the different entities and their relationships within the system.  
+- **Operation Requirements**: Conditions under which the portfolio is managed, updated, and maintained.  
+
+## P
+- **Participating Actor Instances**: The roles interacting with a system in a use case scenario.  
+- **Performance Requirements**: The expected system performance, such as load times and responsiveness.  
+- **Portfolio**: A digital collection showcasing the developer’s skills, projects, and professional information.  
+- **Process Documentation**: A section detailing the development phases of the portfolio.  
+- **Project**: A software application or piece of work developed by the Software Engineer.  
+- **Project Pages**: Sections dedicated to showcasing detailed information about each project.  
+
+## Q
+- **Quality Requirements**: Standards that define the performance, accessibility, and usability of the portfolio.  
+
+## R
+- **Reliability Requirements**: Specifications ensuring that the system remains functional and accessible with minimal downtime.  
+- **Requirements Analysis**: The process of identifying and documenting the needs and functionalities of the portfolio system.  
+- **Responsive Design**: A web development approach ensuring a consistent experience across devices of different screen sizes.  
+- **Resume**: A downloadable document summarizing the developer’s qualifications and work experience.  
+
+## S
+- **Scenarios**: Hypothetical situations describing how users interact with the portfolio.  
+- **Scope**: The boundaries of the project, defining what is and isn't included.  
+- **Search Engine Optimization (SEO)**: Techniques used to improve a website’s visibility on search engines.
+- **Software Enginner Portfolio**: A personal website showcasing the skills, experience, and projects of a Software Enginner.    
+- **Success Criteria**: Measurable conditions that define whether the project meets its objectives.  
+- **Supportability**: The ability of the system to be maintained, updated, and expanded.  
+- **System Boundaries**: The limits of the portfolio’s functionality and features.  
+
+## T
+- **Tailwind CSS**: A utility-first CSS framework used for building responsive and customizable designs.  
+- **Technology Stack**: The set of programming languages, frameworks, and tools used to develop the portfolio.  
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.  
+
+## U
+- **Usability Requirements**: Guidelines ensuring the portfolio is user-friendly and accessible.  
+- **Use Case Model**: A structured representation of user interactions with the system.  
+- **User Interface (UI)**: The graphical layout of the system that users interact with.  
+- **User Experience (UX)**: The overall experience of users when interacting with the portfolio.  
+
+## V
+- **Visitor**: A person who browses the portfolio, including potential employers, clients, and developers.  
+- **Visitor Browses Portfolio**: A use case describing how visitors interact with the portfolio content.  
+- **Visitor Changes Language**: A use case detailing how visitors toggle between languages.  
+- **Visitor Changes Theme**: A use case describing how visitors switch between light and dark modes.  
+- **Visitor Downloads Resume**: A use case detailing the process of downloading the developer’s resume.  
+
+## W
+- **WCAG 2.1 (Web Content Accessibility Guidelines)**: A set of standards for making web content more accessible.  
+- **Website Hosting**: The service used to store and serve the portfolio online.  
 
 
 
