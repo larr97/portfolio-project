@@ -323,6 +323,8 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 | **Education**     | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.          |
 | **Resume**        | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.   |
 | **BlogPost**      | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.            |
+| **Document**           | A Software Project Document containing key attributes such as title, URL, and optionally version. |
+| **Route**              | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.     |
 
 ---
 
@@ -331,6 +333,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 | **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked. |
 | **Language Button**          | A toggle or dropdown allowing users to switch the language of the portfolio (e.g., English to Spanish). Stores the selected language preference.         |
 | **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.   |
+| **Navigation Button**     | A user interface button that allows users to navigate between different views of the application, such as Home, Projects, Docs, and Blog, by triggering route changes. |
 
 ---
 
@@ -339,6 +342,8 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 | **Change Language Control**  | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                |
 | **Change Theme Control**     | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                    |
 | **Download Resume Control**  | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.                                   |
+| **ProjectsControl**    | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic. |
+| **Routing Control**      | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component. |
 
 ###### 3.4.3.2 Class diagrams
 
@@ -348,7 +353,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 ![Diagram](SequenceDiagram.svg)
 
-**Note:** Change Language and Change Theme are basically the same but with different names. 
+> _Note: Change Language and Change Theme are basically the same but with different names._
 
 ##### 3.4.5 User interface—navigational paths and screen mock-ups
 
@@ -358,74 +363,74 @@ While creating the user interface for this project, inspiration was drawn from v
 
 ### 4. Glossary
 
-## A
+#### A
 - **Accessibility**: The practice of designing websites to be usable by people with disabilities, following guidelines such as WCAG 2.1.  
 - **Angular**: A TypeScript-based web application framework for building modern web applications.  
 - **Angular Material**: A UI component library for Angular that follows Google’s Material Design principles.  
 - **API (Application Programming Interface)**: A set of functions and protocols that allow different software systems to communicate.  
 
-## B
+#### B
 - **Blog**: A section of the portfolio where the developer shares articles and insights.  
 - **BlogPost**: An article written by the developer, containing technical insights, personal experiences, or tutorials.  
 - **Boundary Object**: A term in system modeling referring to interface elements that facilitate interactions between users and the system.  
 
-## C
+#### C
 - **Certification**: A formal recognition of a skill or expertise, issued by an organization.  
 - **Change Language Control**: The function responsible for switching the portfolio’s language dynamically.  
 - **Change Theme Control**: A system component that manages light and dark mode switching.  
 - **CSS (Cascading Style Sheets)**: A language used to style HTML content and define the visual presentation of a website.  
 
-## D
+#### D
 - **Data Dictionary**: A structured repository of definitions for data elements used in the portfolio system.  
 - **Developer**: The owner and maintainer of the portfolio.  
 - **Download Resume Button**: A clickable element that allows users to download the developer’s resume in PDF format.  
 - **Download Resume Control**: The system function that handles resume download requests.  
 
-## E
+#### E
 - **Education**: Details about the developer’s academic background, including degrees and institutions attended.  
 - **Error Handling**: The process of managing and responding to system errors, such as broken links or unavailable content.  
 - **Exit Conditions**: The state in which a use case is considered successfully completed.  
 
-## F
+#### F
 - **Figma**: A design and prototyping tool used for UI/UX development.  
 - **Flow of Events**: A structured sequence of actions in a use case describing how a system behaves.  
 - **Functional Requirements**: Specific system features and functions that must be implemented.  
 
-## G
+#### G
 - **GitHub**: A platform for hosting and managing source code using Git.  
 - **Google SEO Starter Guide**: A set of best practices provided by Google to optimize websites for search engines.  
 
-## H
+#### H
 - **Home Page**: The main landing page of the portfolio, displaying personal information and project summaries.  
 - **HTML (HyperText Markup Language)**: The standard language used for structuring web pages.  
 
-## I
+#### I
 - **Implementation Requirements**: Specifications on how the system should be built, including technologies and deployment platforms.  
 - **Interface**: The user-facing components of the system, such as buttons, forms, and navigation elements.  
 - **Intended Audience**: The primary users of the portfolio, such as recruiters, collaborators, and clients.  
 
-## J
+#### J
 - **JavaScript**: A programming language used to create dynamic and interactive web applications.  
 - **Job**: A professional role held by the developer, including responsibilities and achievements.  
 
-## L
+#### L
 - **Language Button**: A UI element that allows visitors to toggle between different languages.  
 - **Light/Dark Mode Button**: A UI control that lets users switch between light and dark themes.  
 
-## M
+#### M
 - **Material Design 3**: A design language developed by Google that guides UI/UX design.  
 - **Media Optimization**: The process of compressing and optimizing images and videos to improve page load times.  
 - **Modular Design**: A software design principle where a system is broken down into independent, interchangeable components.  
 
-## N
+#### N
 - **Navigation Menu**: A UI element that allows users to move between different sections of the portfolio.  
 - **Nonfunctional Requirements**: Requirements that define system quality attributes, such as usability, performance, and security.  
 
-## O
+#### O
 - **Object Model**: A representation of the different entities and their relationships within the system.  
 - **Operation Requirements**: Conditions under which the portfolio is managed, updated, and maintained.  
 
-## P
+#### P
 - **Participating Actor Instances**: The roles interacting with a system in a use case scenario.  
 - **Performance Requirements**: The expected system performance, such as load times and responsiveness.  
 - **Portfolio**: A digital collection showcasing the developer’s skills, projects, and professional information.  
@@ -433,16 +438,16 @@ While creating the user interface for this project, inspiration was drawn from v
 - **Project**: A software application or piece of work developed by the Software Engineer.  
 - **Project Pages**: Sections dedicated to showcasing detailed information about each project.  
 
-## Q
+#### Q
 - **Quality Requirements**: Standards that define the performance, accessibility, and usability of the portfolio.  
 
-## R
+#### R
 - **Reliability Requirements**: Specifications ensuring that the system remains functional and accessible with minimal downtime.  
 - **Requirements Analysis**: The process of identifying and documenting the needs and functionalities of the portfolio system.  
 - **Responsive Design**: A web development approach ensuring a consistent experience across devices of different screen sizes.  
 - **Resume**: A downloadable document summarizing the developer’s qualifications and work experience.  
 
-## S
+#### S
 - **Scenarios**: Hypothetical situations describing how users interact with the portfolio.  
 - **Scope**: The boundaries of the project, defining what is and isn't included.  
 - **Search Engine Optimization (SEO)**: Techniques used to improve a website’s visibility on search engines.
@@ -451,28 +456,24 @@ While creating the user interface for this project, inspiration was drawn from v
 - **Supportability**: The ability of the system to be maintained, updated, and expanded.  
 - **System Boundaries**: The limits of the portfolio’s functionality and features.  
 
-## T
+#### T
 - **Tailwind CSS**: A utility-first CSS framework used for building responsive and customizable designs.  
 - **Technology Stack**: The set of programming languages, frameworks, and tools used to develop the portfolio.  
 - **TypeScript**: A strongly typed programming language that builds on JavaScript.  
 
-## U
+#### U
 - **Usability Requirements**: Guidelines ensuring the portfolio is user-friendly and accessible.  
 - **Use Case Model**: A structured representation of user interactions with the system.  
 - **User Interface (UI)**: The graphical layout of the system that users interact with.  
 - **User Experience (UX)**: The overall experience of users when interacting with the portfolio.  
 
-## V
+#### V
 - **Visitor**: A person who browses the portfolio, including potential employers, clients, and developers.  
 - **Visitor Browses Portfolio**: A use case describing how visitors interact with the portfolio content.  
 - **Visitor Changes Language**: A use case detailing how visitors toggle between languages.  
 - **Visitor Changes Theme**: A use case describing how visitors switch between light and dark modes.  
 - **Visitor Downloads Resume**: A use case detailing the process of downloading the developer’s resume.  
 
-## W
+#### W
 - **WCAG 2.1 (Web Content Accessibility Guidelines)**: A set of standards for making web content more accessible.  
 - **Website Hosting**: The service used to store and serve the portfolio online.  
-
-
-
-
