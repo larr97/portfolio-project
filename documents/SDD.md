@@ -49,8 +49,11 @@ The purpose of the system is to provide a personal portfolio website for a softw
 
 #### 1.4 References
 
-- [Requirements Analysis Document (RAD)](https://github.com/larr97/portfolio-project/blob/main/documents/RAD.md) — Contains the nonfunctional requirements, functional requirements, analysis object model, and dynamic model used to guide system design.
-- [Figma Prototype](https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1) — Interactive UI/UX prototype showcasing the intended look and behavior of the portfolio website.
+- Project documents and design prototypes:  
+  - [Requirements Analysis Document (RAD)](https://github.com/larr97/portfolio-project/blob/main/documents/RAD.md) — Contains the nonfunctional requirements, functional requirements, analysis object model, and dynamic model used to guide system design.
+  - [Web Design Figma Prototype](https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1) — Interactive UI/UX prototype showcasing the intended look and behavior of the portfolio website.
+- Academic References:
+  - Bruegge, B., & Dutoit, A. H. (2009). [*Object-oriented software engineering: Using UML, patterns, and Java™*](https://www.pearson.com/en-us/subject-catalog/p/object-oriented-software-engineering-using-uml-patterns-and-java/P200000003319/9780136061250) (3rd ed.). Prentice Hall. — Served as the primary reference for software engineering methodology, UML modeling, and design process throughout the project.
 
 #### 1.5 Overview
 
@@ -105,18 +108,18 @@ Outside the UI, there are four independent top-level subsystems: Resume, Theme, 
 
 | **Subsystem**            | **Description** |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **UserInterfaceSubsystem** | The UserInterfaceSubsystem is the main entry point of the application, composed of several feature-specific subsystems including Home, Projects, Blog, and Docs. It is responsible for rendering the user-facing parts of the software. |
-| **HomeSubsystem**           | The HomeSubsystem is responsible for displaying the landing page of the portfolio, welcoming users and introducing the site. |
-| **ProjectsSubsystem**       | The ProjectsSubsystem showcases various software engineering projects, including details, technologies used, and links to source code or demos. |
-| **BlogSubsystem**           | The BlogSubsystem is responsible for presenting blog entries authored by the user, including technical posts, career reflections, and tutorials. |
-| **DocsSubsystem**           | The DocsSubsystem is responsible for providing structured documentation, such as API references, usage guides, or design documents. |
-| **SharedUISubsystem**       | The SharedUISubsystem provides reusable UI components such as layout containers, buttons, and icons that are shared across all UI subsystems. |
-| **HeaderSubsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls. |
-| **FooterSubsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright. |
-| **ResumeSubsystem**         | The ResumeSubsystem is responsible for hosting and allowing users to download the user’s professional resume in various formats. |
-| **ThemeSubsystem**          | The ThemeSubsystem manages the visual theme of the application, such as light and dark mode toggling. |
-| **LanguageSubsystem**       | The LanguageSubsystem handles internationalization by allowing users to switch between supported languages. |
-| **RoutingSubsystem**        | The RoutingSubsystem is responsible for handling page navigation and URL routing throughout the application, enabling users to move between subsystems seamlessly. |
+| **User Interface Subsystem** | The UserInterfaceSubsystem is the main entry point of the application, composed of several feature-specific subsystems including Home, Projects, Blog, and Docs. It is responsible for rendering the user-facing parts of the software. |
+| **Home Subsystem**           | The HomeSubsystem is responsible for displaying the landing page of the portfolio, welcoming users and introducing the site. |
+| **Projects Subsystem**       | The ProjectsSubsystem showcases various software engineering projects, including details, technologies used, and links to source code or demos. |
+| **Blog Subsystem**           | The BlogSubsystem is responsible for presenting blog entries authored by the user, including technical posts, career reflections, and tutorials. |
+| **Docs Subsystem**           | The DocsSubsystem is responsible for providing structured documentation, such as API references, usage guides, or design documents. |
+| **Shared UI Subsystem**      | The SharedUISubsystem provides reusable UI components such as layout containers, buttons, and icons that are shared across all UI subsystems. |
+| **Header Subsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls. |
+| **Footer Subsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright. |
+| **Resume Subsystem**         | The ResumeSubsystem is responsible for hosting and allowing users to download the user’s professional resume in various formats. |
+| **Theme Subsystem**          | The ThemeSubsystem manages the visual theme of the application, such as light and dark mode toggling. |
+| **Language Subsystem**       | The LanguageSubsystem handles internationalization by allowing users to switch between supported languages. |
+| **Routing Subsystem**        | The RoutingSubsystem is responsible for handling page navigation and URL routing throughout the application, enabling users to move between subsystems seamlessly. |
 |                             |               |
 
 #### 3.3 Hardware/software mapping
@@ -212,19 +215,19 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 
 ![Diagram](SubsystemServices.svg)
 
-- **ProjectsSubsystem – GetProjects**  
+- **Projects Subsystem – GetProjects**  
   This service retrieves and provides a list of portfolio projects for display. It sources data from preloaded or static resources and ensures users can view project content even in degraded network conditions.
 
-- **ThemeSubsystem – ChangeTheme**  
+- **Theme Subsystem – ChangeTheme**  
   This service handles user requests to switch between visual themes, such as light and dark mode. It updates the interface accordingly and ensures the selection persists across sessions using local storage mechanisms when available.
 
-- **LanguageSubsystem – ChangeLanguage**  
+- **Language Subsystem – ChangeLanguage**  
   This service allows users to switch the interface language. It updates displayed text dynamically and maintains language preferences between visits, defaulting to a primary language if needed.
 
-- **RoutingSubsystem – ChangeRoute**  
+- **Routing Subsystem – ChangeRoute**  
   This service manages navigation within the application by updating the route and rendering the corresponding view. It ensures smooth transitions between sections and handles fallback scenarios for invalid routes.
 
-- **ResumeSubsystem – DownloadResume**  
+- **Resume Subsystem – DownloadResume**  
   This service enables users to download the author's resume in a selected format. It supports straightforward content delivery while handling potential download issues gracefully.
 
 ### 5. Glossary
@@ -243,7 +246,7 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 
 #### D  
 - **Docs Subsystem**: A functional part of the application where structured documentation such as guides or references is displayed.  
-- **DownloadResume Service**: A function that allows users to download the resume from the portfolio website.  
+- **Download Resume Service**: A function that allows users to download the resume from the portfolio website.  
 
 #### E  
 - **Event-Driven Model**: A control flow structure where the system reacts to user actions such as clicks or navigation.  

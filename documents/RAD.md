@@ -53,21 +53,24 @@ The system will be responsive and accessible, ensuring optimal user experience a
 
 #### 1.5 References
 
-- Personal notes and other portfolios for inspiration
+- Personal notes and other portfolios for inspiration — Collected insights and design ideas to shape the portfolio’s structure and style.
 - Design tools documentation:
-  - [Figma](https://help.figma.com/hc/en-us)
-  - [Material Design 3](https://m3.material.io)
+  - [Figma](https://help.figma.com/hc/en-us) — Official help center for Figma, covering UI design, prototyping, and collaboration features.
+  - [Material Design 3](https://m3.material.io) — Guidelines and components for implementing Google’s Material Design 3, ensuring a modern, accessible UI.
 - Web development frameworks and libraries documentation:
-  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-  - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-  - [Angular](https://angular.dev/overview)
-  - [Angular Material](https://material.angular.io/)
-  - [Tailwind CSS](https://tailwindcss.com/docs/installation)
-  - [TypeScript](https://www.typescriptlang.org/docs)
+  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) — Comprehensive documentation on HTML elements and best practices.
+  - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) — Detailed CSS reference and guides on styling web pages.
+  - [Angular](https://angular.dev/overview) — Official Angular framework overview and documentation.
+  - [Angular Material](https://material.angular.io/) — Documentation for Angular’s Material Design component library.
+  - [Tailwind CSS](https://tailwindcss.com/docs/installation) — Utility-first CSS framework guide for rapid UI development.
+  - [TypeScript](https://www.typescriptlang.org/docs) — Language documentation covering TypeScript syntax and features.
 - Accessibility standards:
-  - [WCAG 2.1 guidelines](https://www.w3.org/WAI/standards-guidelines/wcag)
+  - [WCAG 2.1 guidelines](https://www.w3.org/WAI/standards-guidelines/wcag) — Web Content Accessibility Guidelines ensuring the portfolio meets accessibility standards for all users.
 - SEO best practices guidelines:
-  - [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+  - [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) — Official Google guide to improve search engine optimization and site visibility.
+- Academic References:
+  - Bruegge, B., & Dutoit, A. H. (2009). [*Object-oriented software engineering: Using UML, patterns, and Java™*](https://www.pearson.com/en-us/subject-catalog/p/object-oriented-software-engineering-using-uml-patterns-and-java/P200000003319/9780136061250) (3rd ed.). Prentice Hall. — Served as the primary reference for software engineering methodology, UML modeling, and design process throughout the project.
+
 
 #### 1.6 Overview
 
@@ -322,9 +325,11 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 | **Certification** | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates. |
 | **Education**     | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.          |
 | **Resume**        | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.   |
-| **BlogPost**      | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.            |
-| **Document**           | A Software Project Document containing key attributes such as title, URL, and optionally version. |
-| **Route**              | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.     |
+| **Blog Post**      | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.            |
+| **Document**      | A Software Project Document containing key attributes such as title, URL, and optionally version. |
+| **Route**         | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.     |
+| **Theme**         | Represents the visual style preference selected by the user (e.g., light or dark mode). Includes the attribute name. |
+| **Language**      | Represents the language selected by the user for localization. Includes attributes such as code (e.g., "en", "es") and name. |
 
 ---
 
@@ -339,15 +344,19 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Control Object Name**            | **Description**                                                                                                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Change Language Control**  | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                |
-| **Change Theme Control**     | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                    |
-| **Download Resume Control**  | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.                                   |
-| **ProjectsControl**    | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic. |
+| **Languages Control**  | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                |
+| **Themes Control**     | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                    |
+| **Resume Control**  | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.                                   |
+| **Projects Control**    | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic. |
 | **Routing Control**      | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component. |
 
 ###### 3.4.3.2 Class diagrams
 
 ![Diagram](ClassDiagram.svg)
+
+###### 3.4.3.3 Object Associations diagram
+
+![Diagram](ObjectAssociationsDiagram.svg)
 
 ##### 3.4.4 Dynamic models
 
@@ -371,20 +380,17 @@ While creating the user interface for this project, inspiration was drawn from v
 
 #### B
 - **Blog**: A section of the portfolio where the developer shares articles and insights.  
-- **BlogPost**: An article written by the developer, containing technical insights, personal experiences, or tutorials.  
+- **Blog Post**: An article written by the developer, containing technical insights, personal experiences, or tutorials.  
 - **Boundary Object**: A term in system modeling referring to interface elements that facilitate interactions between users and the system.  
 
 #### C
 - **Certification**: A formal recognition of a skill or expertise, issued by an organization.  
-- **Change Language Control**: The function responsible for switching the portfolio’s language dynamically.  
-- **Change Theme Control**: A system component that manages light and dark mode switching.  
 - **CSS (Cascading Style Sheets)**: A language used to style HTML content and define the visual presentation of a website.  
 
 #### D
 - **Data Dictionary**: A structured repository of definitions for data elements used in the portfolio system.  
 - **Developer**: The owner and maintainer of the portfolio.  
 - **Download Resume Button**: A clickable element that allows users to download the developer’s resume in PDF format.  
-- **Download Resume Control**: The system function that handles resume download requests.  
 
 #### E
 - **Education**: Details about the developer’s academic background, including degrees and institutions attended.  
@@ -414,7 +420,9 @@ While creating the user interface for this project, inspiration was drawn from v
 - **Job**: A professional role held by the developer, including responsibilities and achievements.  
 
 #### L
-- **Language Button**: A UI element that allows visitors to toggle between different languages.  
+- **Language**: Represents the language setting selected by the user.  
+- **Language Button**: A UI element that allows visitors to toggle between different languages. 
+- **Languages Control**: The function responsible for switching the portfolio’s language dynamically.  
 - **Light/Dark Mode Button**: A UI control that lets users switch between light and dark themes.  
 
 #### M
@@ -446,6 +454,7 @@ While creating the user interface for this project, inspiration was drawn from v
 - **Requirements Analysis**: The process of identifying and documenting the needs and functionalities of the portfolio system.  
 - **Responsive Design**: A web development approach ensuring a consistent experience across devices of different screen sizes.  
 - **Resume**: A downloadable document summarizing the developer’s qualifications and work experience.  
+- **Resume Control**: The system function that handles resume download requests.  
 
 #### S
 - **Scenarios**: Hypothetical situations describing how users interact with the portfolio.  
@@ -459,6 +468,8 @@ While creating the user interface for this project, inspiration was drawn from v
 #### T
 - **Tailwind CSS**: A utility-first CSS framework used for building responsive and customizable designs.  
 - **Technology Stack**: The set of programming languages, frameworks, and tools used to develop the portfolio.  
+- **Theme**: Represents the visual style preference selected by the user, such as light or dark mode.
+- **Themes Control**: A system component that manages light and dark mode switching.  
 - **TypeScript**: A strongly typed programming language that builds on JavaScript.  
 
 #### U
