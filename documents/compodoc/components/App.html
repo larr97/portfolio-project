@@ -1,0 +1,643 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>portfolio-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">portfolio-web documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  App</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterOutlet</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./app.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#title" >title</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Luis\&#x27;s portfolio&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { RouterOutlet } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  imports: [
+    RouterOutlet,
+  ],
+  templateUrl: &#x27;./app.html&#x27;,
+  styleUrl: &#x27;./app.scss&#x27;
+})
+export class App {
+  protected title &#x3D; &#x27;Luis\&#x27;s portfolio&#x27;;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * The content below * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * Delete the template below * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * to get started with your project! * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+
+&lt;style&gt;
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto,
+      Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;,
+      &quot;Segoe UI Symbol&quot;;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: &quot;Inter Tight&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto,
+      Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;,
+      &quot;Segoe UI Symbol&quot;;
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group svg {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }
+&lt;/style&gt;
+
+&lt;main class&#x3D;&quot;main&quot;&gt;
+  &lt;div class&#x3D;&quot;content&quot;&gt;
+    &lt;div class&#x3D;&quot;left-side&quot;&gt;
+      &lt;svg
+        xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+        viewBox&#x3D;&quot;0 0 300 100&quot;
+        class&#x3D;&quot;angular-logo&quot;&gt;
+        &lt;style&gt;
+          @import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;DM+Mono&amp;display&#x3D;swap&#x27;);
+          text {
+            font-family: &#x27;DM Mono&#x27;, monospace;
+            font-size: 64px;
+            fill: url(#gradient);
+          }
+        &lt;/style&gt;
+        &lt;defs&gt;
+          &lt;linearGradient id&#x3D;&quot;gradient&quot; x1&#x3D;&quot;0&quot; y1&#x3D;&quot;0&quot; x2&#x3D;&quot;1&quot; y2&#x3D;&quot;0&quot;&gt;
+            &lt;stop offset&#x3D;&quot;0%&quot; stop-color&#x3D;&quot;#F0060B&quot; /&gt;
+            &lt;stop offset&#x3D;&quot;50%&quot; stop-color&#x3D;&quot;#CC26D5&quot; /&gt;
+            &lt;stop offset&#x3D;&quot;100%&quot; stop-color&#x3D;&quot;#7702FF&quot; /&gt;
+          &lt;/linearGradient&gt;
+        &lt;/defs&gt;
+        &lt;text x&#x3D;&quot;10&quot; y&#x3D;&quot;70&quot;&gt;&amp;gt;lr_&lt;/text&gt;
+      &lt;/svg&gt;
+      &lt;h1&gt;{{ title }}&lt;/h1&gt;
+      &lt;p&gt;Hi there! 👋🏻&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;divider&quot; role&#x3D;&quot;separator&quot; aria-label&#x3D;&quot;Divider&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;right-side&quot;&gt;
+      &lt;div class&#x3D;&quot;pill-group&quot;&gt;
+        @for (item of [
+          { title: &#x27;Figma&#x27;, link: &#x27;https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id&#x3D;21-101&amp;t&#x3D;z6c1uPhNA7Ls2fbo-1&amp;scaling&#x3D;min-zoom&amp;content-scaling&#x3D;fixed&amp;page-id&#x3D;0%3A1&amp;starting-point-node-id&#x3D;21%3A101&amp;show-proto-sidebar&#x3D;1&#x27; },
+          { title: &#x27;Github&#x27;, link: &#x27;https://github.com/larr97/portfolio-project&#x27; },
+          { title: &#x27;LinkedIn&#x27;, link: &#x27;https://www.linkedin.com/in/luisrr97/&#x27; },
+        ]; track item.title) {
+          &lt;a
+            class&#x3D;&quot;pill&quot;
+            [href]&#x3D;&quot;item.link&quot;
+            target&#x3D;&quot;_blank&quot;
+            rel&#x3D;&quot;noopener&quot;
+          &gt;
+            &lt;span&gt;{{ item.title }}&lt;/span&gt;
+            &lt;svg
+              xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+              height&#x3D;&quot;14&quot;
+              viewBox&#x3D;&quot;0 -960 960 960&quot;
+              width&#x3D;&quot;14&quot;
+              fill&#x3D;&quot;currentColor&quot;
+            &gt;
+              &lt;path
+                d&#x3D;&quot;M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z&quot;
+              /&gt;
+            &lt;/svg&gt;
+          &lt;/a&gt;
+        }
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --&gt;
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
+
+&lt;router-outlet /&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><style>  :host {    --bright-blue: oklch(51.01% 0.274 263.83);    --electric-violet: oklch(53.18% 0.28 296.97);    --french-violet: oklch(47.66% 0.246 305.88);    --vivid-pink: oklch(69.02% 0.277 332.77);    --hot-red: oklch(61.42% 0.238 15.34);    --orange-red: oklch(63.32% 0.24 31.68);    --gray-900: oklch(19.37% 0.006 300.98);    --gray-700: oklch(36.98% 0.014 302.71);    --gray-400: oklch(70.9% 0.015 304.04);    --red-to-pink-to-purple-vertical-gradient: linear-gradient(      180deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(      90deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --pill-accent: var(--bright-blue);    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";    box-sizing: border-box;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;  }  h1 {    font-size: 3.125rem;    color: var(--gray-900);    font-weight: 500;    line-height: 100%;    letter-spacing: -0.125rem;    margin: 0;    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";  }  p {    margin: 0;    color: var(--gray-700);  }  main {    width: 100%;    min-height: 100%;    display: flex;    justify-content: center;    align-items: center;    padding: 1rem;    box-sizing: inherit;    position: relative;  }  .angular-logo {    max-width: 9.2rem;  }  .content {    display: flex;    justify-content: space-around;    width: 100%;    max-width: 700px;    margin-bottom: 3rem;  }  .content h1 {    margin-top: 1.75rem;  }  .content p {    margin-top: 1.5rem;  }  .divider {    width: 1px;    background: var(--red-to-pink-to-purple-vertical-gradient);    margin-inline: 0.5rem;  }  .pill-group {    display: flex;    flex-direction: column;    align-items: start;    flex-wrap: wrap;    gap: 1.25rem;  }  .pill {    display: flex;    align-items: center;    --pill-accent: var(--bright-blue);    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);    color: var(--pill-accent);    padding-inline: 0.75rem;    padding-block: 0.375rem;    border-radius: 2.75rem;    border: 0;    transition: background 0.3s ease;    font-family: var(--inter-font);    font-size: 0.875rem;    font-style: normal;    font-weight: 500;    line-height: 1.4rem;    letter-spacing: -0.00875rem;    text-decoration: none;  }  .pill:hover {    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);  }  .pill-group .pill:nth-child(6n + 1) {    --pill-accent: var(--bright-blue);  }  .pill-group .pill:nth-child(6n + 2) {    --pill-accent: var(--french-violet);  }  .pill-group .pill:nth-child(6n + 3),  .pill-group .pill:nth-child(6n + 4),  .pill-group .pill:nth-child(6n + 5) {    --pill-accent: var(--hot-red);  }  .pill-group svg {    margin-inline-start: 0.25rem;  }  .social-links {    display: flex;    align-items: center;    gap: 0.73rem;    margin-top: 1.5rem;  }  .social-links path {    transition: fill 0.3s ease;    fill: var(--gray-400);  }  .social-links a:hover svg path {    fill: var(--gray-900);  }  @media screen and (max-width: 650px) {    .content {      flex-direction: column;      width: max-content;    }    .divider {      height: 1px;      width: 100%;      background: var(--red-to-pink-to-purple-horizontal-gradient);      margin-block: 1.5rem;    }  }</style><main class="main">  <div class="content">    <div class="left-side">      <svg        xmlns="http://www.w3.org/2000/svg"        viewBox="0 0 300 100"        class="angular-logo">        <style>          @import url(\'https://fonts.googleapis.com/css2?family=DM+Mono&display=swap\');          text {            font-family: \'DM Mono\', monospace;            font-size: 64px;            fill: url(#gradient);          }        </style>        <defs>          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">            <stop offset="0%" stop-color="#F0060B" />            <stop offset="50%" stop-color="#CC26D5" />            <stop offset="100%" stop-color="#7702FF" />          </linearGradient>        </defs>        <text x="10" y="70">&gt;lr_</text>      </svg>      <h1>{{ title }}</h1>      <p>Hi there! 👋🏻</p>    </div>    <div class="divider" role="separator" aria-label="Divider"></div>    <div class="right-side">      <div class="pill-group">        @for (item of [          { title: \'Figma\', link: \'https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1\' },          { title: \'Github\', link: \'https://github.com/larr97/portfolio-project\' },          { title: \'LinkedIn\', link: \'https://www.linkedin.com/in/luisrr97/\' },        ]; track item.title) {          <a            class="pill"            [href]="item.link"            target="_blank"            rel="noopener"          >            <span>{{ item.title }}</span>            <svg              xmlns="http://www.w3.org/2000/svg"              height="14"              viewBox="0 -960 960 960"              width="14"              fill="currentColor"            >              <path                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"              />            </svg>          </a>        }      </div>    </div>  </div></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><router-outlet /></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'App'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'App.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
