@@ -1,4 +1,7 @@
-## Object Design Document for Software Engineer Portfolio
+## Object Design Document (ODD) for Software Engineer Portfolio
+Version: 1.1  
+Date: 2025-06-22  
+Author: Luis Rodriguez
 
 ### 1. Introduction
 
@@ -9,7 +12,7 @@
 - **Rendering Strategy (Client-side vs. Server-side):** The portfolio uses client-side rendering to simplify deployment and hosting on static servers. This improves scalability and reduces server costs but increases the initial page load time and relies on the client device's processing power.
 - **Hosting Approach (Static vs. Dynamic):** By opting for static hosting, the project prioritizes security, ease of maintenance, and performance. However, this limits the ability to implement dynamic server-side logic or personalized backend services.
 - **Persistence Mechanism (In-browser Storage vs. Backend Storage):** User preferences (e.g., theme, language) are stored locally using browser storage. This approach offers fast access and reduces server dependencies but limits cross-device synchronization and persistence reliability.
-- **UI Design (Component-based Reusability vs. Custom Styling):** Using Angular Material and Tailwind CSS supports rapid UI development and ensures consistency, balancing between customization flexibility and development efficiency.
+- **UI Design (Component-based Reusability vs. Custom Styling):** Using CSS Grid, Flexbox, and Angular Material supports UI development and ensures consistency, balancing between customization flexibility and development efficiency.
 
 #### 1.2 Interface documentation guidelines
 
@@ -36,7 +39,6 @@
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) — Detailed CSS reference and guides on styling web pages.
   - [Angular](https://angular.dev/overview) — Official Angular framework overview and documentation.
   - [Angular Material](https://material.angular.io/) — Documentation for Angular’s Material Design component library.
-  - [Tailwind CSS](https://tailwindcss.com/docs/installation) — Utility-first CSS framework guide for rapid UI development.
   - [TypeScript](https://www.typescriptlang.org/docs) — Language documentation covering TypeScript syntax and features.
   - [Compodoc](https://compodoc.app/) — Documentation tool for Angular applications generating static documentation from code comments.
 - Project documents and design prototypes:  
@@ -102,7 +104,7 @@ This section outlines the public interfaces of the classes and services used in 
 
 Given the modular nature of the application and the frequency of interface revisions, detailed specifications are automatically generated and maintained using [Compodoc](https://compodoc.app/). This ensures synchronization between the design documentation and the source code.
 
-For complete interface specifications, refer to the [Interface Documentation](./compodoc/index.html).
+For complete interface specifications, refer to the [Interface Documentation](https://larr97.github.io/portfolio-project/documents/compodoc/index.html).
 
 These generated pages include:
 - Class and interface descriptions
@@ -171,7 +173,6 @@ These generated pages include:
 - **Single-Page Application (SPA)**: A web application model where navigation occurs within a single HTML document, improving performance and user experience.  
 
 #### T  
-- **Tailwind CSS**: A utility-first CSS framework used for quickly styling components using predefined class names.  
 - **Theme Subsystem**: A core service that manages the light/dark mode feature of the application interface.  
 - **TypeScript**: A statically typed superset of JavaScript used throughout the application for writing safer and more maintainable code.
 

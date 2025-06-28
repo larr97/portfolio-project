@@ -1,4 +1,7 @@
-## Requirements Analysis Document for Software Engineer Portfolio
+## Requirements Analysis Document (RAD) for Software Engineer Portfolio
+Version: 3.1  
+Date: 2025-06-22  
+Author: Luis Rodriguez
 
 ### 1. Introduction
 
@@ -62,7 +65,6 @@ The system will be responsive and accessible, ensuring optimal user experience a
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) — Detailed CSS reference and guides on styling web pages.
   - [Angular](https://angular.dev/overview) — Official Angular framework overview and documentation.
   - [Angular Material](https://material.angular.io/) — Documentation for Angular’s Material Design component library.
-  - [Tailwind CSS](https://tailwindcss.com/docs/installation) — Utility-first CSS framework guide for rapid UI development.
   - [TypeScript](https://www.typescriptlang.org/docs) — Language documentation covering TypeScript syntax and features.
 - Accessibility standards:
   - [WCAG 2.1 guidelines](https://www.w3.org/WAI/standards-guidelines/wcag) — Web Content Accessibility Guidelines ensuring the portfolio meets accessibility standards for all users.
@@ -70,7 +72,6 @@ The system will be responsive and accessible, ensuring optimal user experience a
   - [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) — Official Google guide to improve search engine optimization and site visibility.
 - Academic References:
   - Bruegge, B., & Dutoit, A. H. (2009). [*Object-oriented software engineering: Using UML, patterns, and Java™*](https://www.pearson.com/en-us/subject-catalog/p/object-oriented-software-engineering-using-uml-patterns-and-java/P200000003319/9780136061250) (3rd ed.). Prentice Hall. — Served as the primary reference for software engineering methodology, UML modeling, and design process throughout the project.
-
 
 #### 1.6 Overview
 
@@ -154,7 +155,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 ##### 3.3.5 Implementation
 
-- The portfolio will use widely supported technologies, such as HTML, CSS, JavaScript, TypeScript, Angular, Angular Material, and Tailwind CSS.
+- The portfolio will use widely supported technologies, such as HTML, CSS, JavaScript, TypeScript, Angular, and Angular Material.
 - Ensure the solution is compatible with common browsers (Chrome, Firefox, Safari, Edge) and devices (desktop, tablet, mobile).
 - Hosting will be done on a reliable platform like Namecheap or similar reliable platforms with automated backups and SSL support.
 
@@ -466,7 +467,6 @@ While creating the user interface for this project, inspiration was drawn from v
 - **System Boundaries**: The limits of the portfolio’s functionality and features.  
 
 #### T
-- **Tailwind CSS**: A utility-first CSS framework used for building responsive and customizable designs.  
 - **Technology Stack**: The set of programming languages, frameworks, and tools used to develop the portfolio.  
 - **Theme**: Represents the visual style preference selected by the user, such as light or dark mode.
 - **Themes Control**: A system component that manages light and dark mode switching.  

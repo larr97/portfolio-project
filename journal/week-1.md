@@ -22,5 +22,3 @@ As part of the **Requirement Elicitation** phase of the project, I started creat
 ## Next Steps
 - Complete *version 1* of the **Requirement Analysis Document (RAD)** for the portfolio, covering the object model, dynamic model, and user interface (navigational paths and screen mock-ups).
 - Work on creating the website design on Figma. 
-
- 

@@ -1,4 +1,7 @@
-## System Design Document for Software Engineer Portfolio
+## System Design Document (SDD) for Software Engineer Portfolio
+Version: 2.1  
+Date: 2025-06-22  
+Author: Luis Rodriguez
 
 ### 1. Introduction
 
@@ -19,7 +22,7 @@ The purpose of the system is to provide a personal portfolio website for a softw
 3. **Security**: Ensure secure access to downloadable assets and SSL compliance for safe user interaction.
 
 **Cost Criteria**
-1. **Development Cost**: Keep costs low by using open-source and widely supported technologies (Angular, TailwindCSS).
+1. **Development Cost**: Keep costs low by using open-source and widely supported technologies (Angular).
 2. **Deployment Cost**: Host the portfolio on an affordable, reliable platform (e.g., Namecheap) with backup and SSL support.
 3. **Maintenance Cost**: Modular and static site design minimizes ongoing maintenance and update costs.
 
@@ -45,7 +48,6 @@ The purpose of the system is to provide a personal portfolio website for a softw
 - **JavaScript**: A programming language used to create dynamic and interactive effects within web browsers.
 - **TypeScript**: A strongly typed programming language that builds on JavaScript, often used with Angular applications.
 - **Angular**: A popular web application framework for building front-end applications.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 
 #### 1.4 References
 
@@ -58,7 +60,7 @@ The purpose of the system is to provide a personal portfolio website for a softw
 #### 1.5 Overview
 
 This document presents the software architecture and design goals for the personal portfolio website. The primary objective is to create an intuitive, visually appealing, and fully functional platform that showcases the skills, experience, and projects of a software engineer. 
-The architecture design follows modern web development principles, incorporating technologies such as HTML, CSS, JavaScript, TypeScript, Angular, Angular Material, and Tailwind CSS. The portfolio website is designed with the user in mind, ensuring an accessible and responsive experience across devices and screen sizes.
+The architecture design follows modern web development principles, incorporating technologies such as HTML, CSS, JavaScript, TypeScript, Angular, and Angular Material. The portfolio website is designed with the user in mind, ensuring an accessible and responsive experience across devices and screen sizes.
 
 ### 2. Current System
 
@@ -289,7 +291,6 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 - **Subsystem**: A module within the larger system that performs a specific set of functions.  
 
 #### T  
-- **Tailwind CSS**: A utility-first CSS framework used to rapidly build custom user interfaces.  
 - **Theme Subsystem**: A system module that controls the application's visual theme (e.g., light or dark mode).  
 - **TypeScript**: A strongly typed programming language that builds on JavaScript, often used with Angular.  
 
