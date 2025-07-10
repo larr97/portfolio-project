@@ -5,10 +5,20 @@ This week focused on preparing the Angular project environment, including the se
 As the journey continues, so do the ideas to build a more professional and maintainable project. I explored how to improve commit messages by following standards, learned how to version documents properly, and prepared to apply versioning to the Angular codebase using Git.
 
 ## Completed Tasks
-- Installed Angular via [Angular.dev](https://angular.dev/installation) (requires [Node.js](https://nodejs.org/en/download))  
+- Installed Angular via [Angular.dev](https://angular.dev/installation) (requires [Node.js](https://nodejs.org/en/download)) 
+```
+npm install -g @angular/cli
+```
 - Created custom `favicon.ico` using Figma  
-- Installed [Compodoc](https://compodoc.app/guides/installation.html) for ODD (Object Design Documentation)  
+- Installed [Compodoc](https://compodoc.app/guides/installation.html) for ODD (Object Design Documentation)
+```
+ng add @compodoc/compodoc
+```  
 - Installed [Angular Material](https://material.angular.dev/guide/getting-started) and applied custom theming via the [Material 3 theme schematic](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md)
+```
+ng add @angular/material
+ng generate @angular/material:theme-color
+```
 - Refactored Git commit messages using standardized formats (e.g., `docs(rad): update structure`)
 - Established a versioning convention for project documents (RAD, SDD, ODD) using simplified Semantic Versioning (`v1.0`, `v2.0`, etc.)
 - Tagged project document versions in Git to enable historical tracking

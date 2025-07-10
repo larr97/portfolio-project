@@ -1,6 +1,6 @@
 ## Requirements Analysis Document (RAD) for Software Engineer Portfolio
-Version: 3.1  
-Date: 2025-06-22  
+Version: 3.2  
+Date: 2025-07-10  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -319,37 +319,37 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 ###### 3.4.3.1 Data dictionary
 
-| **Entity Object Name**  | **Description**                                                                                                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Project**       | A piece of work or software developed by the Software Engineer to demonstrate skills and expertise. A project is identified by a unique ID and includes details such as title, description, technologies used, and a link to its live/demo version or repository. |
-| **Job**           | A professional role held by the developer in the past or present. A job entry is composed of a job title, company name, start and end dates, responsibilities, and achievements.      |
-| **Certification** | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates. |
-| **Education**     | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.          |
-| **Resume**        | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.   |
-| **Blog Post**      | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.            |
-| **Document**      | A Software Project Document containing key attributes such as title, URL, and optionally version. |
-| **Route**         | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.     |
-| **Theme**         | Represents the visual style preference selected by the user (e.g., light or dark mode). Includes the attribute name. |
-| **Language**      | Represents the language selected by the user for localization. Includes attributes such as code (e.g., "en", "es") and name. |
+| **Entity Object Name**  | **Description**                                                                                                                                | **Angular Name**              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| **Project**             | A piece of work or software developed by the Software Engineer to demonstrate skills and expertise. A project is identified by a unique ID and includes details such as title, description, technologies used, and a link to its live/demo version or repository.                                                                                         |                               |
+| **Job**                 | A professional role held by the developer in the past or present. A job entry is composed of a job title, company name, start and end dates, responsibilities, and achievements.                                                                                                                                                              |                               |
+| **Certification**       | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates.                                                                                                                                                                     |                               |
+| **Education**           | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.                                                                                                                                                                     |                               |
+| **Resume**              | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.                                                                                                                                                                 |                               |
+| **Blog Post**           | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.                                                                                                                                                                      |                               |
+| **Document**            | A Software Project Document containing key attributes such as title, URL, and optionally version.                                              |                               |
+| **Route**               | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.                                                                                                                                                                      |                               |
+| **Theme**               | Represents the visual style preference selected by the user (e.g., light or dark mode). Includes the attribute name.                           |                               |
+| **Language**            | Represents the language selected by the user for localization. Includes attributes such as code (e.g., "en", "es") and name.                   | `language.model`              |
 
 ---
 
-| **Boundary Object Name**           | **Description**                                                                                                                                         |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked. |
-| **Language Button**          | A toggle or dropdown allowing users to switch the language of the portfolio (e.g., English to Spanish). Stores the selected language preference.         |
-| **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.   |
-| **Navigation Button**     | A user interface button that allows users to navigate between different views of the application, such as Home, Projects, Docs, and Blog, by triggering route changes. |
+| **Boundary Object Name**     | **Description**                                                                                                                           | **Angular Name**              |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked.                                                                                                                                                                   |                               |
+| **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.                                                                                                                                                                      |                               |
+| **Navigation Button**        | A user interface button that allows users to navigate between different views of the application, such as Home, Projects, Docs, and Blog, by triggering route changes.                                                                                                                                                                   |                               |
+| **Language Button**          | A toggle or dropdown allowing users to switch the language of the portfolio (e.g., English to Spanish). Stores the selected language preference.                                                                                                                                                                | `language-switcher`           |
 
 ---
 
-| **Control Object Name**            | **Description**                                                                                                                                                   |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Languages Control**  | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                |
-| **Themes Control**     | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                    |
-| **Resume Control**  | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.                                   |
-| **Projects Control**    | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic. |
-| **Routing Control**      | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component. |
+| **Control Object Name**     | **Description**                                                                                                                            | **Angular Name**              |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
+| **Themes Control**          | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                                                                                                                                                                |                               |
+| **Resume Control**          | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.            |                               |
+| **Projects Control**        | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic.                                                                                                                     |                               |
+| **Routing Control**         | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component.                                                                                                                                                                 |                               |
+| **Languages Control**       | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                                                                                                                                                               | `language.service`            |
 
 ###### 3.4.3.2 Class diagrams
 
