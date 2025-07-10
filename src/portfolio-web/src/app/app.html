@@ -178,6 +178,19 @@
 </style>
 
 <main class="main">
+
+  <!-- 
+  This corresponds the Boundary Object: "Language Button" (model domain)
+  that will be mapped to the "language-switcher" component (source code domain)
+  -->
+  <!-- #docregion mat-menu-trigger-for -->
+  <button matButton [matMenuTriggerFor]="menu">Language</button>
+  <!-- #enddocregion mat-menu-trigger-for -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="changeLanguage('en')" [disabled]="currentLang === 'en'">🇺🇸 English</button>
+    <button mat-menu-item (click)="changeLanguage('es')" [disabled]="currentLang === 'es'">🇪🇸 Español</button>
+  </mat-menu>
+
   <div class="content">
     <div class="left-side">
       <svg
@@ -201,8 +214,8 @@
         </defs>
         <text x="10" y="70">&gt;lr_</text>
       </svg>
-      <h1>{{ title }}</h1>
-      <p>Hi there! 👋🏻</p>
+      <h1>{{ 'app.title' | translate }}</h1>
+      <p>{{ 'app.hello' | translate }}</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

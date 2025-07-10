@@ -149,7 +149,11 @@
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
+                            <code>TranslatePipe</code>
+                            <code>TranslateDirective</code>
                             <code>RouterOutlet</code>
+                            <code>MatButtonModule</code>
+                            <code>MatMenuModule</code>
                 </td>
             </tr>
 
@@ -190,7 +194,23 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#title" >title</a>
+                                <a href="#currentLang" >currentLang</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeLanguage" >changeLanguage</a>
                             </li>
                         </ul>
                     </td>
@@ -200,17 +220,138 @@
 
 
 
-
         </tbody>
     </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(translate: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
 
 
 
 
 
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeLanguage"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>changeLanguage</b></span>
+                        <a href="#changeLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeLanguage(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/app/app.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>lang</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section data-compodoc="block-properties">
     
     <h3 id="inputs">
@@ -220,11 +361,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="title"></a>
+                    <a name="currentLang"></a>
                     <span class="name">
                             <span class="modifier">Protected</span>
-                        <span ><b>title</b></span>
-                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>currentLang</b></span>
+                        <a href="#currentLang"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -236,12 +377,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;Luis\&#x27;s portfolio&#x27;</code>
+                        <i>Default value : </i><code>&#x27;en&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -255,18 +396,64 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { TranslateService, TranslatePipe, TranslateDirective } from &quot;@ngx-translate/core&quot;;
 import { RouterOutlet } from &#x27;@angular/router&#x27;;
+import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
+import {MatMenuModule} from &#x27;@angular/material/menu&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   imports: [
+    TranslatePipe, 
+    TranslateDirective,
     RouterOutlet,
+    MatButtonModule,
+    MatMenuModule
   ],
   templateUrl: &#x27;./app.html&#x27;,
   styleUrl: &#x27;./app.scss&#x27;
 })
 export class App {
-  protected title &#x3D; &#x27;Luis\&#x27;s portfolio&#x27;;
+  
+  // This corresponds the Entity Object: &quot;Language&quot; (model domain)
+  // that will be mapped to the &quot;language.model&quot; (source code domain)
+  protected currentLang &#x3D; &#x27;en&#x27;;    // The active language
+
+  constructor(private translate: TranslateService) {
+      
+    // Step 1: Check if a language is stored in localStorage
+    let storedLang: string | null &#x3D; null;
+    if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
+      storedLang &#x3D; localStorage.getItem(&#x27;lang&#x27;);
+    }
+
+    // Step 2: If no language is stored, default to &#x27;en&#x27;
+    this.currentLang &#x3D; storedLang || this.currentLang;
+
+    // Step 3: Initialize the translation service
+    // The Control Object: &quot;Language Control&quot; (model domain)
+    // is mapped to the &quot;language.service&quot; (source code domain),
+    // and its &quot;languages&quot; attribute is [&#x27;en&#x27;, &#x27;es&#x27;]
+    this.translate.addLangs([&#x27;en&#x27;, &#x27;es&#x27;]);  
+    this.translate.setDefaultLang(&#x27;en&#x27;);  // // Default language, fallback if nothing else matches
+    this.translate.use(this.currentLang);
+  }
+
+  // lang is an instance of the Entity Object &quot;Language&quot; (model domain)
+  // that will be mapped to the &quot;language.model&quot; (source code domain)
+  public changeLanguage(lang: string) {  
+    
+    // Step 1: Update the current language
+    this.currentLang &#x3D; lang;
+
+    // Step 2: Store the new language in localStorage (only in browser)
+    if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
+      localStorage.setItem(&#x27;lang&#x27;, lang);
+    }
+    
+    // Step 3: Use the new language in the translation service
+    this.translate.use(this.currentLang);
+  }
 }</code></pre>
     </div>
 
@@ -451,6 +638,19 @@ export class App {
 &lt;/style&gt;
 
 &lt;main class&#x3D;&quot;main&quot;&gt;
+
+  &lt;!-- 
+  This corresponds the Boundary Object: &quot;Language Button&quot; (model domain)
+  that will be mapped to the &quot;language-switcher&quot; component (source code domain)
+  --&gt;
+  &lt;!-- #docregion mat-menu-trigger-for --&gt;
+  &lt;button matButton [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;Language&lt;/button&gt;
+  &lt;!-- #enddocregion mat-menu-trigger-for --&gt;
+  &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
+    &lt;button mat-menu-item (click)&#x3D;&quot;changeLanguage(&#x27;en&#x27;)&quot; [disabled]&#x3D;&quot;currentLang &#x3D;&#x3D;&#x3D; &#x27;en&#x27;&quot;&gt;🇺🇸 English&lt;/button&gt;
+    &lt;button mat-menu-item (click)&#x3D;&quot;changeLanguage(&#x27;es&#x27;)&quot; [disabled]&#x3D;&quot;currentLang &#x3D;&#x3D;&#x3D; &#x27;es&#x27;&quot;&gt;🇪🇸 Español&lt;/button&gt;
+  &lt;/mat-menu&gt;
+
   &lt;div class&#x3D;&quot;content&quot;&gt;
     &lt;div class&#x3D;&quot;left-side&quot;&gt;
       &lt;svg
@@ -474,8 +674,8 @@ export class App {
         &lt;/defs&gt;
         &lt;text x&#x3D;&quot;10&quot; y&#x3D;&quot;70&quot;&gt;&amp;gt;lr_&lt;/text&gt;
       &lt;/svg&gt;
-      &lt;h1&gt;{{ title }}&lt;/h1&gt;
-      &lt;p&gt;Hi there! 👋🏻&lt;/p&gt;
+      &lt;h1&gt;{{ &#x27;app.title&#x27; | translate }}&lt;/h1&gt;
+      &lt;p&gt;{{ &#x27;app.hello&#x27; | translate }}&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;divider&quot; role&#x3D;&quot;separator&quot; aria-label&#x3D;&quot;Divider&quot;&gt;&lt;/div&gt;
     &lt;div class&#x3D;&quot;right-side&quot;&gt;
@@ -547,7 +747,7 @@ export class App {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><style>  :host {    --bright-blue: oklch(51.01% 0.274 263.83);    --electric-violet: oklch(53.18% 0.28 296.97);    --french-violet: oklch(47.66% 0.246 305.88);    --vivid-pink: oklch(69.02% 0.277 332.77);    --hot-red: oklch(61.42% 0.238 15.34);    --orange-red: oklch(63.32% 0.24 31.68);    --gray-900: oklch(19.37% 0.006 300.98);    --gray-700: oklch(36.98% 0.014 302.71);    --gray-400: oklch(70.9% 0.015 304.04);    --red-to-pink-to-purple-vertical-gradient: linear-gradient(      180deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(      90deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --pill-accent: var(--bright-blue);    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";    box-sizing: border-box;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;  }  h1 {    font-size: 3.125rem;    color: var(--gray-900);    font-weight: 500;    line-height: 100%;    letter-spacing: -0.125rem;    margin: 0;    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";  }  p {    margin: 0;    color: var(--gray-700);  }  main {    width: 100%;    min-height: 100%;    display: flex;    justify-content: center;    align-items: center;    padding: 1rem;    box-sizing: inherit;    position: relative;  }  .angular-logo {    max-width: 9.2rem;  }  .content {    display: flex;    justify-content: space-around;    width: 100%;    max-width: 700px;    margin-bottom: 3rem;  }  .content h1 {    margin-top: 1.75rem;  }  .content p {    margin-top: 1.5rem;  }  .divider {    width: 1px;    background: var(--red-to-pink-to-purple-vertical-gradient);    margin-inline: 0.5rem;  }  .pill-group {    display: flex;    flex-direction: column;    align-items: start;    flex-wrap: wrap;    gap: 1.25rem;  }  .pill {    display: flex;    align-items: center;    --pill-accent: var(--bright-blue);    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);    color: var(--pill-accent);    padding-inline: 0.75rem;    padding-block: 0.375rem;    border-radius: 2.75rem;    border: 0;    transition: background 0.3s ease;    font-family: var(--inter-font);    font-size: 0.875rem;    font-style: normal;    font-weight: 500;    line-height: 1.4rem;    letter-spacing: -0.00875rem;    text-decoration: none;  }  .pill:hover {    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);  }  .pill-group .pill:nth-child(6n + 1) {    --pill-accent: var(--bright-blue);  }  .pill-group .pill:nth-child(6n + 2) {    --pill-accent: var(--french-violet);  }  .pill-group .pill:nth-child(6n + 3),  .pill-group .pill:nth-child(6n + 4),  .pill-group .pill:nth-child(6n + 5) {    --pill-accent: var(--hot-red);  }  .pill-group svg {    margin-inline-start: 0.25rem;  }  .social-links {    display: flex;    align-items: center;    gap: 0.73rem;    margin-top: 1.5rem;  }  .social-links path {    transition: fill 0.3s ease;    fill: var(--gray-400);  }  .social-links a:hover svg path {    fill: var(--gray-900);  }  @media screen and (max-width: 650px) {    .content {      flex-direction: column;      width: max-content;    }    .divider {      height: 1px;      width: 100%;      background: var(--red-to-pink-to-purple-horizontal-gradient);      margin-block: 1.5rem;    }  }</style><main class="main">  <div class="content">    <div class="left-side">      <svg        xmlns="http://www.w3.org/2000/svg"        viewBox="0 0 300 100"        class="angular-logo">        <style>          @import url(\'https://fonts.googleapis.com/css2?family=DM+Mono&display=swap\');          text {            font-family: \'DM Mono\', monospace;            font-size: 64px;            fill: url(#gradient);          }        </style>        <defs>          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">            <stop offset="0%" stop-color="#F0060B" />            <stop offset="50%" stop-color="#CC26D5" />            <stop offset="100%" stop-color="#7702FF" />          </linearGradient>        </defs>        <text x="10" y="70">&gt;lr_</text>      </svg>      <h1>{{ title }}</h1>      <p>Hi there! 👋🏻</p>    </div>    <div class="divider" role="separator" aria-label="Divider"></div>    <div class="right-side">      <div class="pill-group">        @for (item of [          { title: \'Figma\', link: \'https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1\' },          { title: \'Github\', link: \'https://github.com/larr97/portfolio-project\' },          { title: \'LinkedIn\', link: \'https://www.linkedin.com/in/luisrr97/\' },        ]; track item.title) {          <a            class="pill"            [href]="item.link"            target="_blank"            rel="noopener"          >            <span>{{ item.title }}</span>            <svg              xmlns="http://www.w3.org/2000/svg"              height="14"              viewBox="0 -960 960 960"              width="14"              fill="currentColor"            >              <path                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"              />            </svg>          </a>        }      </div>    </div>  </div></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><router-outlet /></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><style>  :host {    --bright-blue: oklch(51.01% 0.274 263.83);    --electric-violet: oklch(53.18% 0.28 296.97);    --french-violet: oklch(47.66% 0.246 305.88);    --vivid-pink: oklch(69.02% 0.277 332.77);    --hot-red: oklch(61.42% 0.238 15.34);    --orange-red: oklch(63.32% 0.24 31.68);    --gray-900: oklch(19.37% 0.006 300.98);    --gray-700: oklch(36.98% 0.014 302.71);    --gray-400: oklch(70.9% 0.015 304.04);    --red-to-pink-to-purple-vertical-gradient: linear-gradient(      180deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(      90deg,      var(--orange-red) 0%,      var(--vivid-pink) 50%,      var(--electric-violet) 100%    );    --pill-accent: var(--bright-blue);    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";    box-sizing: border-box;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;  }  h1 {    font-size: 3.125rem;    color: var(--gray-900);    font-weight: 500;    line-height: 100%;    letter-spacing: -0.125rem;    margin: 0;    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",      "Segoe UI Symbol";  }  p {    margin: 0;    color: var(--gray-700);  }  main {    width: 100%;    min-height: 100%;    display: flex;    justify-content: center;    align-items: center;    padding: 1rem;    box-sizing: inherit;    position: relative;  }  .angular-logo {    max-width: 9.2rem;  }  .content {    display: flex;    justify-content: space-around;    width: 100%;    max-width: 700px;    margin-bottom: 3rem;  }  .content h1 {    margin-top: 1.75rem;  }  .content p {    margin-top: 1.5rem;  }  .divider {    width: 1px;    background: var(--red-to-pink-to-purple-vertical-gradient);    margin-inline: 0.5rem;  }  .pill-group {    display: flex;    flex-direction: column;    align-items: start;    flex-wrap: wrap;    gap: 1.25rem;  }  .pill {    display: flex;    align-items: center;    --pill-accent: var(--bright-blue);    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);    color: var(--pill-accent);    padding-inline: 0.75rem;    padding-block: 0.375rem;    border-radius: 2.75rem;    border: 0;    transition: background 0.3s ease;    font-family: var(--inter-font);    font-size: 0.875rem;    font-style: normal;    font-weight: 500;    line-height: 1.4rem;    letter-spacing: -0.00875rem;    text-decoration: none;  }  .pill:hover {    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);  }  .pill-group .pill:nth-child(6n + 1) {    --pill-accent: var(--bright-blue);  }  .pill-group .pill:nth-child(6n + 2) {    --pill-accent: var(--french-violet);  }  .pill-group .pill:nth-child(6n + 3),  .pill-group .pill:nth-child(6n + 4),  .pill-group .pill:nth-child(6n + 5) {    --pill-accent: var(--hot-red);  }  .pill-group svg {    margin-inline-start: 0.25rem;  }  .social-links {    display: flex;    align-items: center;    gap: 0.73rem;    margin-top: 1.5rem;  }  .social-links path {    transition: fill 0.3s ease;    fill: var(--gray-400);  }  .social-links a:hover svg path {    fill: var(--gray-900);  }  @media screen and (max-width: 650px) {    .content {      flex-direction: column;      width: max-content;    }    .divider {      height: 1px;      width: 100%;      background: var(--red-to-pink-to-purple-horizontal-gradient);      margin-block: 1.5rem;    }  }</style><main class="main">  <!--   This corresponds the Boundary Object: "Language Button" (model domain)  that will be mapped to the "language-switcher" component (source code domain)  -->  <!-- #docregion mat-menu-trigger-for -->  <button matButton [matMenuTriggerFor]="menu">Language</button>  <!-- #enddocregion mat-menu-trigger-for -->  <mat-menu #menu="matMenu">    <button mat-menu-item (click)="changeLanguage(\'en\')" [disabled]="currentLang === \'en\'">🇺🇸 English</button>    <button mat-menu-item (click)="changeLanguage(\'es\')" [disabled]="currentLang === \'es\'">🇪🇸 Español</button>  </mat-menu>  <div class="content">    <div class="left-side">      <svg        xmlns="http://www.w3.org/2000/svg"        viewBox="0 0 300 100"        class="angular-logo">        <style>          @import url(\'https://fonts.googleapis.com/css2?family=DM+Mono&display=swap\');          text {            font-family: \'DM Mono\', monospace;            font-size: 64px;            fill: url(#gradient);          }        </style>        <defs>          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">            <stop offset="0%" stop-color="#F0060B" />            <stop offset="50%" stop-color="#CC26D5" />            <stop offset="100%" stop-color="#7702FF" />          </linearGradient>        </defs>        <text x="10" y="70">&gt;lr_</text>      </svg>      <h1>{{ \'app.title\' | translate }}</h1>      <p>{{ \'app.hello\' | translate }}</p>    </div>    <div class="divider" role="separator" aria-label="Divider"></div>    <div class="right-side">      <div class="pill-group">        @for (item of [          { title: \'Figma\', link: \'https://www.figma.com/proto/BckiGF230fNRprznGKNyZi/Website?node-id=21-101&t=z6c1uPhNA7Ls2fbo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A101&show-proto-sidebar=1\' },          { title: \'Github\', link: \'https://github.com/larr97/portfolio-project\' },          { title: \'LinkedIn\', link: \'https://www.linkedin.com/in/luisrr97/\' },        ]; track item.title) {          <a            class="pill"            [href]="item.link"            target="_blank"            rel="noopener"          >            <span>{{ item.title }}</span>            <svg              xmlns="http://www.w3.org/2000/svg"              height="14"              viewBox="0 -960 960 960"              width="14"              fill="currentColor"            >              <path                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"              />            </svg>          </a>        }      </div>    </div>  </div></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><router-outlet /></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'App'};
