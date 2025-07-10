@@ -1,6 +1,6 @@
 ## Object Design Document (ODD) for Software Engineer Portfolio
-Version: 1.1  
-Date: 2025-06-22  
+Version: 1.2  
+Date: 2025-07-10  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -16,12 +16,13 @@ Author: Luis Rodriguez
 
 #### 1.2 Interface documentation guidelines
 
-- **Component Naming:** Angular components are named using PascalCase (e.g., `ProjectListComponent`) following the Angular Style Guide for consistency and readability.
-- **Methods:** Functions and methods are named with verb phrases that clearly indicate the action performed (e.g., `loadProjects()`, `toggleTheme()`), improving code clarity.
-- **Properties:** Variables and properties use camelCase notation (e.g., `isDarkMode`, `currentLanguage`), adhering to TypeScript and JavaScript conventions.
-- **Events:** Event emitters use the `on` prefix (e.g., `onLanguageChange`) to clearly indicate event handling points.
-- **Error Handling:** Angular’s `HttpInterceptor` is employed to centralize HTTP error handling, ensuring consistent and maintainable error management across the application.
-- **Comments:** TypeScript JSDoc-style comments document classes, methods, and interfaces. This facilitates automatic documentation generation with tools like Compodoc and improves maintainability.
+- **Component Naming:** Angular components are named using **PascalCase** (e.g., `ProjectList`), following the [Angular Style Guide](https://angular.dev/style-guide) for consistency and readability.
+- **File Naming:** Use **kebab-case** (hyphens to separate words) for file names. For example, a component named `UserProfile` should have a file named `user-profile.ts`. File names should clearly describe the contents of the file and reflect the primary class or component it contains.
+- **Methods:** Use **camelCase** for function and method names. Name methods with verb phrases that clearly indicate the action performed (e.g., `loadProjects()`, `toggleTheme()`) to improve code clarity.
+- **Properties:** Variables and class properties use **camelCase** (e.g., `isDarkMode`, `currentLanguage`), in line with TypeScript and JavaScript conventions.
+- **Events:** Name event handlers based on what they **do**, not based on the triggering event. For example, prefer `saveUser()` over `onClick()`. This makes the purpose of the method clearer and more reusable.
+- **Comments:** Use **TypeScript JSDoc-style comments** to document classes, methods, and interfaces. This supports automatic documentation tools like **Compodoc** and improves long-term maintainability.
+
 
 #### 1.3 Definitions, acronyms, and abbreviations
 
@@ -56,47 +57,44 @@ This section outlines the decomposition of the application into packages and the
   - **resume:** Handles resume display logic and download functionality.
   - **theme:** Manages light/dark mode switching and persistence.
   - **language:** Manages internationalization and language switching.
-  - **core.module.ts:** Aggregates the above core services into a reusable module.
 
 - **shared:** Contains reusable UI components and styling shared across multiple features:
   - **header, footer:** Layout components used throughout the application.
-  - **buttons:** Reusable interactive elements including:
+  - **components:** Reusable interactive elements including:
     - **theme-toggle**
     - **language-switcher**
     - **download-resume**
-  - **shared.module.ts:** Exports all shared UI elements for easy import into feature modules.
 
 - **pages:** Contains routed feature modules representing distinct sections of the application:
   - **home:**
-    - `home.component.ts`: The main landing view of the site.
-    - `home.component.html`: Template for the home view layout.
-    - `home.component.css`: Styles for the home page.
+    - `home.ts`: The main landing view of the site.
+    - `home.html`: Template for the home view layout.
+    - `home.css`: Styles for the home page.
     - `education.model.ts`: Type definition for education items.
     - `certification.model.ts`: Type definition for certifications.
     - `job.model.ts`: Type definition for professional experience.
-    - `home.module.ts`: Declares and exports the Home feature module.
   - **project:** 
-    - `project.component.ts`: Displays the project list.
-    - `project-detail.component.ts`: Displays detail for a specific project.
+    - `project.ts`: Displays the project list.
+    - `project-detail.ts`: Displays detail for a specific project.
     - `project.model.ts`: Type definition for a project entity.
     - `projects.service.ts`: Handles project data retrieval.
   - **blog:** 
-    - `blog.component.ts`: Blog list and summaries.
-    - `blog-post.component.ts`: Displays full blog post content.
+    - `blog.ts`: Blog list and summaries.
+    - `blog-post.ts`: Displays full blog post content.
     - `blog-post.model.ts`: Type definition for blog entries.
     - `blog.service.ts`: Fetches blog post data.
   - **docs:**
-    - `docs.component.ts`: Documentation index or content view.
+    - `docs.ts`: Documentation index or content view.
     - `document.model.ts`: Type definition for documentation entries.
   - **pages.module.ts:** Aggregates all routed page modules into one importable module.
 
-- **routing:** Defined in `app-routing.module.ts`, centralizes application route configuration, enabling navigation within the Single-Page Application (SPA) context.
+- **routing:** Defined in `app.routes.ts`, centralizes application route configuration, enabling navigation within the Single-Page Application (SPA) context.
 
-- **assets:** Stores static resources including downloadable resumes and translation files used for i18n:
+- **public:** Stores static resources including downloadable resumes and translation files used for i18n:
   - **resume:** PDF files in English and Spanish.
   - **i18n:** Translation key-value pairs (`en.json`, `es.json`).
 
-- **root (`app.component.ts`, `app.module.ts`):** Bootstraps the application. `app.component.html` serves as the main layout, embedding routing and global components like the header and footer.
+- **root**: `app.ts` bootstraps the application. `app.html` serves as the main layout, embedding routing and global components like the header and footer.
 
 ### 3. Class Interfaces
 
@@ -119,15 +117,14 @@ These generated pages include:
 
 #### A  
 - **Angular**: A TypeScript-based web application framework used to develop the front end of the portfolio as a modular single-page application (SPA).  
-- **App Module**: The root module in the Angular application, responsible for bootstrapping the main components and importing feature modules.  
-- **Asset Folder**: A directory used to store static files such as images, PDFs, and localization files.
+- **App**: The root module in the Angular application, responsible for bootstrapping the main components and importing feature modules.  
 
 #### B  
 - **Blog Subsystem**: A routed page module that presents blog entries or reflections authored by the developer.  
 
 #### C  
 - **Component**: A self-contained building block in Angular consisting of a TypeScript class, HTML template, and SCSS/CSS styles.  
-- **Core Module**: A shared service layer that provides singleton logic for resume download, theme control, and language switching.  
+- **Core**: A shared service layer that provides singleton logic for resume download, theme control, and language switching.  
 - **CSS (Cascading Style Sheets)**: A styling language used to define the look and layout of HTML components.
 
 #### D  
@@ -139,9 +136,7 @@ These generated pages include:
 
 #### H  
 - **Header Component**: A shared top-level UI element containing the main navigation and global actions (e.g., theme and language toggles).  
-- **Home Subsystem**: The landing page of the application, showcasing an overview of the portfolio owner.  
-
-#### HTML  
+- **Home Subsystem**: The landing page of the application, showcasing an overview of the portfolio owner.   
 - **HTML (HyperText Markup Language)**: The standard language used to structure content for display in web browsers.  
 
 #### I  
@@ -156,12 +151,12 @@ These generated pages include:
 
 #### M  
 - **Material Design**: A visual design standard by Google emphasizing usability and clarity, used as inspiration for UI styling.  
-- **Module**: A container in Angular that groups related components, services, and routing logic for encapsulation and reusability.
 
 #### P  
-- **Pages Module**: A feature module that organizes all routed pages of the application such as Home, Blog, Projects, and Docs.  
+- **Pages**: A feature that organizes all routed pages of the application such as Home, Blog, Projects, and Docs.  
 - **Portfolio**: A personal website built to showcase a developer’s work, achievements, and contact information.  
 - **Projects Subsystem**: A routed page module that displays a list of personal or academic projects, including descriptions and metadata.
+- **Public Folder**: A directory used to store static files such as images, PDFs, and localization files.
 
 #### R  
 - **Resume Subsystem**: A functional module in the core services responsible for accessing and downloading resume files.  
@@ -169,7 +164,7 @@ These generated pages include:
 
 #### S  
 - **SCSS (Sassy CSS)**: A CSS preprocessor syntax used in Angular components to define style rules with variables, nesting, and mixins.  
-- **Shared Module**: A module exporting UI components and layout elements reused throughout the application.  
+- **Shared**: Exporting UI components and layout elements reused throughout the application.  
 - **Single-Page Application (SPA)**: A web application model where navigation occurs within a single HTML document, improving performance and user experience.  
 
 #### T  

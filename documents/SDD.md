@@ -1,6 +1,6 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.1  
-Date: 2025-06-22  
+Version: 2.2  
+Date: 2025-07-10  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -137,7 +137,7 @@ The **client node** is any user device running a web browser. All application lo
 - The **User Interface Subsystem**, including individual page subsystems (Home, Projects, Blog, Docs) and shared components like the Header and Footer.
 - The **Routing Subsystem**, responsible for determining which view to render based on user navigation.
 - The **Theme Subsystem**, which manages the visual mode (e.g., light/dark).
-- The **Language Subsystem**, enabling dynamic content translation and localization.
+- The **Language Subsystem**, enabling dynamic content translation.
 - The **Resume Subsystem**, which handles interactions for downloading resume files.
 
 The **server node** is responsible for hosting and delivering static files such as HTML, JavaScript, stylesheets, media, translation data, and resume documents. It does not execute application logic—its role is purely to respond to HTTP requests with appropriate resources.
