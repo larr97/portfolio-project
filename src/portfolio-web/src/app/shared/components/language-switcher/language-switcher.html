@@ -1,0 +1,18 @@
+<!-- This corresponds the Boundary Object: "Language Button" (model domain) -->
+<!-- Language Menu Trigger -->
+<button matButton [matMenuTriggerFor]="menu">
+  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>
+  {{ label }}
+</button>
+<!-- Menu -->
+<mat-menu #menu="matMenu">
+  @for (lang of languages; track lang.getId()) {
+    <button mat-menu-item
+      (click)="onSelectLanguage(lang)"
+      [disabled]="getCurrentLang() === lang" >
+      {{ lang.getFlag() }} {{ lang.getName() }}
+    </button>
+  } @empty {
+    <button mat-menu-item disabled>No languages available</button>
+  }
+</mat-menu>

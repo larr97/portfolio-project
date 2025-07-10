@@ -179,24 +179,7 @@
 
 <main class="main">
 
-  <!-- 
-  This corresponds the Boundary Object: "Language Button" (model domain)
-  that will be mapped to the "language-switcher" component (source code domain)
-  -->
-  <!-- Language Menu Trigger -->
-  <button matButton [matMenuTriggerFor]="menu">Language</button>
-  <!-- Menu -->
-  <mat-menu #menu="matMenu">
-    @for (lang of languages; track lang.getId()) {
-      <button mat-menu-item
-        (click)="onSelectLanguage(lang)"
-        [disabled]="getCurrentLang() === lang" >
-        {{ lang.getFlag() }} {{ lang.getName() }}
-      </button>
-    } @empty {
-      <button mat-menu-item disabled>No languages available</button>
-    }
-  </mat-menu>
+  <app-language-switcher></app-language-switcher>
 
   <div class="content">
     <div class="left-side">
