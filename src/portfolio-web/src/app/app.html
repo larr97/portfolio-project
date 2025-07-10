@@ -189,8 +189,8 @@
   <mat-menu #menu="matMenu">
     @for (lang of languages; track lang.getId()) {
       <button mat-menu-item
-        (click)="changeLanguage(lang)"
-        [disabled]="currentLang === lang.getCode()" >
+        (click)="onSelectLanguage(lang)"
+        [disabled]="getCurrentLang() === lang" >
         {{ lang.getFlag() }} {{ lang.getName() }}
       </button>
     } @empty {
