@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 import { Language } from './language.model';
+import { Title } from '@angular/platform-browser';
 
 /**
  * Service to manage application languages and integration with ngx-translate.
@@ -44,7 +45,7 @@ export class LanguageService {
    * 
    * @param {TranslateService} translate - The ngx-translate service instance.
    */
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private titleService: Title) {
       
     // Step 1: Check if a language is stored in localStorage
     let storedLang: string | null = null;
@@ -60,6 +61,11 @@ export class LanguageService {
     this.translate.addLangs(languageCodes);                           // Add available languages to the translation service
     this.translate.setDefaultLang('en');                              // Default language, fallback if nothing else matches
     this.translate.use(this.currentLang);
+
+    // Step 4: Set the browser title based on the current language
+    let title = this.translate.instant('app.title');
+    this.titleService.setTitle(title);
+
   }
 
   /**
@@ -101,6 +107,11 @@ export class LanguageService {
     
     // Step 3: Use the new language in the translation service
     this.translate.use(this.currentLang);
+
+    // Step 4: Set the browser title based on the current language
+    let title = this.translate.instant('app.title');
+    this.titleService.setTitle(title);
+
   }
 
 }

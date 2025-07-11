@@ -59,6 +59,8 @@ This week, I focused on implementing multi-language support in my Angular applic
 - I incorporated Google Fonts icons using Angular Material’s Icon component:
   - [Angular Material Icon Component](https://material.angular.dev/components/icon/overview)
   - [Google Fonts Icons](https://fonts.google.com/icons)
+- I learned how to use [`ngx-translate` in code](https://ngx-translate.org/getting-started/translating-your-components/#using-translations-in-code) to dynamically apply localized titles using `TranslateService` and Angular's [`Title`](https://angular.dev/api/platform-browser/Title) service.
+
 
 ## Next Steps
 - Integrate the `LanguageSwitcher` component into a shared header layout for better accessibility across the app.
