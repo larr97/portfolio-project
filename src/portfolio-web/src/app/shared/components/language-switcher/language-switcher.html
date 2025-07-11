@@ -8,7 +8,7 @@
 <mat-menu #menu="matMenu">
   @for (lang of languages; track lang.getId()) {
     <button mat-menu-item
-      (click)="onSelectLanguage(lang)"
+      (click)="changeLang(lang)"
       [disabled]="getCurrentLang() === lang" >
       {{ lang.getFlag() }} {{ lang.getName() }}
     </button>

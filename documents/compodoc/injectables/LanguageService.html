@@ -119,6 +119,15 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service to manage application languages and integration with ngx-translate.</p>
+<p>It maintains the list of available languages, tracks the current language,
+and persists the user&#39;s choice in localStorage.</p>
+
+            </p>
 
 
 
@@ -189,12 +198,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/language/language.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/language/language.service.ts:38</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of LanguageService.
+Initializes translation service and sets the active language based on
+localStorage or defaults to English.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -203,6 +216,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -217,6 +231,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>The ngx-translate service instance.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -254,14 +274,18 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:92</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Changes the application&#39;s active language.
+Updates internal state, persists choice to localStorage,
+and updates ngx-translate to use the new language.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">                     mapped to the &quot;language.model&quot; (source code domain).</code></pre></div></div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -272,6 +296,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -286,6 +311,13 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>An instance of the Entity Object &quot;Language&quot; (model domain),
+mapped to the &quot;language.model&quot; (source code domain).</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -323,19 +355,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:70</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Gets the currently active Language object.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../classes/Language.html" target="_self" >Language</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>The active language entity.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -362,19 +400,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:79</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Gets the list of supported languages.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../classes/Language.html" target="_self" >Language[]</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Array of Language entities.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -404,10 +448,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/language/language.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/language/language.service.ts:38</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The code of the currently active language (e.g. &#39;en&#39;, &#39;es&#39;).</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -439,10 +489,18 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/language/language.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/language/language.service.ts:28</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The attribute of the Control Object &quot;Language Control&quot; (model domain),
+which holds a list of available languages as Entity Objects &quot;Language&quot; (model domain).</p>
+<p>Each item represents a language supported by the application.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -456,22 +514,48 @@
 import { TranslateService } from &quot;@ngx-translate/core&quot;;
 import { Language } from &#x27;./language.model&#x27;;
 
+/**
+ * Service to manage application languages and integration with ngx-translate.
+ *
+ * It maintains the list of available languages, tracks the current language,
+ * and persists the user&#x27;s choice in localStorage.
+ *
+ * @export
+ * @class LanguageService
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class LanguageService {
-
-  // The attribute of the Control Object: &quot;Language Control&quot; (model domain)
-  // that will be mapped in the &quot;language.service&quot; (source code domain),
-  // that have a list of available languages as Entity Objects: &quot;Language&quot; (model domain) 
-  // implemented in &quot;language.model&quot; (source code domain)
+  
+  /**
+   * The attribute of the Control Object &quot;Language Control&quot; (model domain),
+   * which holds a list of available languages as Entity Objects &quot;Language&quot; (model domain).
+   *
+   * Each item represents a language supported by the application.
+   *
+   * @protected
+   * @type {Language[]}
+   */
   protected languages: Language[] &#x3D; [  
     new Language(1, &#x27;English&#x27;, &#x27;en&#x27;, &#x27;🇺🇸&#x27;),
     new Language(2, &#x27;Español&#x27;, &#x27;es&#x27;, &#x27;🇪🇸&#x27;)
   ];
   
+  /**
+   * The code of the currently active language (e.g. &#x27;en&#x27;, &#x27;es&#x27;).
+   * @protected
+   * @type {string}
+   */
   protected currentLang &#x3D; this.languages[0].getCode();       // The code of the active language
 
+  /**
+   * Creates an instance of LanguageService.
+   * Initializes translation service and sets the active language based on
+   * localStorage or defaults to English.
+   * 
+   * @param {TranslateService} translate - The ngx-translate service instance.
+   */
   constructor(private translate: TranslateService) {
       
     // Step 1: Check if a language is stored in localStorage
@@ -490,16 +574,33 @@ export class LanguageService {
     this.translate.use(this.currentLang);
   }
 
+  /**
+   * Gets the currently active Language object.
+   *
+   * @returns {Language} The active language entity.
+   */
   public getCurrentLanguage(): Language {
     return this.languages.find(lang &#x3D;&gt; lang.getCode() &#x3D;&#x3D;&#x3D; this.currentLang)!;
   }
 
+  /**
+   * Gets the list of supported languages.
+   *
+   * @returns {Language[]} Array of Language entities.
+   */
   public getLanguages(): Language[] {
     return this.languages;
   }
 
-  // lang is an instance of the Entity Object &quot;Language&quot; (model domain)
-  // that will be mapped to the &quot;language.model&quot; (source code domain)
+  /**
+   * Changes the application&#x27;s active language.
+   * Updates internal state, persists choice to localStorage, 
+   * and updates ngx-translate to use the new language.
+   *
+   * @param {Language} lang - An instance of the Entity Object &quot;Language&quot; (model domain),
+   *                          mapped to the &quot;language.model&quot; (source code domain).
+   * @returns {void}
+   */
   public changeLanguage(lang: Language): void {  
     
     // Step 1: Update the current language

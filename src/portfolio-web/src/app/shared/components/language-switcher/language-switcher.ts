@@ -5,6 +5,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
+/**
+ * Component that provides a UI for switching the application's language.
+ * 
+ * Displays the current language and allows the user to select a different one
+ * from the list of available languages.
+ *
+ * @export
+ * @component
+ */
 @Component({
   selector: 'app-language-switcher',
   imports: [MatButtonModule, MatMenuModule, MatIconModule],
@@ -13,21 +22,49 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class LanguageSwitcher {
 
+  /**
+   * Label showing the name of the currently selected language.
+   * @protected
+   * @type {string}
+   */
   protected label: string;
+
+  /**
+   * List of available languages.
+   * @protected
+   * @type {Language[]}
+   */
   protected languages: Language[];
 
+  /**
+   * Creates an instance of LanguageSwitcher.
+   *
+   * @param {LanguageService} languageService - Service to manage languages.
+   */
   constructor(private languageService: LanguageService) {
     this.languages = this.languageService.getLanguages();
     this.label = this.languageService.getCurrentLanguage().getName();
-    }
+  }
   
-    public getCurrentLang(): Language {
-      return this.languageService.getCurrentLanguage();
-    }
+  /**
+   * Returns the currently selected language.
+   *
+   * @returns {Language} The current language entity.
+   */
+  public getCurrentLang(): Language {
+    return this.languageService.getCurrentLanguage();
+  }
   
-    public onSelectLanguage(lang: Language): void {
-      this.languageService.changeLanguage(lang);
-      this.label = lang.getName();
-    }
+  /**
+   * Handler invoked when a language is selected from the UI.
+   * Updates the language in the service and updates the label.
+   *
+   * @param {Language} lang The selected language.
+   * @returns {void}
+   */
+  public changeLang(lang: Language): void {
+    this.languageService.changeLanguage(lang);
+    this.label = lang.getName();
+  }
 
 }

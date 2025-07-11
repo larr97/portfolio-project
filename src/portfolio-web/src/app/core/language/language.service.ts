@@ -2,22 +2,48 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 import { Language } from './language.model';
 
+/**
+ * Service to manage application languages and integration with ngx-translate.
+ *
+ * It maintains the list of available languages, tracks the current language,
+ * and persists the user's choice in localStorage.
+ *
+ * @export
+ * @class LanguageService
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
-
-  // The attribute of the Control Object: "Language Control" (model domain)
-  // that will be mapped in the "language.service" (source code domain),
-  // that have a list of available languages as Entity Objects: "Language" (model domain) 
-  // implemented in "language.model" (source code domain)
+  
+  /**
+   * The attribute of the Control Object "Language Control" (model domain),
+   * which holds a list of available languages as Entity Objects "Language" (model domain).
+   *
+   * Each item represents a language supported by the application.
+   *
+   * @protected
+   * @type {Language[]}
+   */
   protected languages: Language[] = [  
     new Language(1, 'English', 'en', '🇺🇸'),
     new Language(2, 'Español', 'es', '🇪🇸')
   ];
   
+  /**
+   * The code of the currently active language (e.g. 'en', 'es').
+   * @protected
+   * @type {string}
+   */
   protected currentLang = this.languages[0].getCode();       // The code of the active language
 
+  /**
+   * Creates an instance of LanguageService.
+   * Initializes translation service and sets the active language based on
+   * localStorage or defaults to English.
+   * 
+   * @param {TranslateService} translate - The ngx-translate service instance.
+   */
   constructor(private translate: TranslateService) {
       
     // Step 1: Check if a language is stored in localStorage
@@ -36,16 +62,33 @@ export class LanguageService {
     this.translate.use(this.currentLang);
   }
 
+  /**
+   * Gets the currently active Language object.
+   *
+   * @returns {Language} The active language entity.
+   */
   public getCurrentLanguage(): Language {
     return this.languages.find(lang => lang.getCode() === this.currentLang)!;
   }
 
+  /**
+   * Gets the list of supported languages.
+   *
+   * @returns {Language[]} Array of Language entities.
+   */
   public getLanguages(): Language[] {
     return this.languages;
   }
 
-  // lang is an instance of the Entity Object "Language" (model domain)
-  // that will be mapped to the "language.model" (source code domain)
+  /**
+   * Changes the application's active language.
+   * Updates internal state, persists choice to localStorage, 
+   * and updates ngx-translate to use the new language.
+   *
+   * @param {Language} lang - An instance of the Entity Object "Language" (model domain),
+   *                          mapped to the "language.model" (source code domain).
+   * @returns {void}
+   */
   public changeLanguage(lang: Language): void {  
     
     // Step 1: Update the current language
