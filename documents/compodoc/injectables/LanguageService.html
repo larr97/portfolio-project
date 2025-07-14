@@ -123,9 +123,13 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service to manage application languages and integration with ngx-translate.</p>
-<p>It maintains the list of available languages, tracks the current language,
-and persists the user&#39;s choice in localStorage.</p>
+                <p>Service to manage application languages and integrate with ngx-translate.</p>
+<p>This service handles:</p>
+<ul>
+<li>Managing the list of available languages.</li>
+<li>Persisting the user&#39;s language choice in localStorage.</li>
+<li>Updating the translation service and document title.</li>
+</ul>
 
             </p>
 
@@ -145,7 +149,7 @@ and persists the user&#39;s choice in localStorage.</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#currentLang" >currentLang</a>
+                                <a href="#currentLanguage" >currentLanguage</a>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
@@ -170,6 +174,10 @@ and persists the user&#39;s choice in localStorage.</p>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getCurrentLanguage" >getCurrentLanguage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getLanguageByCode" >getLanguageByCode</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -198,7 +206,7 @@ and persists the user&#39;s choice in localStorage.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/language/language.service.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/core/language/language.service.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -250,6 +258,10 @@ localStorage or defaults to English.</p>
                                                     </td>
                                                     
                                                         <td>
+                                                                <ul>
+<li>The Angular Title service to set the document title.</li>
+</ul>
+
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -288,8 +300,8 @@ localStorage or defaults to English.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="98"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:98</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:106</a></div>
                         </td>
                     </tr>
 
@@ -298,7 +310,8 @@ localStorage or defaults to English.</p>
                 <td class="col-md-4">
                         <div class="io-description"><p>Changes the application&#39;s active language.
 Updates internal state, persists choice to localStorage,
-and updates ngx-translate to use the new language.</p>
+updates ngx-translate to use the new language,
+and sets the document title based on the new language.</p>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-none">                     mapped to the &quot;language.model&quot; (source code domain).</code></pre></div></div>
 
                             <div class="io-description">
@@ -369,8 +382,8 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="76"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:76</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:73</a></div>
                         </td>
                     </tr>
 
@@ -386,6 +399,85 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
                         </div>
                             <div class="io-description">
                                 <p>The active language entity.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLanguageByCode"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getLanguageByCode</b></span>
+                        <a href="#getLanguageByCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLanguageByCode(code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Finds the Language object by its code (e.g., &#39;en&#39;, &#39;es&#39;).</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The language code to search for.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Language.html" target="_self" >Language</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The corresponding Language object.</p>
 
                             </div>
                 </td>
@@ -414,8 +506,8 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:82</a></div>
                         </td>
                     </tr>
 
@@ -447,28 +539,28 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="currentLang"></a>
+                    <a name="currentLanguage"></a>
                     <span class="name">
                             <span class="modifier">Protected</span>
-                        <span ><b>currentLang</b></span>
-                        <a href="#currentLang"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>currentLanguage</b></span>
+                        <a href="#currentLanguage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.languages[0].getCode()</code>
+                        <i>Default value : </i><code>this.languages[0]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/language/language.service.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/core/language/language.service.ts:41</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The code of the currently active language (e.g. &#39;en&#39;, &#39;es&#39;).</p>
+                    <div class="io-description"><p>The currently active language as a Language object.</p>
 </div>
                 </td>
             </tr>
@@ -503,7 +595,7 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/core/language/language.service.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/core/language/language.service.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -530,10 +622,12 @@ import { Language } from &#x27;./language.model&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 
 /**
- * Service to manage application languages and integration with ngx-translate.
+ * Service to manage application languages and integrate with ngx-translate.
  *
- * It maintains the list of available languages, tracks the current language,
- * and persists the user&#x27;s choice in localStorage.
+ * This service handles:
+ * - Managing the list of available languages.
+ * - Persisting the user&#x27;s language choice in localStorage.
+ * - Updating the translation service and document title.
  *
  * @export
  * @class LanguageService
@@ -558,11 +652,11 @@ export class LanguageService {
   ];
   
   /**
-   * The code of the currently active language (e.g. &#x27;en&#x27;, &#x27;es&#x27;).
+   * The currently active language as a Language object.
    * @protected
-   * @type {string}
+   * @type {Language}
    */
-  protected currentLang &#x3D; this.languages[0].getCode();       // The code of the active language
+  protected currentLanguage &#x3D; this.languages[0];       // The active language
 
   /**
    * Creates an instance of LanguageService.
@@ -570,28 +664,23 @@ export class LanguageService {
    * localStorage or defaults to English.
    * 
    * @param {TranslateService} translate - The ngx-translate service instance.
+   * @param {Title} titleService - The Angular Title service to set the document title.
    */
   constructor(private translate: TranslateService, private titleService: Title) {
       
     // Step 1: Check if a language is stored in localStorage
-    let storedLang: string | null &#x3D; null;
+    let storedLang &#x3D; this.currentLanguage.getCode(); // Default to the first language in the list
     if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
-      storedLang &#x3D; localStorage.getItem(&#x27;lang&#x27;);
+      storedLang &#x3D; localStorage.getItem(&#x27;lang&#x27;) || this.currentLanguage.getCode(); // Fallback to the default language if nothing is stored
     }
-
-    // Step 2: If no language is stored, default to &#x27;en&#x27;
-    this.currentLang &#x3D; storedLang || this.currentLang;
 
     // Step 3: Initialize the translation service
     let languageCodes &#x3D; this.languages.map(lang &#x3D;&gt; lang.getCode());   // List of language codes
     this.translate.addLangs(languageCodes);                           // Add available languages to the translation service
     this.translate.setDefaultLang(&#x27;en&#x27;);                              // Default language, fallback if nothing else matches
-    this.translate.use(this.currentLang);
 
-    // Step 4: Set the browser title based on the current language
-    let title &#x3D; this.translate.instant(&#x27;app.title&#x27;);
-    this.titleService.setTitle(title);
-
+    // Step 4: Calls the changeLanguage method with the stored language or defaults to English
+    this.changeLanguage(this.getLanguageByCode(storedLang));
   }
 
   /**
@@ -600,7 +689,7 @@ export class LanguageService {
    * @returns {Language} The active language entity.
    */
   public getCurrentLanguage(): Language {
-    return this.languages.find(lang &#x3D;&gt; lang.getCode() &#x3D;&#x3D;&#x3D; this.currentLang)!;
+    return this.currentLanguage;
   }
 
   /**
@@ -613,28 +702,42 @@ export class LanguageService {
   }
 
   /**
+   * Finds the Language object by its code (e.g., &#x27;en&#x27;, &#x27;es&#x27;).
+   *
+   * @param {string} code - The language code to search for.
+   * @returns {Language} The corresponding Language object.
+   */
+  public getLanguageByCode(code: string): Language {
+    return this.languages.find(lang &#x3D;&gt; lang.getCode() &#x3D;&#x3D;&#x3D; code)!;
+  }
+
+  /**
    * Changes the application&#x27;s active language.
    * Updates internal state, persists choice to localStorage, 
-   * and updates ngx-translate to use the new language.
+   * updates ngx-translate to use the new language,
+   * and sets the document title based on the new language.
    *
    * @param {Language} lang - An instance of the Entity Object &quot;Language&quot; (model domain),
    *                          mapped to the &quot;language.model&quot; (source code domain).
    * @returns {void}
    */
-  public changeLanguage(lang: Language): void {  
-    
-    // Step 1: Update the current language
-    this.currentLang &#x3D; lang.getCode();
+  public changeLanguage(lang: Language): void {
 
-    // Step 2: Store the new language in localStorage (only in browser)
+    // Step 1: Check if the new language is the same as the current one. If so, no change needed
+    if (this.currentLanguage &#x3D;&#x3D;&#x3D; lang) return; // No change needed
+
+    // Step 2: Update the current language
+    this.currentLanguage &#x3D; lang;
+
+    // Step 3: Store the new language in localStorage (only in browser)
     if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
-      localStorage.setItem(&#x27;lang&#x27;, this.currentLang);
+      localStorage.setItem(&#x27;lang&#x27;, this.currentLanguage.getCode());
     }
     
-    // Step 3: Use the new language in the translation service
-    this.translate.use(this.currentLang);
+    // Step 4: Use the new language in the translation service
+    this.translate.use(this.currentLanguage.getCode());
 
-    // Step 4: Set the browser title based on the current language
+    // Step 5: Set the browser title based on the current language
     let title &#x3D; this.translate.instant(&#x27;app.title&#x27;);
     this.titleService.setTitle(title);
 

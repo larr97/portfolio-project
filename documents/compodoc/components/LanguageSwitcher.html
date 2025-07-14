@@ -205,7 +205,7 @@ from the list of available languages.</p>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#languages" >languages</a>
+                                <a href="#languageList" >languageList</a>
                             </li>
                         </ul>
                     </td>
@@ -221,11 +221,11 @@ from the list of available languages.</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#changeLang" >changeLang</a>
+                                <a href="#getActiveLanguage" >getActiveLanguage</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCurrentLang" >getCurrentLang</a>
+                                <a href="#setLanguage" >setLanguage</a>
                             </li>
                         </ul>
                     </td>
@@ -310,18 +310,63 @@ from the list of available languages.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="changeLang"></a>
+                    <a name="getActiveLanguage"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>changeLang</b></span>
-                        <a href="#changeLang"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getActiveLanguage</b></span>
+                        <a href="#getActiveLanguage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>changeLang(lang: <a href="../classes/Language.html" target="_self">Language</a>)</code>
+                    <code>getActiveLanguage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Returns the currently selected language.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Language.html" target="_self" >Language</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The current language entity.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setLanguage"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>setLanguage</b></span>
+                        <a href="#setLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setLanguage(lang: <a href="../classes/Language.html" target="_self">Language</a>)</code>
                 </td>
             </tr>
 
@@ -383,51 +428,6 @@ Updates the language in the service and updates the label.</p>
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getCurrentLang"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>getCurrentLang</b></span>
-                        <a href="#getCurrentLang"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCurrentLang()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:54</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Returns the currently selected language.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/Language.html" target="_self" >Language</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>The current language entity.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
     <section data-compodoc="block-properties">
     
@@ -471,11 +471,11 @@ Updates the language in the service and updates the label.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="languages"></a>
+                    <a name="languageList"></a>
                     <span class="name">
                             <span class="modifier">Protected</span>
-                        <span ><b>languages</b></span>
-                        <a href="#languages"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>languageList</b></span>
+                        <a href="#languageList"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -542,7 +542,7 @@ export class LanguageSwitcher {
    * @protected
    * @type {Language[]}
    */
-  protected languages: Language[];
+  protected languageList: Language[];
 
   /**
    * Creates an instance of LanguageSwitcher.
@@ -550,7 +550,7 @@ export class LanguageSwitcher {
    * @param {LanguageService} languageService - Service to manage languages.
    */
   constructor(private languageService: LanguageService) {
-    this.languages &#x3D; this.languageService.getLanguages();
+    this.languageList &#x3D; this.languageService.getLanguages();
     this.label &#x3D; this.languageService.getCurrentLanguage().getName();
   }
   
@@ -559,7 +559,7 @@ export class LanguageSwitcher {
    *
    * @returns {Language} The current language entity.
    */
-  public getCurrentLang(): Language {
+  public getActiveLanguage(): Language {
     return this.languageService.getCurrentLanguage();
   }
   
@@ -570,7 +570,7 @@ export class LanguageSwitcher {
    * @param {Language} lang The selected language.
    * @returns {void}
    */
-  public changeLang(lang: Language): void {
+  public setLanguage(lang: Language): void {
     this.languageService.changeLanguage(lang);
     this.label &#x3D; lang.getName();
   }
@@ -587,10 +587,10 @@ export class LanguageSwitcher {
 &lt;/button&gt;
 &lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
-  @for (lang of languages; track lang.getId()) {
+  @for (lang of languageList; track lang.getId()) {
     &lt;button mat-menu-item
-      (click)&#x3D;&quot;changeLang(lang)&quot;
-      [disabled]&#x3D;&quot;getCurrentLang() &#x3D;&#x3D;&#x3D; lang&quot; &gt;
+      (click)&#x3D;&quot;setLanguage(lang)&quot;
+      [disabled]&#x3D;&quot;getActiveLanguage() &#x3D;&#x3D;&#x3D; lang&quot; &gt;
       {{ lang.getFlag() }} {{ lang.getName() }}
     &lt;/button&gt;
   } @empty {
@@ -625,7 +625,7 @@ export class LanguageSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of languages; track lang.getId()) {    <button mat-menu-item      (click)="changeLang(lang)"      [disabled]="getCurrentLang() === lang" >      {{ lang.getFlag() }} {{ lang.getName() }}    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of languageList; track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      {{ lang.getFlag() }} {{ lang.getName() }}    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};

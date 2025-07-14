@@ -34,7 +34,7 @@ export class LanguageSwitcher {
    * @protected
    * @type {Language[]}
    */
-  protected languages: Language[];
+  protected languageList: Language[];
 
   /**
    * Creates an instance of LanguageSwitcher.
@@ -42,7 +42,7 @@ export class LanguageSwitcher {
    * @param {LanguageService} languageService - Service to manage languages.
    */
   constructor(private languageService: LanguageService) {
-    this.languages = this.languageService.getLanguages();
+    this.languageList = this.languageService.getLanguages();
     this.label = this.languageService.getCurrentLanguage().getName();
   }
   
@@ -51,7 +51,7 @@ export class LanguageSwitcher {
    *
    * @returns {Language} The current language entity.
    */
-  public getCurrentLang(): Language {
+  public getActiveLanguage(): Language {
     return this.languageService.getCurrentLanguage();
   }
   
@@ -62,7 +62,7 @@ export class LanguageSwitcher {
    * @param {Language} lang The selected language.
    * @returns {void}
    */
-  public changeLang(lang: Language): void {
+  public setLanguage(lang: Language): void {
     this.languageService.changeLanguage(lang);
     this.label = lang.getName();
   }

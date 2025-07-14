@@ -4,10 +4,12 @@ import { Language } from './language.model';
 import { Title } from '@angular/platform-browser';
 
 /**
- * Service to manage application languages and integration with ngx-translate.
+ * Service to manage application languages and integrate with ngx-translate.
  *
- * It maintains the list of available languages, tracks the current language,
- * and persists the user's choice in localStorage.
+ * This service handles:
+ * - Managing the list of available languages.
+ * - Persisting the user's language choice in localStorage.
+ * - Updating the translation service and document title.
  *
  * @export
  * @class LanguageService
@@ -32,11 +34,11 @@ export class LanguageService {
   ];
   
   /**
-   * The code of the currently active language (e.g. 'en', 'es').
+   * The currently active language as a Language object.
    * @protected
-   * @type {string}
+   * @type {Language}
    */
-  protected currentLang = this.languages[0].getCode();       // The code of the active language
+  protected currentLanguage = this.languages[0];       // The active language
 
   /**
    * Creates an instance of LanguageService.
@@ -44,28 +46,23 @@ export class LanguageService {
    * localStorage or defaults to English.
    * 
    * @param {TranslateService} translate - The ngx-translate service instance.
+   * @param {Title} titleService - The Angular Title service to set the document title.
    */
   constructor(private translate: TranslateService, private titleService: Title) {
       
     // Step 1: Check if a language is stored in localStorage
-    let storedLang: string | null = null;
+    let storedLang = this.currentLanguage.getCode(); // Default to the first language in the list
     if (typeof window !== 'undefined' && window.localStorage) {
-      storedLang = localStorage.getItem('lang');
+      storedLang = localStorage.getItem('lang') || this.currentLanguage.getCode(); // Fallback to the default language if nothing is stored
     }
-
-    // Step 2: If no language is stored, default to 'en'
-    this.currentLang = storedLang || this.currentLang;
 
     // Step 3: Initialize the translation service
     let languageCodes = this.languages.map(lang => lang.getCode());   // List of language codes
     this.translate.addLangs(languageCodes);                           // Add available languages to the translation service
     this.translate.setDefaultLang('en');                              // Default language, fallback if nothing else matches
-    this.translate.use(this.currentLang);
 
-    // Step 4: Set the browser title based on the current language
-    let title = this.translate.instant('app.title');
-    this.titleService.setTitle(title);
-
+    // Step 4: Calls the changeLanguage method with the stored language or defaults to English
+    this.changeLanguage(this.getLanguageByCode(storedLang));
   }
 
   /**
@@ -74,7 +71,7 @@ export class LanguageService {
    * @returns {Language} The active language entity.
    */
   public getCurrentLanguage(): Language {
-    return this.languages.find(lang => lang.getCode() === this.currentLang)!;
+    return this.currentLanguage;
   }
 
   /**
@@ -87,28 +84,42 @@ export class LanguageService {
   }
 
   /**
+   * Finds the Language object by its code (e.g., 'en', 'es').
+   *
+   * @param {string} code - The language code to search for.
+   * @returns {Language} The corresponding Language object.
+   */
+  public getLanguageByCode(code: string): Language {
+    return this.languages.find(lang => lang.getCode() === code)!;
+  }
+
+  /**
    * Changes the application's active language.
    * Updates internal state, persists choice to localStorage, 
-   * and updates ngx-translate to use the new language.
+   * updates ngx-translate to use the new language,
+   * and sets the document title based on the new language.
    *
    * @param {Language} lang - An instance of the Entity Object "Language" (model domain),
    *                          mapped to the "language.model" (source code domain).
    * @returns {void}
    */
-  public changeLanguage(lang: Language): void {  
-    
-    // Step 1: Update the current language
-    this.currentLang = lang.getCode();
+  public changeLanguage(lang: Language): void {
 
-    // Step 2: Store the new language in localStorage (only in browser)
+    // Step 1: Check if the new language is the same as the current one. If so, no change needed
+    if (this.currentLanguage === lang) return; // No change needed
+
+    // Step 2: Update the current language
+    this.currentLanguage = lang;
+
+    // Step 3: Store the new language in localStorage (only in browser)
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('lang', this.currentLang);
+      localStorage.setItem('lang', this.currentLanguage.getCode());
     }
     
-    // Step 3: Use the new language in the translation service
-    this.translate.use(this.currentLang);
+    // Step 4: Use the new language in the translation service
+    this.translate.use(this.currentLanguage.getCode());
 
-    // Step 4: Set the browser title based on the current language
+    // Step 5: Set the browser title based on the current language
     let title = this.translate.instant('app.title');
     this.titleService.setTitle(title);
 
