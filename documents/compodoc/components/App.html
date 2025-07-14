@@ -188,6 +188,66 @@
 </section>
 
 
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(document: Document, renderer: Renderer2)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/app.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>document</td>
+                                                  
+                                                        <td>
+                                                                    <code>Document</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code>Renderer2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -199,10 +259,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Renderer2 } from &#x27;@angular/core&#x27;;
 import { TranslatePipe, TranslateDirective } from &quot;@ngx-translate/core&quot;;
 import { RouterOutlet } from &#x27;@angular/router&#x27;;
 import { LanguageSwitcher } from &#x27;./shared/components/language-switcher/language-switcher&#x27;;
+import { DOCUMENT } from &#x27;@angular/common&#x27;;
 
 /**
  * The root component of the application.
@@ -223,7 +284,14 @@ import { LanguageSwitcher } from &#x27;./shared/components/language-switcher/lan
   templateUrl: &#x27;./app.html&#x27;,
   styleUrl: &#x27;./app.scss&#x27;
 })
-export class App {}</code></pre>
+export class App {
+  
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
+    
+    // Set the default theme class
+    this.renderer.addClass(this.document.body, &#x27;blue-light&#x27;);
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">

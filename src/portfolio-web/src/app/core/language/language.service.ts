@@ -36,7 +36,7 @@ export class LanguageService {
    * @protected
    * @type {string}
    */
-  protected currentLang = this.languages[0].getCode();       // The code of the active language
+  protected currentLanguage = this.languages[0].getCode();       // The code of the active language
 
   /**
    * Creates an instance of LanguageService.
@@ -54,13 +54,13 @@ export class LanguageService {
     }
 
     // Step 2: If no language is stored, default to 'en'
-    this.currentLang = storedLang || this.currentLang;
+    this.currentLanguage = storedLang || this.currentLanguage;
 
     // Step 3: Initialize the translation service
     let languageCodes = this.languages.map(lang => lang.getCode());   // List of language codes
     this.translate.addLangs(languageCodes);                           // Add available languages to the translation service
     this.translate.setDefaultLang('en');                              // Default language, fallback if nothing else matches
-    this.translate.use(this.currentLang);
+    this.translate.use(this.currentLanguage);
 
     // Step 4: Set the browser title based on the current language
     let title = this.translate.instant('app.title');
@@ -74,7 +74,7 @@ export class LanguageService {
    * @returns {Language} The active language entity.
    */
   public getCurrentLanguage(): Language {
-    return this.languages.find(lang => lang.getCode() === this.currentLang)!;
+    return this.languages.find(lang => lang.getCode() === this.currentLanguage)!;
   }
 
   /**
@@ -98,15 +98,15 @@ export class LanguageService {
   public changeLanguage(lang: Language): void {  
     
     // Step 1: Update the current language
-    this.currentLang = lang.getCode();
+    this.currentLanguage = lang.getCode();
 
     // Step 2: Store the new language in localStorage (only in browser)
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('lang', this.currentLang);
+      localStorage.setItem('lang', this.currentLanguage);
     }
     
     // Step 3: Use the new language in the translation service
-    this.translate.use(this.currentLang);
+    this.translate.use(this.currentLanguage);
 
     // Step 4: Set the browser title based on the current language
     let title = this.translate.instant('app.title');

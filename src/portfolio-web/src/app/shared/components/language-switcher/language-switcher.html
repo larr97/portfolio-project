@@ -6,10 +6,10 @@
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">
-  @for (lang of languages; track lang.getId()) {
+  @for (lang of languageList; track lang.getId()) {
     <button mat-menu-item
-      (click)="changeLang(lang)"
-      [disabled]="getCurrentLang() === lang" >
+      (click)="setLanguage(lang)"
+      [disabled]="getActiveLanguage() === lang" >
       {{ lang.getFlag() }} {{ lang.getName() }}
     </button>
   } @empty {
