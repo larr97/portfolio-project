@@ -1,8 +1,8 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use './_theme-colors' as my-theme; // location of generated file
+@use './_theme-colors-red' as my-theme-red; // location of generated file
 
 html {
   @include mat.theme((
@@ -13,7 +13,55 @@ html {
     typography: Roboto,
     density: 0,
   ));
-}/* You can add global styles to this file, and also import other style files */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; } /* You can add global styles to this file, and also import other style files */
+
+body { 
+  background-color: var(--mat-sys-surface-container-lowest);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+.light{
+  color-scheme: light;
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+  )));
+}
+
+.dark {
+  color-scheme: dark;
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+  )));  
+}
+
+.hc-light{
+  color-scheme: light;
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+  )));
+
+  @include my-theme.high-contrast-overrides(color-scheme);
+}
+
+.hc-dark{
+  color-scheme: dark;
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+  )));
+
+  @include my-theme.high-contrast-overrides(color-scheme);
+}
