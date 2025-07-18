@@ -161,6 +161,7 @@ from the list of available languages.</p>
                             <code>MatButtonModule</code>
                             <code>MatMenuModule</code>
                             <code>MatIconModule</code>
+                            <code>MatGridListModule</code>
                 </td>
             </tr>
 
@@ -250,7 +251,7 @@ from the list of available languages.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -328,8 +329,8 @@ from the list of available languages.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:55</a></div>
                         </td>
                     </tr>
 
@@ -373,8 +374,8 @@ from the list of available languages.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="65"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:65</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:66</a></div>
                         </td>
                     </tr>
 
@@ -454,7 +455,7 @@ Updates the language in the service and updates the label.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -487,7 +488,7 @@ Updates the language in the service and updates the label.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -512,6 +513,7 @@ import { Language } from &#x27;../../../core/language/language.model&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 import { MatMenuModule } from &#x27;@angular/material/menu&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
+import {MatGridListModule} from &#x27;@angular/material/grid-list&#x27;;
 
 /**
  * Component that provides a UI for switching the application&#x27;s language.
@@ -524,7 +526,7 @@ import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
  */
 @Component({
   selector: &#x27;app-language-switcher&#x27;,
-  imports: [MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [MatButtonModule, MatMenuModule, MatIconModule, MatGridListModule],
   templateUrl: &#x27;./language-switcher.html&#x27;,
   styleUrl: &#x27;./language-switcher.scss&#x27;
 })
@@ -591,7 +593,10 @@ export class LanguageSwitcher {
     &lt;button mat-menu-item
       (click)&#x3D;&quot;setLanguage(lang)&quot;
       [disabled]&#x3D;&quot;getActiveLanguage() &#x3D;&#x3D;&#x3D; lang&quot; &gt;
-      {{ lang.getFlag() }} {{ lang.getName() }}
+      &lt;mat-grid-list cols&#x3D;&quot;4&quot;&gt;
+        &lt;mat-grid-tile [colspan]&#x3D;&quot;1&quot; [rowspan]&#x3D;&quot;1&quot; class&#x3D;&quot;flag&quot;&gt;{{ lang.getFlag() }}&lt;/mat-grid-tile&gt;
+        &lt;mat-grid-tile [colspan]&#x3D;&quot;3&quot; [rowspan]&#x3D;&quot;1&quot;&gt;{{ lang.getName() }}&lt;/mat-grid-tile&gt;
+      &lt;/mat-grid-list&gt;
     &lt;/button&gt;
   } @empty {
     &lt;button mat-menu-item disabled&gt;No languages available&lt;/button&gt;
@@ -625,7 +630,7 @@ export class LanguageSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of languageList; track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      {{ lang.getFlag() }} {{ lang.getName() }}    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of languageList; track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};
