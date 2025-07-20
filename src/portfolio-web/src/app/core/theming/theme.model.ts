@@ -1,0 +1,73 @@
+/**
+ * Represents a theme option used in the application.
+ * Contains metadata such as ID, name, code, and icon.
+ */
+export class Theme {
+
+  /**
+   * Unique numeric identifier for the theme.
+   */
+  private id: number;
+
+  /**
+   * Human-readable name of the theme (e.g., "Light", "Dark").
+   */
+  private name: string;
+
+  /**
+   * Unique string code used to identify the theme (e.g., "light-theme").
+   */
+  private code: string;
+
+  /**
+   * Icon name or path associated with the theme (e.g., emoji or material icon name).
+   */
+  private icon: string;
+
+  /**
+   * Constructs a new Theme instance.
+   * 
+   * @param id - Unique numeric ID for the theme.
+   * @param name - Display name of the theme.
+   * @param code - Internal code used to identify the theme.
+   * @param icon - Icon representing the theme (emoji or icon name).
+   */
+  constructor(id: number, name: string, code: string, icon: string) {
+    this.id = id;
+    this.name = name;
+    this.code = code;
+    this.icon = icon;
+  }
+
+  /**
+   * Gets the unique ID of the theme.
+   * @returns The theme's ID.
+   */
+  public getId(): number {
+    return this.id;
+  }
+
+  /**
+   * Gets the display name of the theme.
+   * @returns The theme's name.
+   */
+  public getName(): string {
+    return this.name;
+  }
+
+  /**
+   * Gets the code identifier of the theme.
+   * @returns The theme's code.
+   */
+  public getCode(): string {
+    return this.code;
+  }
+
+  /**
+   * Gets the icon associated with the theme.
+   * @returns The theme's icon.
+   */
+  public getIcon(): string {
+    return this.icon;
+  }
+}

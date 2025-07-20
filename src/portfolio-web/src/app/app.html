@@ -17,22 +17,16 @@
     <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="changeTheme('light')" [disabled]="currentTheme === 'light'">
-      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="flare"></mat-icon>
-      <span>Light</span>
-    </button>
-    <button mat-menu-item (click)="changeTheme('hc-light')" [disabled]="currentTheme === 'hc-light'">
-      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="light_mode"></mat-icon>
-      <span>Light High Contrast</span>
-    </button>
-    <button mat-menu-item (click)="changeTheme('dark')" [disabled]="currentTheme === 'dark'">
-      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="dark_mode"></mat-icon>
-      <span>Dark</span>
-    </button>
-    <button mat-menu-item (click)="changeTheme('hc-dark')" [disabled]="currentTheme === 'hc-dark'">
-      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="brightness_1"></mat-icon>
-      <span>Dark High Contrast</span>
-    </button>
+    @for (theme of getThemes(); track theme.getId()) {
+      <button mat-menu-item
+        (click)="changeTheme(theme)"
+        [disabled]="getCurrentTheme() === theme" >
+        <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>
+        <span>{{ theme.getName() }}</span>
+      </button>
+    } @empty {
+      <button mat-menu-item disabled>No themes available</button>
+    }
   </mat-menu>
 
 </mat-toolbar>
