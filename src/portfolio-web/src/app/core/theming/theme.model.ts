@@ -1,6 +1,6 @@
 /**
  * Represents a theme option used in the application.
- * Contains metadata such as ID, name, code, and icon.
+ * It encapsulates metadata such as ID, display name, code, and icon used for theming and UI representation.
  */
 export class Theme {
 
@@ -15,12 +15,12 @@ export class Theme {
   private name: string;
 
   /**
-   * Unique string code used to identify the theme (e.g., "light-theme").
+   * Unique string code used to identify the theme (e.g., "light", "dark").
    */
   private code: string;
 
   /**
-   * Icon name or path associated with the theme (e.g., emoji or material icon name).
+   * Icon name or symbol associated with the theme (e.g., Material icon name or emoji).
    */
   private icon: string;
 
@@ -30,7 +30,7 @@ export class Theme {
    * @param id - Unique numeric ID for the theme.
    * @param name - Display name of the theme.
    * @param code - Internal code used to identify the theme.
-   * @param icon - Icon representing the theme (emoji or icon name).
+   * @param icon - Icon representing the theme (Material icon name or emoji).
    */
   constructor(id: number, name: string, code: string, icon: string) {
     this.id = id;

@@ -1,0 +1,15 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  @for (theme of getThemeList(); track theme.getId()) {
+    <button mat-menu-item
+      (click)="setTheme(theme)"
+      [disabled]="getActiveTheme() === theme" >
+      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>
+      <span>{{ theme.getName() }}</span>
+    </button>
+  } @empty {
+    <button mat-menu-item disabled>No themes available</button>
+}
+</mat-menu>

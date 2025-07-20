@@ -59,6 +59,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="components/LanguageSwitcher.html" data-type="entity-link" >LanguageSwitcher</a>
                             </li>
+                            <li class="link">
+                                <a href="components/ThemeSwitcher.html" data-type="entity-link" >ThemeSwitcher</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">
@@ -87,6 +90,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/LanguageService.html" data-type="entity-link" >LanguageService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ThemeService.html" data-type="entity-link" >ThemeService</a>
                                 </li>
                             </ul>
                         </li>

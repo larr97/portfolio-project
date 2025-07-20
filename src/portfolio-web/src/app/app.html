@@ -10,24 +10,8 @@
 <mat-toolbar>
   
   <span class="spacer"></span>
-  
   <app-language-switcher></app-language-switcher>
-  
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    @for (theme of getThemes(); track theme.getId()) {
-      <button mat-menu-item
-        (click)="changeTheme(theme)"
-        [disabled]="getCurrentTheme() === theme" >
-        <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>
-        <span>{{ theme.getName() }}</span>
-      </button>
-    } @empty {
-      <button mat-menu-item disabled>No themes available</button>
-    }
-  </mat-menu>
+  <app-theme-switcher></app-theme-switcher>
 
 </mat-toolbar>
 

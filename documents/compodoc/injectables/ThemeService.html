@@ -79,7 +79,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -89,13 +89,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >Theme</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ThemeService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,7 +115,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/theming/theme.model.ts</code>
+            <code>src/app/core/theming/theme.service.ts</code>
         </p>
 
 
@@ -127,11 +123,14 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Represents a theme option used in the application.
-It encapsulates metadata such as ID, display name, code, and icon used for theming and UI representation.</p>
+                <p>Service to manage application theme</p>
+<p>This service handles:</p>
+<ul>
+<li>Managing the list of available themes.</li>
+<li>Persisting the user&#39;s theme choice in localStorage.</li>
+</ul>
 
             </p>
-
 
 
 
@@ -149,19 +148,11 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#code" >code</a>
+                                <a href="#currentTheme" >currentTheme</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#icon" >icon</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#id" >id</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#name" >name</a>
+                                <a href="#themes" >themes</a>
                             </li>
                         </ul>
                     </td>
@@ -177,19 +168,19 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCode" >getCode</a>
+                                <a href="#changeTheme" >changeTheme</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getIcon" >getIcon</a>
+                                <a href="#getCurrentTheme" >getCurrentTheme</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getId" >getId</a>
+                                <a href="#getThemeByCode" >getThemeByCode</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getName" >getName</a>
+                                <a href="#getThemes" >getThemes</a>
                             </li>
                         </ul>
                     </td>
@@ -209,18 +200,20 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>constructor(document: Document)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.model.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/theming/theme.service.ts:37</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructs a new Theme instance.</p>
+                            <div class="io-description"><p>Initializes the <code>ThemeService</code>.</p>
+<p>Loads the saved theme from localStorage if available and applies it
+by delegating to <code>changeTheme()</code>.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -235,10 +228,10 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>id</td>
+                                                        <td>document</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                                    <code>Document</code>
                                                         </td>
                                                   
                                                     <td>
@@ -247,61 +240,7 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                                                     
                                                         <td>
                                                                 <ul>
-<li>Unique numeric ID for the theme.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>name</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Display name of the theme.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>code</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Internal code used to identify the theme.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>icon</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Icon representing the theme (Material icon name or emoji).</li>
+<li>Injected reference to the DOM <code>document</code> object.</li>
 </ul>
 
                                                         </td>
@@ -315,145 +254,6 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
         </table>
 </section>
 
-            <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="code"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>code</b></span>
-                        <a href="#code"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/theming/theme.model.ts:20</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Unique string code used to identify the theme (e.g., &quot;light&quot;, &quot;dark&quot;).</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="icon"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>icon</b></span>
-                        <a href="#icon"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.model.ts:25</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Icon name or symbol associated with the theme (e.g., Material icon name or emoji).</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="id"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>id</b></span>
-                        <a href="#id"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/theming/theme.model.ts:10</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Unique numeric identifier for the theme.</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="name"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>name</b></span>
-                        <a href="#name"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/theming/theme.model.ts:15</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Human-readable name of the theme (e.g., &quot;Light&quot;, &quot;Dark&quot;).</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-</section>
-
             <section data-compodoc="block-methods">
     
     <h3 id="methods">
@@ -463,18 +263,98 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCode"></a>
+                    <a name="changeTheme"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getCode</b></span>
-                        <a href="#getCode"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>changeTheme</b></span>
+                        <a href="#changeTheme"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCode()</code>
+                    <code>changeTheme(theme: <a href="../classes/Theme.html" target="_self">Theme</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Changes the active theme of the application.</p>
+<p>Handles updating the DOM body class, internal state, and saving
+the selected theme to localStorage.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>theme</td>
+                                            <td>
+                                                            <code><a href="../classes/Theme.html" target="_self" >Theme</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The new <code>Theme</code> to apply.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentTheme"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getCurrentTheme</b></span>
+                        <a href="#getCurrentTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCurrentTheme()</code>
                 </td>
             </tr>
 
@@ -482,22 +362,22 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                     <tr>
                         <td class="col-md-4">
                             <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:62</a></div>
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:62</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Gets the code identifier of the theme.</p>
+                        <div class="io-description"><p>Gets the currently active theme.</p>
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/Theme.html" target="_self" >Theme</a></code>
 
                         </div>
                             <div class="io-description">
-                                <p>The theme&#39;s code.</p>
+                                <p>The currently selected <code>Theme</code> object.</p>
 
                             </div>
                 </td>
@@ -508,41 +388,77 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getIcon"></a>
+                    <a name="getThemeByCode"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getIcon</b></span>
-                        <a href="#getIcon"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getThemeByCode</b></span>
+                        <a href="#getThemeByCode"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getIcon()</code>
+                    <code>getThemeByCode(code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="70"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:70</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:85</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Gets the icon associated with the theme.</p>
+                        <div class="io-description"><p>Finds a theme by its unique string code.</p>
+<p>Assumes a matching theme code is always available.
+If no match is found, this method will throw at runtime.</p>
 </div>
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The code of the theme to retrieve.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/Theme.html" target="_self" >Theme</a></code>
 
                         </div>
                             <div class="io-description">
-                                <p>The theme&#39;s icon.</p>
+                                <p>The <code>Theme</code> matching the code.</p>
 
                             </div>
                 </td>
@@ -553,86 +469,41 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getId"></a>
+                    <a name="getThemes"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getId</b></span>
-                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getThemes</b></span>
+                        <a href="#getThemes"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getId()</code>
+                    <code>getThemes()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="46"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:46</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:71</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Gets the unique ID of the theme.</p>
+                        <div class="io-description"><p>Gets the list of all available themes.</p>
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/Theme.html" target="_self" >Theme[]</a></code>
 
                         </div>
                             <div class="io-description">
-                                <p>The theme&#39;s ID.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getName"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>getName</b></span>
-                        <a href="#getName"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getName()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:54</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Gets the display name of the theme.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>The theme&#39;s name.</p>
+                                <p>A list of all available themes configured in the application.</p>
 
                             </div>
                 </td>
@@ -640,86 +511,214 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
         </tbody>
     </table>
 </section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentTheme"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>currentTheme</b></span>
+                        <a href="#currentTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.themes[0]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/theming/theme.service.ts:37</a></div>
+                        </td>
+                    </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently active theme.
+Initialized with a default fallback (first in the list) and
+updated from localStorage if available.</p>
+</div>
+                </td>
+            </tr>
 
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="themes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>themes</b></span>
+                        <a href="#themes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Theme.html" target="_self" >Theme[]</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    new Theme(1, &#x27;Light&#x27;, &#x27;light&#x27;, &#x27;flare&#x27;),
+    new Theme(2, &#x27;Light High Contrast&#x27;, &#x27;hc-light&#x27;, &#x27;light_mode&#x27;),
+    new Theme(3, &#x27;Dark&#x27;, &#x27;dark&#x27;, &#x27;dark_mode&#x27;),
+    new Theme(4, &#x27;Dark High Contrast&#x27;, &#x27;hc-dark&#x27;, &#x27;brightness_1&#x27;)
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.service.ts:25</a></div>
+                        </td>
+                    </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>List of available themes for the application.
+Each theme includes a name, code, and icon.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Theme {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Inject } from &#x27;@angular/core&#x27;;
+import { Theme } from &#x27;./theme.model&#x27;;
+import { DOCUMENT } from &#x27;@angular/common&#x27;;
+
+/**
+ * Service to manage application theme
+ *
+ * This service handles:
+ * - Managing the list of available themes.
+ * - Persisting the user&#x27;s theme choice in localStorage.
+
+ *
+ * @export
+ * @class ThemeService
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class ThemeService {
 
   /**
-   * Unique numeric identifier for the theme.
+   * List of available themes for the application.
+   * Each theme includes a name, code, and icon.
    */
-  private id: number;
+  private themes: Theme[] &#x3D; [
+    new Theme(1, &#x27;Light&#x27;, &#x27;light&#x27;, &#x27;flare&#x27;),
+    new Theme(2, &#x27;Light High Contrast&#x27;, &#x27;hc-light&#x27;, &#x27;light_mode&#x27;),
+    new Theme(3, &#x27;Dark&#x27;, &#x27;dark&#x27;, &#x27;dark_mode&#x27;),
+    new Theme(4, &#x27;Dark High Contrast&#x27;, &#x27;hc-dark&#x27;, &#x27;brightness_1&#x27;)
+  ];
 
   /**
-   * Human-readable name of the theme (e.g., &quot;Light&quot;, &quot;Dark&quot;).
+   * The currently active theme.
+   * Initialized with a default fallback (first in the list) and
+   * updated from localStorage if available.
    */
-  private name: string;
+  private currentTheme &#x3D; this.themes[0];
 
   /**
-   * Unique string code used to identify the theme (e.g., &quot;light&quot;, &quot;dark&quot;).
-   */
-  private code: string;
-
-  /**
-   * Icon name or symbol associated with the theme (e.g., Material icon name or emoji).
-   */
-  private icon: string;
-
-  /**
-   * Constructs a new Theme instance.
+   * Initializes the &#x60;ThemeService&#x60;.
    * 
-   * @param id - Unique numeric ID for the theme.
-   * @param name - Display name of the theme.
-   * @param code - Internal code used to identify the theme.
-   * @param icon - Icon representing the theme (Material icon name or emoji).
+   * Loads the saved theme from localStorage if available and applies it
+   * by delegating to &#x60;changeTheme()&#x60;.
+   *
+   * @param document - Injected reference to the DOM &#x60;document&#x60; object.
    */
-  constructor(id: number, name: string, code: string, icon: string) {
-    this.id &#x3D; id;
-    this.name &#x3D; name;
-    this.code &#x3D; code;
-    this.icon &#x3D; icon;
+  constructor(@Inject(DOCUMENT) private document: Document) {
+
+    let storedTheme &#x3D; this.currentTheme.getCode();
+    if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
+      storedTheme &#x3D; localStorage.getItem(&#x27;theme&#x27;) || this.currentTheme.getCode();
+    }
+
+    this.changeTheme(this.getThemeByCode(storedTheme));
   }
 
   /**
-   * Gets the unique ID of the theme.
-   * @returns The theme&#x27;s ID.
+   * Gets the currently active theme.
+   * 
+   * @returns The currently selected &#x60;Theme&#x60; object.
    */
-  public getId(): number {
-    return this.id;
+  public getCurrentTheme(): Theme {
+    return this.currentTheme;
+  } 
+
+  /**
+   * Gets the list of all available themes.
+   * 
+   * @returns A list of all available themes configured in the application.
+   */
+  public getThemes(): Theme[] {
+    return this.themes;
   }
 
   /**
-   * Gets the display name of the theme.
-   * @returns The theme&#x27;s name.
+   * Finds a theme by its unique string code.
+   * 
+   * @param code - The code of the theme to retrieve.
+   * @returns The &#x60;Theme&#x60; matching the code.
+   * 
+   * @remarks
+   * Assumes a matching theme code is always available.
+   * If no match is found, this method will throw at runtime.
    */
-  public getName(): string {
-    return this.name;
+  public getThemeByCode(code: string): Theme {
+    return this.themes.find(theme &#x3D;&gt; theme.getCode() &#x3D;&#x3D;&#x3D; code)!;
   }
 
   /**
-   * Gets the code identifier of the theme.
-   * @returns The theme&#x27;s code.
+   * Changes the active theme of the application.
+   * 
+   * Handles updating the DOM body class, internal state, and saving
+   * the selected theme to localStorage.
+   * 
+   * @param theme - The new &#x60;Theme&#x60; to apply.
    */
-  public getCode(): string {
-    return this.code;
-  }
+  public changeTheme(theme: Theme): void {
+    if (this.currentTheme &#x3D;&#x3D;&#x3D; theme) return;
 
-  /**
-   * Gets the icon associated with the theme.
-   * @returns The theme&#x27;s icon.
-   */
-  public getIcon(): string {
-    return this.icon;
+    // Remove old theme class and apply new one
+    this.document.body.classList.remove(this.currentTheme.getCode());
+    this.document.body.classList.add(theme.getCode());
+
+    // Update current theme state
+    this.currentTheme &#x3D; theme;
+
+    // Persist to localStorage
+    if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
+      localStorage.setItem(&#x27;theme&#x27;, theme.getCode());
+    }
   }
 }</code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -754,8 +753,8 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'Theme.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThemeService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
