@@ -6,7 +6,7 @@
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">
-  @for (lang of languageList; track lang.getId()) {
+  @for (lang of getLanguageList(); track lang.getId()) {
     <button mat-menu-item
       (click)="setLanguage(lang)"
       [disabled]="getActiveLanguage() === lang" >

@@ -127,7 +127,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Represents a theme option used in the application.
+                <p>Entity Object: &quot;Theme&quot; (model domain)</p>
+<p>Represents a theme option used in the application.
 It encapsulates metadata such as ID, display name, code, and icon used for theming and UI representation.</p>
 
             </p>
@@ -214,7 +215,7 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.model.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/theming/theme.model.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -340,7 +341,7 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/theming/theme.model.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/theming/theme.model.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -373,7 +374,7 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.model.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/theming/theme.model.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -406,13 +407,13 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/theming/theme.model.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/theming/theme.model.ts:14</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Unique numeric identifier for the theme.</p>
+                    <div class="io-description"><p>Unique identifier for the theme.</p>
 </div>
                 </td>
             </tr>
@@ -439,7 +440,7 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/theming/theme.model.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/core/theming/theme.model.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -481,8 +482,8 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/core/theming/theme.model.ts:72</a></div>
                         </td>
                     </tr>
 
@@ -526,8 +527,8 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="70"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:70</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/core/theming/theme.model.ts:80</a></div>
                         </td>
                     </tr>
 
@@ -571,8 +572,8 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="46"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:46</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/core/theming/theme.model.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -616,8 +617,8 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/core/theming/theme.model.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/core/theming/theme.model.ts:64</a></div>
                         </td>
                     </tr>
 
@@ -651,23 +652,31 @@ It encapsulates metadata such as ID, display name, code, and icon used for themi
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Theme {
 
-  /**
-   * Unique numeric identifier for the theme.
+   /**
+   * Unique identifier for the theme.
+   * @private
+   * @type {number}
    */
   private id: number;
 
   /**
    * Human-readable name of the theme (e.g., &quot;Light&quot;, &quot;Dark&quot;).
+   * @private
+   * @type {string}
    */
   private name: string;
 
   /**
    * Unique string code used to identify the theme (e.g., &quot;light&quot;, &quot;dark&quot;).
+   * @private
+   * @type {string}
    */
   private code: string;
 
   /**
    * Icon name or symbol associated with the theme (e.g., Material icon name or emoji).
+   * @private
+   * @type {string}
    */
   private icon: string;
 

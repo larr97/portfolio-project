@@ -3,6 +3,8 @@ import { Theme } from './theme.model';
 import { DOCUMENT } from '@angular/common';
 
 /**
+ * Control Object: "Themes Control" (model domain)
+ * 
  * Service to manage application theme
  *
  * This service handles:
@@ -19,8 +21,14 @@ import { DOCUMENT } from '@angular/common';
 export class ThemeService {
 
   /**
+   * The attribute of the Control Object "Themes Control" (model domain),
+   * which holds a list of available themes as Entity Objects "Theme" (model domain).
+   *
    * List of available themes for the application.
-   * Each theme includes a name, code, and icon.
+   * 
+   * @private
+   * @type {Theme[]}
+   * 
    */
   private themes: Theme[] = [
     new Theme(1, 'Light', 'light', 'flare'),
@@ -30,9 +38,10 @@ export class ThemeService {
   ];
 
   /**
-   * The currently active theme.
-   * Initialized with a default fallback (first in the list) and
-   * updated from localStorage if available.
+   * The currently active theme as a Theme object.
+   *
+   * @private
+   * @type {Theme}
    */
   private currentTheme = this.themes[0];
 
@@ -57,7 +66,7 @@ export class ThemeService {
   /**
    * Gets the currently active theme.
    * 
-   * @returns The currently selected `Theme` object.
+   * @returns {Theme} The currently selected `Theme` object.
    */
   public getCurrentTheme(): Theme {
     return this.currentTheme;
@@ -66,7 +75,7 @@ export class ThemeService {
   /**
    * Gets the list of all available themes.
    * 
-   * @returns A list of all available themes configured in the application.
+   * @returns {Theme[]} A list of all available themes configured in the application.
    */
   public getThemes(): Theme[] {
     return this.themes;
@@ -75,8 +84,8 @@ export class ThemeService {
   /**
    * Finds a theme by its unique string code.
    * 
-   * @param code - The code of the theme to retrieve.
-   * @returns The `Theme` matching the code.
+   * @param {string} code - The code of the theme to retrieve.
+   * @returns {Theme} The `Theme` matching the code.
    * 
    * @remarks
    * Assumes a matching theme code is always available.
@@ -91,8 +100,10 @@ export class ThemeService {
    * 
    * Handles updating the DOM body class, internal state, and saving
    * the selected theme to localStorage.
-   * 
-   * @param theme - The new `Theme` to apply.
+   *
+   * @param {Theme} theme - The new `Theme` to apply. An instance of the Entity Object "Theme" (model domain),
+   *                          mapped to the "theme.model" (source code domain).
+   * @returns {void}
    */
   public changeTheme(theme: Theme): void {
     if (this.currentTheme === theme) return;

@@ -1,6 +1,6 @@
 ## Object Design Document (ODD) for Software Engineer Portfolio
-Version: 1.2  
-Date: 2025-07-10  
+Version: 1.3  
+Date: 2025-07-20  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -18,7 +18,7 @@ Author: Luis Rodriguez
 
 - **Component Naming:** Angular components are named using **PascalCase** (e.g., `ProjectList`), following the [Angular Style Guide](https://angular.dev/style-guide) for consistency and readability.
 - **File Naming:** Use **kebab-case** (hyphens to separate words) for file names. For example, a component named `UserProfile` should have a file named `user-profile.ts`. File names should clearly describe the contents of the file and reflect the primary class or component it contains.
-- **Methods:** Use **camelCase** for function and method names. Name methods with verb phrases that clearly indicate the action performed (e.g., `loadProjects()`, `toggleTheme()`) to improve code clarity.
+- **Methods:** Use **camelCase** for function and method names. Name methods with verb phrases that clearly indicate the action performed (e.g., `loadProjects()`, `changeTheme()`) to improve code clarity.
 - **Properties:** Variables and class properties use **camelCase** (e.g., `isDarkMode`, `currentLanguage`), in line with TypeScript and JavaScript conventions.
 - **Events:** Name event handlers based on what they **do**, not based on the triggering event. For example, prefer `saveUser()` over `onClick()`. This makes the purpose of the method clearer and more reusable.
 - **Comments:** Use **TypeScript JSDoc-style comments** to document classes, methods, and interfaces. This supports automatic documentation tools like **Compodoc** and improves long-term maintainability.
@@ -61,7 +61,7 @@ This section outlines the decomposition of the application into packages and the
 - **shared:** Contains reusable UI components and styling shared across multiple features:
   - **header, footer:** Layout components used throughout the application.
   - **components:** Reusable interactive elements including:
-    - **theme-toggle**
+    - **theme-switcher**
     - **language-switcher**
     - **download-resume**
 
@@ -124,7 +124,7 @@ These generated pages include:
 
 #### C  
 - **Component**: A self-contained building block in Angular consisting of a TypeScript class, HTML template, and SCSS/CSS styles.  
-- **Core**: A shared service layer that provides singleton logic for resume download, theme control, and language switching.  
+- **Core**: A shared service layer that provides singleton logic for resume download, theme switching, and language switching.  
 - **CSS (Cascading Style Sheets)**: A styling language used to define the look and layout of HTML components.
 
 #### D  
@@ -135,7 +135,7 @@ These generated pages include:
 - **Footer Component**: A shared UI element at the bottom of every page that provides additional navigation or branding information.
 
 #### H  
-- **Header Component**: A shared top-level UI element containing the main navigation and global actions (e.g., theme and language toggles).  
+- **Header Component**: A shared top-level UI element containing the main navigation and global actions (e.g., theme and language menu).  
 - **Home Subsystem**: The landing page of the application, showcasing an overview of the portfolio owner.   
 - **HTML (HyperText Markup Language)**: The standard language used to structure content for display in web browsers.  
 
@@ -168,7 +168,7 @@ These generated pages include:
 - **Single-Page Application (SPA)**: A web application model where navigation occurs within a single HTML document, improving performance and user experience.  
 
 #### T  
-- **Theme Subsystem**: A core service that manages the light/dark mode feature of the application interface.  
+- **Theming Subsystem**: A core service that manages the light/dark mode feature of the application interface.  
 - **TypeScript**: A statically typed superset of JavaScript used throughout the application for writing safer and more maintainable code.
 
 #### U  

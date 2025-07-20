@@ -4,6 +4,8 @@ import { Language } from './language.model';
 import { Title } from '@angular/platform-browser';
 
 /**
+ * Control Object: "Languages Control" (model domain)
+ * 
  * Service to manage application languages and integrate with ngx-translate.
  *
  * This service handles:
@@ -25,20 +27,20 @@ export class LanguageService {
    *
    * Each item represents a language supported by the application.
    *
-   * @protected
+   * @private
    * @type {Language[]}
    */
-  protected languages: Language[] = [  
+  private languages: Language[] = [  
     new Language(1, 'English', 'en', '🇺🇸'),
     new Language(2, 'Español', 'es', '🇪🇸')
   ];
   
   /**
    * The currently active language as a Language object.
-   * @protected
+   * @private
    * @type {Language}
    */
-  protected currentLanguage = this.languages[0];       // The active language
+  private currentLanguage = this.languages[0];       // The active language
 
   /**
    * Creates an instance of LanguageService.
@@ -56,12 +58,12 @@ export class LanguageService {
       storedLang = localStorage.getItem('lang') || this.currentLanguage.getCode(); // Fallback to the default language if nothing is stored
     }
 
-    // Step 3: Initialize the translation service
+    // Step 2: Initialize the translation service
     let languageCodes = this.languages.map(lang => lang.getCode());   // List of language codes
     this.translate.addLangs(languageCodes);                           // Add available languages to the translation service
     this.translate.setDefaultLang('en');                              // Default language, fallback if nothing else matches
 
-    // Step 4: Calls the changeLanguage method with the stored language or defaults to English
+    // Step 3: Calls the changeLanguage method with the stored language or defaults to English
     this.changeLanguage(this.getLanguageByCode(storedLang));
   }
 
@@ -99,7 +101,7 @@ export class LanguageService {
    * updates ngx-translate to use the new language,
    * and sets the document title based on the new language.
    *
-   * @param {Language} lang - An instance of the Entity Object "Language" (model domain),
+   * @param {Language} lang - The new `Language` to apply. An instance of the Entity Object "Language" (model domain),
    *                          mapped to the "language.model" (source code domain).
    * @returns {void}
    */

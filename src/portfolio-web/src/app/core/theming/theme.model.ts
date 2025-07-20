@@ -1,26 +1,36 @@
 /**
+ * Entity Object: "Theme" (model domain)
+ * 
  * Represents a theme option used in the application.
  * It encapsulates metadata such as ID, display name, code, and icon used for theming and UI representation.
  */
 export class Theme {
 
-  /**
-   * Unique numeric identifier for the theme.
+   /**
+   * Unique identifier for the theme.
+   * @private
+   * @type {number}
    */
   private id: number;
 
   /**
    * Human-readable name of the theme (e.g., "Light", "Dark").
+   * @private
+   * @type {string}
    */
   private name: string;
 
   /**
    * Unique string code used to identify the theme (e.g., "light", "dark").
+   * @private
+   * @type {string}
    */
   private code: string;
 
   /**
    * Icon name or symbol associated with the theme (e.g., Material icon name or emoji).
+   * @private
+   * @type {string}
    */
   private icon: string;
 

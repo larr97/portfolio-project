@@ -6,11 +6,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
 /**
- * UI component for switching between available application themes.
+ * Component that provides a UI for switching the application's themes.
  * 
- * Displays the current theme and allows users to select a new one via a dropdown menu.
- * Integrates with `ThemeService` to get the list of themes, track the active theme,
- * and apply a new one on selection.
+ * Displays the current theme and allows the user to select a different one
+ * from the list of available themes.
+ *
+ * @export
+ * @component
  */
 @Component({
   selector: 'app-theme-switcher',
@@ -22,6 +24,8 @@ export class ThemeSwitcher {
 
   /**
    * Label used to display the currently active theme.
+   * @protected
+   * @type {string}
    */
   protected label: string;
 
@@ -30,7 +34,7 @@ export class ThemeSwitcher {
    * 
    * Initializes the display label using the currently active theme.
    * 
-   * @param themeService - Service that manages theme state and switching logic.
+   * @param {ThemeService} themeService - Service that manages theme state and switching logic.
    */
   constructor(private themeService: ThemeService) {
     this.label = this.themeService.getCurrentTheme().getName();
@@ -39,7 +43,7 @@ export class ThemeSwitcher {
   /**
    * Gets the currently active theme from the service.
    * 
-   * @returns The currently selected `Theme` object.
+   * @returns {Theme} The currently selected `Theme` object.
    */
   public getActiveTheme(): Theme {
     return this.themeService.getCurrentTheme();
@@ -48,7 +52,7 @@ export class ThemeSwitcher {
   /**
    * Gets the full list of available themes from the service.
    * 
-   * @returns An array of `Theme` objects.
+   * @returns {Theme[]} An array of `Theme` objects.
    */
   public getThemeList(): Theme[] {
     return this.themeService.getThemes();
@@ -57,7 +61,8 @@ export class ThemeSwitcher {
   /**
    * Applies the selected theme and updates the label to reflect the new active theme.
    * 
-   * @param theme - The theme to activate.
+   * @param {Theme} theme The selected theme.
+   * @returns {void}
    */
   public setTheme(theme: Theme): void {
     this.themeService.changeTheme(theme);

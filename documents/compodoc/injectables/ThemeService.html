@@ -123,7 +123,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service to manage application theme</p>
+                <p>Control Object: &quot;Themes Control&quot; (model domain)</p>
+<p>Service to manage application theme</p>
 <p>This service handles:</p>
 <ul>
 <li>Managing the list of available themes.</li>
@@ -205,7 +206,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/theming/theme.service.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/core/theming/theme.service.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -281,8 +282,8 @@ by delegating to <code>changeTheme()</code>.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="97"
-                                    class="link-to-prism">src/app/core/theming/theme.service.ts:97</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:108</a></div>
                         </td>
                     </tr>
 
@@ -292,7 +293,7 @@ by delegating to <code>changeTheme()</code>.</p>
                         <div class="io-description"><p>Changes the active theme of the application.</p>
 <p>Handles updating the DOM body class, internal state, and saving
 the selected theme to localStorage.</p>
-</div>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">                     mapped to the &quot;theme.model&quot; (source code domain).</code></pre></div></div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -320,7 +321,8 @@ the selected theme to localStorage.</p>
 
                                             <td>
                                                     <ul>
-<li>The new <code>Theme</code> to apply.</li>
+<li>The new <code>Theme</code> to apply. An instance of the Entity Object &quot;Theme&quot; (model domain),
+  mapped to the &quot;theme.model&quot; (source code domain).</li>
 </ul>
 
                                             </td>
@@ -361,8 +363,8 @@ the selected theme to localStorage.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/app/core/theming/theme.service.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:71</a></div>
                         </td>
                     </tr>
 
@@ -406,8 +408,8 @@ the selected theme to localStorage.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/app/core/theming/theme.service.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:94</a></div>
                         </td>
                     </tr>
 
@@ -487,8 +489,8 @@ If no match is found, this method will throw at runtime.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="71"
-                                    class="link-to-prism">src/app/core/theming/theme.service.ts:71</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/core/theming/theme.service.ts:80</a></div>
                         </td>
                     </tr>
 
@@ -535,15 +537,13 @@ If no match is found, this method will throw at runtime.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/theming/theme.service.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/core/theming/theme.service.ts:46</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The currently active theme.
-Initialized with a default fallback (first in the list) and
-updated from localStorage if available.</p>
+                    <div class="io-description"><p>The currently active theme as a Theme object.</p>
 </div>
                 </td>
             </tr>
@@ -580,14 +580,15 @@ updated from localStorage if available.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/theming/theme.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/theming/theme.service.ts:33</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>List of available themes for the application.
-Each theme includes a name, code, and icon.</p>
+                    <div class="io-description"><p>The attribute of the Control Object &quot;Themes Control&quot; (model domain),
+which holds a list of available themes as Entity Objects &quot;Theme&quot; (model domain).</p>
+<p>List of available themes for the application.</p>
 </div>
                 </td>
             </tr>
@@ -605,6 +606,8 @@ import { Theme } from &#x27;./theme.model&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
 
 /**
+ * Control Object: &quot;Themes Control&quot; (model domain)
+ * 
  * Service to manage application theme
  *
  * This service handles:
@@ -621,8 +624,14 @@ import { DOCUMENT } from &#x27;@angular/common&#x27;;
 export class ThemeService {
 
   /**
+   * The attribute of the Control Object &quot;Themes Control&quot; (model domain),
+   * which holds a list of available themes as Entity Objects &quot;Theme&quot; (model domain).
+   *
    * List of available themes for the application.
-   * Each theme includes a name, code, and icon.
+   * 
+   * @private
+   * @type {Theme[]}
+   * 
    */
   private themes: Theme[] &#x3D; [
     new Theme(1, &#x27;Light&#x27;, &#x27;light&#x27;, &#x27;flare&#x27;),
@@ -632,9 +641,10 @@ export class ThemeService {
   ];
 
   /**
-   * The currently active theme.
-   * Initialized with a default fallback (first in the list) and
-   * updated from localStorage if available.
+   * The currently active theme as a Theme object.
+   *
+   * @private
+   * @type {Theme}
    */
   private currentTheme &#x3D; this.themes[0];
 
@@ -659,7 +669,7 @@ export class ThemeService {
   /**
    * Gets the currently active theme.
    * 
-   * @returns The currently selected &#x60;Theme&#x60; object.
+   * @returns {Theme} The currently selected &#x60;Theme&#x60; object.
    */
   public getCurrentTheme(): Theme {
     return this.currentTheme;
@@ -668,7 +678,7 @@ export class ThemeService {
   /**
    * Gets the list of all available themes.
    * 
-   * @returns A list of all available themes configured in the application.
+   * @returns {Theme[]} A list of all available themes configured in the application.
    */
   public getThemes(): Theme[] {
     return this.themes;
@@ -677,8 +687,8 @@ export class ThemeService {
   /**
    * Finds a theme by its unique string code.
    * 
-   * @param code - The code of the theme to retrieve.
-   * @returns The &#x60;Theme&#x60; matching the code.
+   * @param {string} code - The code of the theme to retrieve.
+   * @returns {Theme} The &#x60;Theme&#x60; matching the code.
    * 
    * @remarks
    * Assumes a matching theme code is always available.
@@ -693,8 +703,10 @@ export class ThemeService {
    * 
    * Handles updating the DOM body class, internal state, and saving
    * the selected theme to localStorage.
-   * 
-   * @param theme - The new &#x60;Theme&#x60; to apply.
+   *
+   * @param {Theme} theme - The new &#x60;Theme&#x60; to apply. An instance of the Entity Object &quot;Theme&quot; (model domain),
+   *                          mapped to the &quot;theme.model&quot; (source code domain).
+   * @returns {void}
    */
   public changeTheme(theme: Theme): void {
     if (this.currentTheme &#x3D;&#x3D;&#x3D; theme) return;

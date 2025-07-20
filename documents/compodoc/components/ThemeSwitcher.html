@@ -124,10 +124,9 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>UI component for switching between available application themes.</p>
-<p>Displays the current theme and allows users to select a new one via a dropdown menu.
-Integrates with <code>ThemeService</code> to get the list of themes, track the active theme,
-and apply a new one on selection.</p>
+        <p>Component that provides a UI for switching the application&#39;s themes.</p>
+<p>Displays the current theme and allows the user to select a different one
+from the list of available themes.</p>
 
     </p>
 
@@ -251,7 +250,7 @@ and apply a new one on selection.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -330,8 +329,8 @@ and apply a new one on selection.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:48</a></div>
                         </td>
                     </tr>
 
@@ -375,8 +374,8 @@ and apply a new one on selection.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="53"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:53</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:57</a></div>
                         </td>
                     </tr>
 
@@ -420,8 +419,8 @@ and apply a new one on selection.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:67</a></div>
                         </td>
                     </tr>
 
@@ -456,9 +455,7 @@ and apply a new one on selection.</p>
 
 
                                             <td>
-                                                    <ul>
-<li>The theme to activate.</li>
-</ul>
+                                                    <p>The selected theme.</p>
 
                                             </td>
                                         </tr>
@@ -502,7 +499,7 @@ and apply a new one on selection.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -529,11 +526,13 @@ import { MatMenuModule } from &#x27;@angular/material/menu&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 
 /**
- * UI component for switching between available application themes.
+ * Component that provides a UI for switching the application&#x27;s themes.
  * 
- * Displays the current theme and allows users to select a new one via a dropdown menu.
- * Integrates with &#x60;ThemeService&#x60; to get the list of themes, track the active theme,
- * and apply a new one on selection.
+ * Displays the current theme and allows the user to select a different one
+ * from the list of available themes.
+ *
+ * @export
+ * @component
  */
 @Component({
   selector: &#x27;app-theme-switcher&#x27;,
@@ -545,6 +544,8 @@ export class ThemeSwitcher {
 
   /**
    * Label used to display the currently active theme.
+   * @protected
+   * @type {string}
    */
   protected label: string;
 
@@ -553,7 +554,7 @@ export class ThemeSwitcher {
    * 
    * Initializes the display label using the currently active theme.
    * 
-   * @param themeService - Service that manages theme state and switching logic.
+   * @param {ThemeService} themeService - Service that manages theme state and switching logic.
    */
   constructor(private themeService: ThemeService) {
     this.label &#x3D; this.themeService.getCurrentTheme().getName();
@@ -562,7 +563,7 @@ export class ThemeSwitcher {
   /**
    * Gets the currently active theme from the service.
    * 
-   * @returns The currently selected &#x60;Theme&#x60; object.
+   * @returns {Theme} The currently selected &#x60;Theme&#x60; object.
    */
   public getActiveTheme(): Theme {
     return this.themeService.getCurrentTheme();
@@ -571,7 +572,7 @@ export class ThemeSwitcher {
   /**
    * Gets the full list of available themes from the service.
    * 
-   * @returns An array of &#x60;Theme&#x60; objects.
+   * @returns {Theme[]} An array of &#x60;Theme&#x60; objects.
    */
   public getThemeList(): Theme[] {
     return this.themeService.getThemes();
@@ -580,7 +581,8 @@ export class ThemeSwitcher {
   /**
    * Applies the selected theme and updates the label to reflect the new active theme.
    * 
-   * @param theme - The theme to activate.
+   * @param {Theme} theme The selected theme.
+   * @returns {void}
    */
   public setTheme(theme: Theme): void {
     this.themeService.changeTheme(theme);
@@ -591,9 +593,12 @@ export class ThemeSwitcher {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Light/DarkMode Button&quot; (model domain) --&gt;
+&lt;!-- Theme Menu Trigger --&gt;
+&lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
   &lt;mat-icon fontIcon&#x3D;&quot;light_mode&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
 &lt;/button&gt;
+&lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
   @for (theme of getThemeList(); track theme.getId()) {
     &lt;button mat-menu-item
@@ -634,7 +639,7 @@ export class ThemeSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon></button><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ theme.getName() }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ theme.getName() }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ThemeSwitcher'};

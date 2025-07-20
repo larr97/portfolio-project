@@ -1,6 +1,6 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.2  
-Date: 2025-07-10  
+Version: 2.3  
+Date: 2025-07-20  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -91,7 +91,7 @@ In addition to the core functional requirements, boundary conditions such as con
 
 The system is structured into distinct subsystems. The core of the application is the User Interface Subsystem, which is composed of four functional subsystems: Home, Projects, Blog, and Docs. These handle specific user-facing features. Additionally, the UI contains a Shared UI Subsystem, which holds commonly used components such as the Header and Footer, promoting reuse and consistency across pages.
 
-Outside the UI, there are four independent top-level subsystems: Resume, Theme, Language, and Routing. These are not part of the UI because they provide services that span multiple areas of the application. The Theme and Language subsystems, for example, manage global settings, while Resume handles downloadable content and Routing controls navigation. This separation of concerns makes the architecture more modular, scalable, and easier to maintain.
+Outside the UI, there are four independent top-level subsystems: Resume, Theming, Language, and Routing. These are not part of the UI because they provide services that span multiple areas of the application. The Theming and Language subsystems, for example, manage global settings, while Resume handles downloadable content and Routing controls navigation. This separation of concerns makes the architecture more modular, scalable, and easier to maintain.
 
 ![Diagram](SubsystemDescomposition.svg)
 
@@ -104,7 +104,7 @@ Outside the UI, there are four independent top-level subsystems: Resume, Theme, 
         - **Header Subsystem**
          - **Footer Subsystem**
 - **Resume Subsystem**
-- **Theme Subsystem**
+- **Theming Subsystem**
 - **Language Subsystem**
 - **Routing Subsystem**
 
@@ -119,7 +119,7 @@ Outside the UI, there are four independent top-level subsystems: Resume, Theme, 
 | **Header Subsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls. |
 | **Footer Subsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright. |
 | **Resume Subsystem**         | The ResumeSubsystem is responsible for hosting and allowing users to download the user’s professional resume in various formats. |
-| **Theme Subsystem**          | The ThemeSubsystem manages the visual theme of the application, such as light and dark mode toggling. |
+| **Theming Subsystem**          | The ThemingSubsystem manages the visual theme of the application, such as light and dark mode toggling. |
 | **Language Subsystem**       | The LanguageSubsystem handles internationalization by allowing users to switch between supported languages. |
 | **Routing Subsystem**        | The RoutingSubsystem is responsible for handling page navigation and URL routing throughout the application, enabling users to move between subsystems seamlessly. |
 |                             |               |
@@ -136,7 +136,7 @@ The **client node** is any user device running a web browser. All application lo
 
 - The **User Interface Subsystem**, including individual page subsystems (Home, Projects, Blog, Docs) and shared components like the Header and Footer.
 - The **Routing Subsystem**, responsible for determining which view to render based on user navigation.
-- The **Theme Subsystem**, which manages the visual mode (e.g., light/dark).
+- The **Theming Subsystem**, which manages the visual mode (e.g., light/dark).
 - The **Language Subsystem**, enabling dynamic content translation.
 - The **Resume Subsystem**, which handles interactions for downloading resume files.
 
@@ -220,7 +220,7 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 - **Projects Subsystem – GetProjects**  
   This service retrieves and provides a list of portfolio projects for display. It sources data from preloaded or static resources and ensures users can view project content even in degraded network conditions.
 
-- **Theme Subsystem – ChangeTheme**  
+- **Theming Subsystem – ChangeTheme**  
   This service handles user requests to switch between visual themes, such as light and dark mode. It updates the interface accordingly and ensures the selection persists across sessions using local storage mechanisms when available.
 
 - **Language Subsystem – ChangeLanguage**  
@@ -291,7 +291,7 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 - **Subsystem**: A module within the larger system that performs a specific set of functions.  
 
 #### T  
-- **Theme Subsystem**: A system module that controls the application's visual theme (e.g., light or dark mode).  
+- **Theming Subsystem**: A system module that controls the application's visual theme (e.g., light or dark mode).  
 - **TypeScript**: A strongly typed programming language that builds on JavaScript, often used with Angular.  
 
 #### U  
