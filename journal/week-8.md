@@ -1,11 +1,9 @@
 # Week 8 Progress Journal
 
 ## Overview
-
 This week, I focused on implementing multi-language support in my Angular application using the `ngx-translate` library. My goal was to build a scalable and maintainable translation system with persistent language preferences and full compatibility with server-side rendering (SSR). With this work completed, I finalized the core Language Subsystem.
 
 ## Completed Tasks
-
 - Installed and configured `ngx-translate` and `http-loader`.
 - Created `en.json` and `es.json` translation files.
 - Added translation support using `TranslateService`.
@@ -16,7 +14,6 @@ This week, I focused on implementing multi-language support in my Angular applic
 - Integrated language switching into the root app layout.
 
 ## Challenges
-
 - Refreshing core Angular concepts such as **dependency injection** and the new **standalone API patterns** to better understand component and service architecture, while following best practices outlined in the Angular coding style guide.
   - [Dependency Injection Essentials](https://angular.dev/essentials/dependency-injection)
   - [In-depth Guide to Dependency Injection](https://angular.dev/guide/di)
@@ -26,7 +23,6 @@ This week, I focused on implementing multi-language support in my Angular applic
 - Translating all the concepts from the RAD, SDD, and ODD documents into actual source code was challenging, especially when trying to maintain consistency across layers. As I progressed, I also had to revise some models—primarily the class diagram—to better align with the implementation.
 
 ## Lessons Learned
-
 - [`ngx-translate`](https://ngx-translate.org/) is a powerful and flexible library for adding internationalization (i18n) to Angular applications. It supports dynamic language switching, structured JSON translations, and integration with Angular’s standalone API.
 - [Installation guide](https://ngx-translate.org/getting-started/installation/)
   ```bash
@@ -60,7 +56,6 @@ This week, I focused on implementing multi-language support in my Angular applic
   - [Angular Material Icon Component](https://material.angular.dev/components/icon/overview)
   - [Google Fonts Icons](https://fonts.google.com/icons)
 - I learned how to use [`ngx-translate` in code](https://ngx-translate.org/getting-started/translating-your-components/#using-translations-in-code) to dynamically apply localized titles using `TranslateService` and Angular's [`Title`](https://angular.dev/api/platform-browser/Title) service.
-
 
 ## Next Steps
 - Integrate the `LanguageSwitcher` component into a shared header layout for better accessibility across the app.
