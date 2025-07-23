@@ -1,7 +1,7 @@
 <!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) -->
 <!-- Theme Menu Trigger -->
 <button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon>
+  <mat-icon fontIcon={{label}} aria-hidden="false" aria-label="theme icon"></mat-icon>
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">

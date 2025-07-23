@@ -557,7 +557,7 @@ export class ThemeSwitcher {
    * @param {ThemeService} themeService - Service that manages theme state and switching logic.
    */
   constructor(private themeService: ThemeService) {
-    this.label &#x3D; this.themeService.getCurrentTheme().getName();
+    this.label &#x3D; this.themeService.getCurrentTheme().getIcon();
   }
 
   /**
@@ -586,7 +586,7 @@ export class ThemeSwitcher {
    */
   public setTheme(theme: Theme): void {
     this.themeService.changeTheme(theme);
-    this.label &#x3D; theme.getName();
+    this.label &#x3D; theme.getIcon();
   }
 
 }</code></pre>
@@ -596,7 +596,7 @@ export class ThemeSwitcher {
         <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Light/DarkMode Button&quot; (model domain) --&gt;
 &lt;!-- Theme Menu Trigger --&gt;
 &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
-  &lt;mat-icon fontIcon&#x3D;&quot;light_mode&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
+  &lt;mat-icon fontIcon&#x3D;{{label}} aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
 &lt;/button&gt;
 &lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
@@ -639,7 +639,7 @@ export class ThemeSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon="light_mode" aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ theme.getName() }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon={{label}} aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ theme.getName() }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ThemeSwitcher'};

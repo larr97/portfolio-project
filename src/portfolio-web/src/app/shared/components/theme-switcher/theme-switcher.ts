@@ -37,7 +37,7 @@ export class ThemeSwitcher {
    * @param {ThemeService} themeService - Service that manages theme state and switching logic.
    */
   constructor(private themeService: ThemeService) {
-    this.label = this.themeService.getCurrentTheme().getName();
+    this.label = this.themeService.getCurrentTheme().getIcon();
   }
 
   /**
@@ -66,7 +66,7 @@ export class ThemeSwitcher {
    */
   public setTheme(theme: Theme): void {
     this.themeService.changeTheme(theme);
-    this.label = theme.getName();
+    this.label = theme.getIcon();
   }
 
 }
