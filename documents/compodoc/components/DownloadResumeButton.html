@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  App</li>
+  DownloadResumeButton</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,7 +116,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app.ts</code>
+    <code>src/app/shared/components/download-resume-button/download-resume-button.ts</code>
 </p>
 
 
@@ -124,8 +124,9 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>The root component of the application.</p>
-<p>Acts as the main container including routing and other application features.</p>
+        <p>Component that provides a UI button for downloading the resume PDF.</p>
+<p>When clicked, it downloads the version of the resume that matches the
+user&#39;s current language preference.</p>
 
     </p>
 
@@ -150,21 +151,14 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
+                <td class="col-md-9"><code>app-download-resume-button</code></td>
             </tr>
 
 
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
-                            <code>TranslatePipe</code>
-                            <code>TranslateDirective</code>
-                            <code>RouterOutlet</code>
-                            <code>MatButtonModule</code>
-                            <code>MatToolbarModule</code>
-                                <code><a href="../components/LanguageSwitcher.html" target="_self" >LanguageSwitcher</a></code>
-                                <code><a href="../components/ThemeSwitcher.html" target="_self" >ThemeSwitcher</a></code>
-                                <code><a href="../components/DownloadResumeButton.html" target="_self" >DownloadResumeButton</a></code>
+                            <code>MatButton</code>
                 </td>
             </tr>
 
@@ -173,14 +167,14 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.html</code></td>
+                <td class="col-md-9"><code>./download-resume-button.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./app.scss</code></td>
+                <td class="col-md-9"><code>./download-resume-button.scss</code></td>
             </tr>
 
 
@@ -191,86 +185,192 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#requestResume" >requestResume</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(resumeService: <a href="../injectables/ResumeService.html" target="_self">ResumeService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of DownloadResumeButton.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>resumeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ResumeService.html" target="_self" >ResumeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Used internally to handle the resume download.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestResume"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>requestResume</b></span>
+                        <a href="#requestResume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>requestResume()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initiates the download of the resume PDF.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { TranslatePipe, TranslateDirective } from &quot;@ngx-translate/core&quot;;
-import { RouterOutlet } from &#x27;@angular/router&#x27;;
-import { LanguageSwitcher } from &#x27;./shared/components/language-switcher/language-switcher&#x27;;
-import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
-import { MatToolbarModule } from &#x27;@angular/material/toolbar&#x27;;
-import { ThemeSwitcher } from &#x27;./shared/components/theme-switcher/theme-switcher&#x27;;
-import { DownloadResumeButton } from &quot;./shared/components/download-resume-button/download-resume-button&quot;;
+import { ResumeService } from &#x27;../../../core/resume/resume.service&#x27;;
+import { MatButton } from &#x27;@angular/material/button&#x27;;
 
 /**
- * The root component of the application.
- *
- * Acts as the main container including routing and other application features.
+ * Component that provides a UI button for downloading the resume PDF.
  * 
+ * When clicked, it downloads the version of the resume that matches the 
+ * user&#x27;s current language preference.
+ *
  * @export
  * @component
  */
 @Component({
-  selector: &#x27;app-root&#x27;,
-  imports: [
-    TranslatePipe,
-    TranslateDirective,
-    RouterOutlet,
-    MatButtonModule,
-    MatToolbarModule,
-    LanguageSwitcher,
-    ThemeSwitcher,
-    DownloadResumeButton
-],
-  templateUrl: &#x27;./app.html&#x27;,
-  styleUrl: &#x27;./app.scss&#x27;
+  selector: &#x27;app-download-resume-button&#x27;,
+  imports: [MatButton],
+  templateUrl: &#x27;./download-resume-button.html&#x27;,
+  styleUrl: &#x27;./download-resume-button.scss&#x27;
 })
-export class App {}</code></pre>
+export class DownloadResumeButton {
+
+  /**
+   * Creates an instance of DownloadResumeButton.
+   * 
+   * @param {ResumeService} resumeService Used internally to handle the resume download.
+   */
+  constructor(private resumeService: ResumeService) {}
+
+  /**
+   * Initiates the download of the resume PDF.
+   * 
+   * @returns {void}
+   */
+  public requestResume(): void {
+    this.resumeService.downloadResume();
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * The content below * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * Delete the template below * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * to get started with your project! * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-
-&lt;mat-toolbar&gt;
-  
-  &lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
-  &lt;app-language-switcher&gt;&lt;/app-language-switcher&gt;
-  &lt;app-theme-switcher&gt;&lt;/app-theme-switcher&gt;
-
-&lt;/mat-toolbar&gt;
-
-&lt;main class&#x3D;&quot;app-main&quot;&gt;
-  &lt;h1&gt;{{ &#x27;app.title&#x27; | translate }}&lt;/h1&gt;
-  &lt;p&gt;{{ &#x27;app.hello&#x27; | translate }}&lt;/p&gt;
-  &lt;app-download-resume-button&gt;&lt;/app-download-resume-button&gt;
-&lt;/main&gt;
-
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-
-&lt;router-outlet /&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Download Resume Button&quot; (model domain) --&gt;
+&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;Download Resume&lt;/button&gt;</code></pre>
     </div>
 
 
@@ -299,10 +399,10 @@ export class App {}</code></pre>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><mat-toolbar>    <span class="spacer"></span>  <app-language-switcher></app-language-switcher>  <app-theme-switcher></app-theme-switcher></mat-toolbar><main class="app-main">  <h1>{{ \'app.title\' | translate }}</h1>  <p>{{ \'app.hello\' | translate }}</p>  <app-download-resume-button></app-download-resume-button></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><router-outlet /></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">Download Resume</button></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'App'};
+    var ACTUAL_COMPONENT = {'name': 'DownloadResumeButton'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -348,7 +448,7 @@ export class App {}</code></pre>
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'App.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DownloadResumeButton.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

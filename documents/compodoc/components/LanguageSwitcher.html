@@ -644,7 +644,7 @@ export class LanguageSwitcher {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguageList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};
 </script>

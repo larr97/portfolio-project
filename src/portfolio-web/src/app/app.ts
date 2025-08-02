@@ -5,6 +5,7 @@ import { LanguageSwitcher } from './shared/components/language-switcher/language
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeSwitcher } from './shared/components/theme-switcher/theme-switcher';
+import { DownloadResumeButton } from "./shared/components/download-resume-button/download-resume-button";
 
 /**
  * The root component of the application.
@@ -17,14 +18,15 @@ import { ThemeSwitcher } from './shared/components/theme-switcher/theme-switcher
 @Component({
   selector: 'app-root',
   imports: [
-    TranslatePipe, 
+    TranslatePipe,
     TranslateDirective,
     RouterOutlet,
     MatButtonModule,
     MatToolbarModule,
     LanguageSwitcher,
-    ThemeSwitcher
-  ],
+    ThemeSwitcher,
+    DownloadResumeButton
+],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

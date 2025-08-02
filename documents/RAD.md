@@ -1,6 +1,6 @@
 ## Requirements Analysis Document (RAD) for Software Engineer Portfolio
-Version: 3.4  
-Date: 2025-07-20  
+Version: 3.5  
+Date: 2025-07-27  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -289,7 +289,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 |                                   | 3. The theme preference persists during navigation and (optionally) across sessions.                                   |
 | **Entry Conditions**              | The visitor has access to the theme toggle feature, and the system supports multiple themes.                           |
 | **Exit Conditions**               | The portfolio updates to the selected theme consistently across all pages.                                             |
-| **Quality Requirements**          | Theme toggling must be fast and visually consistent, without affecting usability or accessibility.                      |
+| **Quality Requirements**          | Theme toggling must be fast and visually consistent, without affecting usability or accessibility.                     |
 
 ---
 
@@ -325,10 +325,10 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 | **Job**                 | A professional role held by the developer in the past or present. A job entry is composed of a job title, company name, start and end dates, responsibilities, and achievements.                                                                                                                                                              |                               |
 | **Certification**       | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates.                                                                                                                                                                     |                               |
 | **Education**           | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.                                                                                                                                                                     |                               |
-| **Resume**              | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.                                                                                                                                                                 |                               |
 | **Blog Post**           | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.                                                                                                                                                                      |                               |
 | **Document**            | A Software Project Document containing key attributes such as title, URL, and optionally version.                                              |                               |
 | **Route**               | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.                                                                                                                                                                      |                               |
+| **Resume**              | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.                                                                                                                                                                 | `resume.model`                |
 | **Theme**               | Represents the visual style preference selected by the user (e.g., light or dark mode). Includes the attribute name.                           | `theme.model`                 |
 | **Language**            | Represents the language selected by the user for localization. Includes attributes such as code (e.g., "en", "es") and name.                   | `language.model`              |
 
@@ -336,8 +336,8 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Boundary Object Name**     | **Description**                                                                                                                           | **Angular Name**              |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked.                                                                                                                                                                   |                               |
 | **Navigation Button**        | A user interface button that allows users to navigate between different views of the application, such as Home, Projects, Docs, and Blog, by triggering route changes.                                                                                                                                                                   |                               |
+| **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked.                                                                                                                                                                   | `download-resume-button`      |
 | **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.                                                                                                                                                                      | `theme-switcher`              |
 | **Language Button**          | A toggle or dropdown allowing users to switch the language of the portfolio (e.g., English to Spanish). Stores the selected language preference.                                                                                                                                                                | `language-switcher`           |
 
@@ -345,9 +345,9 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Control Object Name**     | **Description**                                                                                                                            | **Angular Name**              |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
-| **Resume Control**          | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.            |                               |
 | **Projects Control**        | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic.                                                                                                                     |                               |
 | **Routing Control**         | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component.                                                                                                                                                                 |                               |
+| **Resume Control**          | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.            | `resume.service`              |
 | **Themes Control**          | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                                                                                                                                                                | `theme.service`               |
 | **Languages Control**       | Handles the logic for switching the portfolio’s language. Retrieves the selected language from the interface and updates all content dynamically.                                                                                                                                                               | `language.service`            |
 
@@ -362,8 +362,6 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 ##### 3.4.4 Dynamic models
 
 ![Diagram](SequenceDiagram.svg)
-
-> _Note: Change Language and Change Theme are basically the same but with different names._
 
 ##### 3.4.5 User interface—navigational paths and screen mock-ups
 

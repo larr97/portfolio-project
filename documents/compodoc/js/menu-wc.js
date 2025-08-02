@@ -57,6 +57,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/App.html" data-type="entity-link" >App</a>
                             </li>
                             <li class="link">
+                                <a href="components/DownloadResumeButton.html" data-type="entity-link" >DownloadResumeButton</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/LanguageSwitcher.html" data-type="entity-link" >LanguageSwitcher</a>
                             </li>
                             <li class="link">
@@ -76,6 +79,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Language.html" data-type="entity-link" >Language</a>
                             </li>
                             <li class="link">
+                                <a href="classes/Resume.html" data-type="entity-link" >Resume</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Theme.html" data-type="entity-link" >Theme</a>
                             </li>
                         </ul>
@@ -90,6 +96,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/LanguageService.html" data-type="entity-link" >LanguageService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ResumeService.html" data-type="entity-link" >ResumeService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ThemeService.html" data-type="entity-link" >ThemeService</a>
