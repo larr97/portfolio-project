@@ -161,6 +161,7 @@ from the list of available themes.</p>
                             <code>MatButtonModule</code>
                             <code>MatMenuModule</code>
                             <code>MatIconModule</code>
+                            <code>TranslatePipe</code>
                 </td>
             </tr>
 
@@ -250,7 +251,7 @@ from the list of available themes.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -329,8 +330,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -374,8 +375,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="57"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:57</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:58</a></div>
                         </td>
                     </tr>
 
@@ -419,8 +420,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="67"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:67</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -499,7 +500,7 @@ from the list of available themes.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -524,6 +525,7 @@ import { ThemeService } from &#x27;../../../core/theming/theme.service&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 import { MatMenuModule } from &#x27;@angular/material/menu&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
+import { TranslatePipe } from &#x27;@ngx-translate/core&#x27;;
 
 /**
  * Component that provides a UI for switching the application&#x27;s themes.
@@ -536,7 +538,7 @@ import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
  */
 @Component({
   selector: &#x27;app-theme-switcher&#x27;,
-  imports: [MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [MatButtonModule, MatMenuModule, MatIconModule, TranslatePipe],
   templateUrl: &#x27;./theme-switcher.html&#x27;,
   styleUrl: &#x27;./theme-switcher.scss&#x27;
 })
@@ -596,7 +598,7 @@ export class ThemeSwitcher {
         <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Light/DarkMode Button&quot; (model domain) --&gt;
 &lt;!-- Theme Menu Trigger --&gt;
 &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
-  &lt;mat-icon fontIcon&#x3D;{{label}} aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
+  &lt;mat-icon fontIcon&#x3D;&#x27;format_color_fill&#x27; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
 &lt;/button&gt;
 &lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
@@ -605,7 +607,7 @@ export class ThemeSwitcher {
       (click)&#x3D;&quot;setTheme(theme)&quot;
       [disabled]&#x3D;&quot;getActiveTheme() &#x3D;&#x3D;&#x3D; theme&quot; &gt;
       &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot; fontIcon&#x3D;&quot;{{ theme.getIcon() }}&quot;&gt;&lt;/mat-icon&gt;
-      &lt;span&gt;{{ theme.getName() }}&lt;/span&gt;
+      &lt;span&gt;{{ &#x27;app.shared.theme.&#x27; + theme.getCode() | translate }}&lt;/span&gt;
     &lt;/button&gt;
   } @empty {
     &lt;button mat-menu-item disabled&gt;No themes available&lt;/button&gt;
@@ -639,7 +641,7 @@ export class ThemeSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon={{label}} aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ theme.getName() }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon=\'format_color_fill\' aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemeList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ \'app.shared.theme.\' + theme.getCode() | translate }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ThemeSwitcher'};

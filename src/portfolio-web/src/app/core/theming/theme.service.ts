@@ -10,7 +10,6 @@ import { DOCUMENT } from '@angular/common';
  * This service handles:
  * - Managing the list of available themes.
  * - Persisting the user's theme choice in localStorage.
-
  *
  * @export
  * @class ThemeService
@@ -101,8 +100,7 @@ export class ThemeService {
    * Handles updating the DOM body class, internal state, and saving
    * the selected theme to localStorage.
    *
-   * @param {Theme} theme - The new `Theme` to apply. An instance of the Entity Object "Theme" (model domain),
-   *                          mapped to the "theme.model" (source code domain).
+   * @param {Theme} theme - The new `Theme` to apply. An instance of the Entity Object "Theme" (model domain), mapped to the "theme.model" (source code domain).
    * @returns {void}
    */
   public changeTheme(theme: Theme): void {

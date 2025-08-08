@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ResumeService } from '../../../core/resume/resume.service';
 import { MatButton } from '@angular/material/button';
+import { TranslatePipe } from "@ngx-translate/core";
 
 /**
  * Component that provides a UI button for downloading the resume PDF.
@@ -13,7 +14,7 @@ import { MatButton } from '@angular/material/button';
  */
 @Component({
   selector: 'app-download-resume-button',
-  imports: [MatButton],
+  imports: [MatButton, TranslatePipe],
   templateUrl: './download-resume-button.html',
   styleUrl: './download-resume-button.scss'
 })

@@ -4,6 +4,7 @@ import { ThemeService } from '../../../core/theming/theme.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslatePipe } from '@ngx-translate/core';
 
 /**
  * Component that provides a UI for switching the application's themes.
@@ -16,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
  */
 @Component({
   selector: 'app-theme-switcher',
-  imports: [MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [MatButtonModule, MatMenuModule, MatIconModule, TranslatePipe],
   templateUrl: './theme-switcher.html',
   styleUrl: './theme-switcher.scss'
 })

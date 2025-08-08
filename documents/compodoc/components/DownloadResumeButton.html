@@ -159,6 +159,7 @@ user&#39;s current language preference.</p>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>MatButton</code>
+                            <code>TranslatePipe</code>
                 </td>
             </tr>
 
@@ -225,7 +226,7 @@ user&#39;s current language preference.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -301,8 +302,8 @@ user&#39;s current language preference.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -332,6 +333,7 @@ user&#39;s current language preference.</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { ResumeService } from &#x27;../../../core/resume/resume.service&#x27;;
 import { MatButton } from &#x27;@angular/material/button&#x27;;
+import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
 
 /**
  * Component that provides a UI button for downloading the resume PDF.
@@ -344,7 +346,7 @@ import { MatButton } from &#x27;@angular/material/button&#x27;;
  */
 @Component({
   selector: &#x27;app-download-resume-button&#x27;,
-  imports: [MatButton],
+  imports: [MatButton, TranslatePipe],
   templateUrl: &#x27;./download-resume-button.html&#x27;,
   styleUrl: &#x27;./download-resume-button.scss&#x27;
 })
@@ -370,7 +372,7 @@ export class DownloadResumeButton {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Download Resume Button&quot; (model domain) --&gt;
-&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;Download Resume&lt;/button&gt;</code></pre>
+&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;{{ &#x27;app.shared.download-resume-button&#x27; | translate }}&lt;/button&gt;</code></pre>
     </div>
 
 
@@ -399,7 +401,7 @@ export class DownloadResumeButton {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">Download Resume</button></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">{{ \'app.shared.download-resume-button\' | translate }}</button></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DownloadResumeButton'};

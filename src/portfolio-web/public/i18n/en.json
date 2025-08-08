@@ -1,6 +1,15 @@
 {
   "app": {
     "title": "Luis's Portfolio",
-    "hello": "Hi there! 👋🏻"
+    "hello": "Hi there! 👋🏻",
+    "shared": {
+      "download-resume-button": "Download Resume",
+      "theme": {
+        "light": "Light",
+        "hc-light": "Light High Contrast",
+        "dark": "Dark",
+        "hc-dark": "Dark High Contrast"
+      }
+    }
   }
 }

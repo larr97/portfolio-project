@@ -1,6 +1,15 @@
 {
   "app": {
     "title": "El Portafolio de Luis",
-    "hello": "¡Hola! 👋🏻"
+    "hello": "¡Hola! 👋🏻",
+    "shared": {
+      "download-resume-button": "Descargar CV",
+      "theme": {
+        "light": "Claro",
+        "hc-light": "Claro de Alto Contraste",
+        "dark": "Oscuro",
+        "hc-dark": "Oscuro de Alto Contraste"
+      }
+    }
   }
 }

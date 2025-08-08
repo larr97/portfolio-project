@@ -1,7 +1,7 @@
 <!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) -->
 <!-- Theme Menu Trigger -->
 <button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon fontIcon={{label}} aria-hidden="false" aria-label="theme icon"></mat-icon>
+  <mat-icon fontIcon='format_color_fill' aria-hidden="false" aria-label="theme icon"></mat-icon>
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">
@@ -10,7 +10,7 @@
       (click)="setTheme(theme)"
       [disabled]="getActiveTheme() === theme" >
       <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>
-      <span>{{ theme.getName() }}</span>
+      <span>{{ 'app.shared.theme.' + theme.getCode() | translate }}</span>
     </button>
   } @empty {
     <button mat-menu-item disabled>No themes available</button>
