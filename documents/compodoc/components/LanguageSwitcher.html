@@ -251,7 +251,7 @@ from the list of available languages.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -494,19 +494,19 @@ Updates the language in the service and updates the label.</p>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; this.languageService.currentLanguageSignal().getName())</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:32</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Label showing the name of the currently selected language.</p>
+                    <div class="io-description"><p>Label showing the name of the currently selected language.
+Automatically updates when the language changes.</p>
 </div>
                 </td>
             </tr>
@@ -519,7 +519,7 @@ Updates the language in the service and updates the label.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, signal } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, signal } from &#x27;@angular/core&#x27;;
 import { LanguageService } from &#x27;../../../core/language/language.service&#x27;;
 import { Language } from &#x27;../../../core/language/language.model&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
@@ -546,10 +546,11 @@ export class LanguageSwitcher {
 
   /**
    * Label showing the name of the currently selected language.
+   * Automatically updates when the language changes.
    * @protected
-   * @type {string}
+   * @type {Signal&lt;string&gt;}
    */
-  protected label: string;
+  protected label &#x3D; computed(() &#x3D;&gt; this.languageService.currentLanguageSignal().getName());
 
   /**
    * Creates an instance of LanguageSwitcher.
@@ -557,7 +558,6 @@ export class LanguageSwitcher {
    * @param {LanguageService} languageService - Service to manage languages.
    */
   constructor(private languageService: LanguageService) {
-    this.label &#x3D; this.languageService.getCurrentLanguage().getName();
   }
   
   /**
@@ -587,7 +587,6 @@ export class LanguageSwitcher {
    */
   public setLanguage(lang: Language): void {
     this.languageService.changeLanguage(lang);
-    this.label &#x3D; lang.getName();
   }
 
 }</code></pre>
@@ -598,7 +597,7 @@ export class LanguageSwitcher {
 &lt;!-- Language Menu Trigger --&gt;
 &lt;button matButton [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
   &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;language icon&quot; fontIcon&#x3D;&quot;language&quot;&gt;&lt;/mat-icon&gt;
-  {{ label }}
+  {{ label() }}
 &lt;/button&gt;
 &lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
@@ -643,7 +642,7 @@ export class LanguageSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguageList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label() }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguageList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};

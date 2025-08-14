@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { LanguageService } from '../../../core/language/language.service';
 import { Language } from '../../../core/language/language.model';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,10 +25,11 @@ export class LanguageSwitcher {
 
   /**
    * Label showing the name of the currently selected language.
+   * Automatically updates when the language changes.
    * @protected
-   * @type {string}
+   * @type {Signal<string>}
    */
-  protected label: string;
+  protected label = computed(() => this.languageService.currentLanguageSignal().getName());
 
   /**
    * Creates an instance of LanguageSwitcher.
@@ -36,7 +37,6 @@ export class LanguageSwitcher {
    * @param {LanguageService} languageService - Service to manage languages.
    */
   constructor(private languageService: LanguageService) {
-    this.label = this.languageService.getCurrentLanguage().getName();
   }
   
   /**
@@ -66,7 +66,6 @@ export class LanguageSwitcher {
    */
   public setLanguage(lang: Language): void {
     this.languageService.changeLanguage(lang);
-    this.label = lang.getName();
   }
 
 }

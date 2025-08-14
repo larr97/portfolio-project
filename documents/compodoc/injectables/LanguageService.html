@@ -153,6 +153,11 @@
                                 <a href="#currentLanguage" >currentLanguage</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#currentLanguageSignal" >currentLanguageSignal</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Private</span>
                                 <a href="#languages" >languages</a>
                             </li>
@@ -207,7 +212,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/core/language/language.service.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/core/language/language.service.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -301,8 +306,8 @@ localStorage or defaults to English.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="108"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:108</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:129</a></div>
                         </td>
                     </tr>
 
@@ -383,8 +388,8 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="75"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:75</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:96</a></div>
                         </td>
                     </tr>
 
@@ -428,8 +433,8 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="94"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:94</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:115</a></div>
                         </td>
                     </tr>
 
@@ -507,8 +512,8 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="84"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:84</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:105</a></div>
                         </td>
                     </tr>
 
@@ -550,19 +555,57 @@ mapped to the &quot;language.model&quot; (source code domain).</li>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.languages[0]</code>
+                        <i>Default value : </i><code>signal&lt;Language&gt;(this.languages[0])</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/core/language/language.service.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/core/language/language.service.ts:47</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The currently active language as a Language object.</p>
+                    <div class="io-description"><p>Signal holding the currently active language as a <code>Language</code> object.</p>
+<p>This replaces the previous non-reactive property, enabling automatic
+UI updates in any component that subscribes to it.</p>
 </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentLanguageSignal"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>currentLanguageSignal</b></span>
+                        <a href="#currentLanguageSignal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.currentLanguage</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/core/language/language.service.ts:64</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Read-only reference to the <code>currentLanguage</code> signal.</p>
+<p>Exposed for use in components so they can subscribe reactively to
+language changes without directly modifying the signal&#39;s value.</p>
+<p>Example usage in a component:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-ts">public label = computed(() =&gt; this.languageService.currentLanguageSignal().getName());</code></pre></div></div>
                 </td>
             </tr>
 
@@ -617,7 +660,7 @@ which holds a list of available languages as Entity Objects &quot;Language&quot;
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, signal } from &#x27;@angular/core&#x27;;
 import { TranslateService } from &quot;@ngx-translate/core&quot;;
 import { Language } from &#x27;./language.model&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
@@ -655,11 +698,32 @@ export class LanguageService {
   ];
   
   /**
-   * The currently active language as a Language object.
+   * Signal holding the currently active language as a &#x60;Language&#x60; object.
+   *
+   * This replaces the previous non-reactive property, enabling automatic
+   * UI updates in any component that subscribes to it.
+   *
    * @private
-   * @type {Language}
+   * @type {Signal&lt;Language&gt;}
    */
-  private currentLanguage &#x3D; this.languages[0];       // The active language
+  private currentLanguage &#x3D; signal&lt;Language&gt;(this.languages[0]);
+
+  /**
+   * Read-only reference to the &#x60;currentLanguage&#x60; signal.
+   *
+   * Exposed for use in components so they can subscribe reactively to
+   * language changes without directly modifying the signal&#x27;s value.
+   *
+   * Example usage in a component:
+   * &#x60;&#x60;&#x60;ts
+   * public label &#x3D; computed(() &#x3D;&gt; this.languageService.currentLanguageSignal().getName());
+   * &#x60;&#x60;&#x60;
+   *
+   * @public
+   * @readonly
+   * @type {Signal&lt;Language&gt;}
+   */
+  public readonly currentLanguageSignal &#x3D; this.currentLanguage;
 
   /**
    * Creates an instance of LanguageService.
@@ -672,9 +736,9 @@ export class LanguageService {
   constructor(private translate: TranslateService, private titleService: Title) {
       
     // Step 1: Check if a language is stored in localStorage
-    let storedLang &#x3D; this.currentLanguage.getCode(); // Default to the first language in the list
+    let storedLang &#x3D; this.currentLanguage().getCode(); // Default to the first language in the list
     if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
-      storedLang &#x3D; localStorage.getItem(&#x27;lang&#x27;) || this.currentLanguage.getCode(); // Fallback to the default language if nothing is stored
+      storedLang &#x3D; localStorage.getItem(&#x27;lang&#x27;) || this.currentLanguage().getCode(); // Fallback to the default language if nothing is stored
     }
 
     // Step 2: Initialize the translation service
@@ -692,7 +756,7 @@ export class LanguageService {
    * @returns {Language} The active language entity.
    */
   public getCurrentLanguage(): Language {
-    return this.currentLanguage;
+    return this.currentLanguage();
   }
 
   /**
@@ -727,18 +791,18 @@ export class LanguageService {
   public changeLanguage(lang: Language): void {
 
     // Step 1: Check if the new language is the same as the current one. If so, no change needed
-    if (this.currentLanguage &#x3D;&#x3D;&#x3D; lang) return; // No change needed
+    if (this.currentLanguage() &#x3D;&#x3D;&#x3D; lang) return; // No change needed
 
     // Step 2: Update the current language
-    this.currentLanguage &#x3D; lang;
+    this.currentLanguage.set(lang);
 
     // Step 3: Store the new language in localStorage (only in browser)
     if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
-      localStorage.setItem(&#x27;lang&#x27;, this.currentLanguage.getCode());
+      localStorage.setItem(&#x27;lang&#x27;, this.currentLanguage().getCode());
     }
     
     // Step 4: Use the new language in the translation service
-    this.translate.use(this.currentLanguage.getCode());
+    this.translate.use(this.currentLanguage().getCode());
 
     // Step 5: Set the browser title based on the current language
     let title &#x3D; this.translate.instant(&#x27;app.title&#x27;);

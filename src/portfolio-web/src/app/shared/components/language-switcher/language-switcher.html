@@ -2,7 +2,7 @@
 <!-- Language Menu Trigger -->
 <button matButton [matMenuTriggerFor]="menu">
   <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>
-  {{ label }}
+  {{ label() }}
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">
