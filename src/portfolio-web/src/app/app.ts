@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { TranslatePipe, TranslateDirective } from "@ngx-translate/core";
 import { RouterOutlet } from '@angular/router';
 import { LanguageSwitcher } from './shared/components/language-switcher/language-switcher';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeSwitcher } from './shared/components/theme-switcher/theme-switcher';
-import { DownloadResumeButton } from "./shared/components/download-resume-button/download-resume-button";
+import { RouterLink } from '@angular/router';
 
 /**
  * The root component of the application.
@@ -18,14 +17,12 @@ import { DownloadResumeButton } from "./shared/components/download-resume-button
 @Component({
   selector: 'app-root',
   imports: [
-    TranslatePipe,
-    TranslateDirective,
     RouterOutlet,
     MatButtonModule,
     MatToolbarModule,
     LanguageSwitcher,
     ThemeSwitcher,
-    DownloadResumeButton
+    RouterLink
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

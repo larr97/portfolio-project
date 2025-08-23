@@ -8,17 +8,22 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <mat-toolbar>
-  
+
   <span class="spacer"></span>
+  <button mat-button routerLink="">Home</button>
+  <button mat-button routerLink="/projects">Projects</button>
+  <button mat-button routerLink="/blog">Blog</button>
+  <button mat-button routerLink="/docs">Docs</button>
+  
+  <span class="divider"></span>
+
   <app-language-switcher></app-language-switcher>
   <app-theme-switcher></app-theme-switcher>
 
 </mat-toolbar>
 
 <main class="app-main">
-  <h1>{{ 'app.title' | translate }}</h1>
-  <p>{{ 'app.hello' | translate }}</p>
-  <app-download-resume-button></app-download-resume-button>
+  <router-outlet />
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -28,5 +33,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet />
