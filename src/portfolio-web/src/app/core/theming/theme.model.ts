@@ -36,11 +36,11 @@ export class Theme {
 
   /**
    * Constructs a new Theme instance.
-   * 
-   * @param id - Unique numeric ID for the theme.
-   * @param name - Display name of the theme.
-   * @param code - Internal code used to identify the theme.
-   * @param icon - Icon representing the theme (Material icon name or emoji).
+   *
+   * @param id Unique numeric ID for the theme.
+   * @param name Display name of the theme.
+   * @param code Internal code used to identify the theme.
+   * @param icon Icon representing the theme (Material icon name or emoji).
    */
   constructor(id: number, name: string, code: string, icon: string) {
     this.id = id;

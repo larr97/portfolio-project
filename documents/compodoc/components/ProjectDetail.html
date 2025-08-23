@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  DownloadResumeButton</li>
+  ProjectDetail</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,7 +116,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/components/download-resume-button/download-resume-button.ts</code>
+    <code>src/app/pages/projects/project-detail/project-detail.ts</code>
 </p>
 
 
@@ -124,9 +124,9 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Component that provides a UI button for downloading the resume PDF.</p>
-<p>When clicked, it downloads the version of the resume that matches the
-user&#39;s current language preference.</p>
+        <p>The ProjectDetail component displays details for a specific project.
+It reads the project <code>:name</code> parameter from the route and stores it
+in a reactive signal for use in the template.</p>
 
     </p>
 
@@ -151,31 +151,24 @@ user&#39;s current language preference.</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-download-resume-button</code></td>
+                <td class="col-md-9"><code>app-project-detail</code></td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                            <code>MatButton</code>
-                            <code>TranslatePipe</code>
-                </td>
-            </tr>
 
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./download-resume-button.html</code></td>
+                <td class="col-md-9"><code>./project-detail.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./download-resume-button.scss</code></td>
+                <td class="col-md-9"><code>./project-detail.scss</code></td>
             </tr>
 
 
@@ -190,22 +183,25 @@ user&#39;s current language preference.</p>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Properties</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#requestResume" >requestResume</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#activatedRoute" >activatedRoute</a>
+                            </li>
+                            <li>
+                                <a href="#projectName" >projectName</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
+
 
 
 
@@ -221,50 +217,20 @@ user&#39;s current language preference.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(resumeService: <a href="../injectables/ResumeService.html" target="_self">ResumeService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:27</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Creates an instance of DownloadResumeButton.</p>
+                            <div class="io-description"><p>Initializes the ProjectDetail component.
+Subscribes to route parameter changes and updates <code>projectName</code>.</p>
 </div>
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>resumeService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ResumeService.html" target="_self" >ResumeService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <p>Used internally to handle the resume download.</p>
-
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
                     </td>
                 </tr>
             </tbody>
@@ -275,53 +241,75 @@ user&#39;s current language preference.</p>
 
 
 
-    <section data-compodoc="block-methods">
+
+    <section data-compodoc="block-properties">
     
-    <h3 id="methods">
-        Methods
+    <h3 id="inputs">
+        Properties
     </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="requestResume"></a>
+                    <a name="activatedRoute"></a>
                     <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>requestResume</b></span>
-                        <a href="#requestResume"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                        <span ><b>activatedRoute</b></span>
+                        <a href="#activatedRoute"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>requestResume()</code>
-                </td>
-            </tr>
-
-
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:27</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ActivatedRoute is injected to access route parameters dynamically.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projectName"></a>
+                    <span class="name">
+                        <span ><b>projectName</b></span>
+                        <a href="#projectName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:22</a></div>
+                        </td>
+                    </tr>
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Initiates the download of the resume PDF.</p>
+                    <div class="io-description"><p>Holds the current project name extracted from the route parameters.
+This is a reactive signal so the template will automatically update
+when the value changes.</p>
 </div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
                 </td>
             </tr>
+
         </tbody>
     </table>
 </section>
@@ -330,49 +318,53 @@ user&#39;s current language preference.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { ResumeService } from &#x27;../../../core/resume/resume.service&#x27;;
-import { MatButton } from &#x27;@angular/material/button&#x27;;
-import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, signal } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 
 /**
- * Component that provides a UI button for downloading the resume PDF.
- * 
- * When clicked, it downloads the version of the resume that matches the 
- * user&#x27;s current language preference.
- *
- * @export
- * @component
+ * The ProjectDetail component displays details for a specific project.
+ * It reads the project &#x60;:name&#x60; parameter from the route and stores it
+ * in a reactive signal for use in the template.
  */
 @Component({
-  selector: &#x27;app-download-resume-button&#x27;,
-  imports: [MatButton, TranslatePipe],
-  templateUrl: &#x27;./download-resume-button.html&#x27;,
-  styleUrl: &#x27;./download-resume-button.scss&#x27;
+  selector: &#x27;app-project-detail&#x27;,
+  imports: [],
+  templateUrl: &#x27;./project-detail.html&#x27;,
+  styleUrl: &#x27;./project-detail.scss&#x27;
 })
-export class DownloadResumeButton {
-
+export class ProjectDetail {
+  
   /**
-   * Creates an instance of DownloadResumeButton.
-   * 
-   * @param {ResumeService} resumeService Used internally to handle the resume download.
+   * Holds the current project name extracted from the route parameters.
+   * This is a reactive signal so the template will automatically update
+   * when the value changes.
    */
-  constructor(private resumeService: ResumeService) {}
-
+  projectName &#x3D; signal(&#x27;&#x27;);
+  
   /**
-   * Initiates the download of the resume PDF.
-   * 
-   * @returns {void}
+   * ActivatedRoute is injected to access route parameters dynamically.
    */
-  public requestResume(): void {
-    this.resumeService.downloadResume();
+  private activatedRoute &#x3D; inject(ActivatedRoute);
+  
+  /**
+   * Initializes the ProjectDetail component.
+   * Subscribes to route parameter changes and updates &#x60;projectName&#x60;.
+   */
+  constructor() {
+    // Access route parameters
+    this.activatedRoute.params.subscribe((params) &#x3D;&gt; {
+      this.projectName.set(params[&#x27;name&#x27;]);
+    });
   }
+
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Download Resume Button&quot; (model domain) --&gt;
-&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;{{ &#x27;app.shared.download-resume-button&#x27; | translate }}&lt;/button&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;project-detail works!&lt;/p&gt;
+
+&lt;h2&gt;{{ projectName() }}&lt;/h2&gt;
+</code></pre>
     </div>
 
 
@@ -401,10 +393,10 @@ export class DownloadResumeButton {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">{{ \'app.shared.download-resume-button\' | translate }}</button></div>'
+        var COMPONENT_TEMPLATE = '<div><p>project-detail works!</p><h2>{{ projectName() }}</h2></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'DownloadResumeButton'};
+    var ACTUAL_COMPONENT = {'name': 'ProjectDetail'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -450,7 +442,7 @@ export class DownloadResumeButton {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'DownloadResumeButton.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectDetail.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

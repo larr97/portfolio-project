@@ -39,10 +39,10 @@ export class Language {
   /**
    * Creates an instance of Language.
    *
-   * @param {number} id - Unique identifier.
-   * @param {string} name - Name of the language.
-   * @param {string} code - Language code.
-   * @param {string} flag - Flag symbol.
+   * @param {number} id Unique identifier.
+   * @param {string} name Name of the language.
+   * @param {string} code Language code.
+   * @param {string} flag Flag symbol.
    */
   constructor(id: number, name: string, code: string, flag: string) {
     this.id = id;

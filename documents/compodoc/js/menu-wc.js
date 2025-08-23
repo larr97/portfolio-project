@@ -57,10 +57,28 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/App.html" data-type="entity-link" >App</a>
                             </li>
                             <li class="link">
+                                <a href="components/Blog.html" data-type="entity-link" >Blog</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/BlogPost.html" data-type="entity-link" >BlogPost</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/Docs.html" data-type="entity-link" >Docs</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/DownloadResumeButton.html" data-type="entity-link" >DownloadResumeButton</a>
                             </li>
                             <li class="link">
+                                <a href="components/Home.html" data-type="entity-link" >Home</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/LanguageSwitcher.html" data-type="entity-link" >LanguageSwitcher</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProjectDetail.html" data-type="entity-link" >ProjectDetail</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/Projects.html" data-type="entity-link" >Projects</a>
                             </li>
                             <li class="link">
                                 <a href="components/ThemeSwitcher.html" data-type="entity-link" >ThemeSwitcher</a>

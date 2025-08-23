@@ -51,12 +51,11 @@ export class LanguageService {
    *
    * Exposed for use in components so they can subscribe reactively to
    * language changes without directly modifying the signal's value.
-   *
-   * Example usage in a component:
+   * 
    * ```ts
    * public label = computed(() => this.languageService.currentLanguageSignal().getName());
    * ```
-   *
+   * 
    * @public
    * @readonly
    * @type {Signal<Language>}
@@ -68,8 +67,8 @@ export class LanguageService {
    * Initializes translation service and sets the active language based on
    * localStorage or defaults to English.
    * 
-   * @param {TranslateService} translate - The ngx-translate service instance.
-   * @param {Title} titleService - The Angular Title service to set the document title.
+   * @param {TranslateService} translate The ngx-translate service instance.
+   * @param {Title} titleService The Angular Title service to set the document title.
    */
   constructor(private translate: TranslateService, private titleService: Title) {
       
@@ -109,7 +108,7 @@ export class LanguageService {
   /**
    * Finds the Language object by its code (e.g., 'en', 'es').
    *
-   * @param {string} code - The language code to search for.
+   * @param {string} code The language code to search for.
    * @returns {Language} The corresponding Language object.
    */
   public getLanguageByCode(code: string): Language {
@@ -122,8 +121,8 @@ export class LanguageService {
    * updates ngx-translate to use the new language,
    * and sets the document title based on the new language.
    *
-   * @param {Language} lang - The new `Language` to apply. An instance of the Entity Object "Language" (model domain),
-   *                          mapped to the "language.model" (source code domain).
+   * @param {Language} lang The new `Language` to apply. An instance of the Entity Object "Language" (model domain),
+   * mapped to the "language.model" (source code domain).
    * @returns {void}
    */
   public changeLanguage(lang: Language): void {

@@ -157,14 +157,12 @@
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
-                            <code>TranslatePipe</code>
-                            <code>TranslateDirective</code>
                             <code>RouterOutlet</code>
                             <code>MatButtonModule</code>
                             <code>MatToolbarModule</code>
                                 <code><a href="../components/LanguageSwitcher.html" target="_self" >LanguageSwitcher</a></code>
                                 <code><a href="../components/ThemeSwitcher.html" target="_self" >ThemeSwitcher</a></code>
-                                <code><a href="../components/DownloadResumeButton.html" target="_self" >DownloadResumeButton</a></code>
+                            <code>RouterLink</code>
                 </td>
             </tr>
 
@@ -204,13 +202,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { TranslatePipe, TranslateDirective } from &quot;@ngx-translate/core&quot;;
 import { RouterOutlet } from &#x27;@angular/router&#x27;;
 import { LanguageSwitcher } from &#x27;./shared/components/language-switcher/language-switcher&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 import { MatToolbarModule } from &#x27;@angular/material/toolbar&#x27;;
 import { ThemeSwitcher } from &#x27;./shared/components/theme-switcher/theme-switcher&#x27;;
-import { DownloadResumeButton } from &quot;./shared/components/download-resume-button/download-resume-button&quot;;
+import { RouterLink } from &#x27;@angular/router&#x27;;
 
 /**
  * The root component of the application.
@@ -223,14 +220,12 @@ import { DownloadResumeButton } from &quot;./shared/components/download-resume-b
 @Component({
   selector: &#x27;app-root&#x27;,
   imports: [
-    TranslatePipe,
-    TranslateDirective,
     RouterOutlet,
     MatButtonModule,
     MatToolbarModule,
     LanguageSwitcher,
     ThemeSwitcher,
-    DownloadResumeButton
+    RouterLink
 ],
   templateUrl: &#x27;./app.html&#x27;,
   styleUrl: &#x27;./app.scss&#x27;
@@ -249,17 +244,22 @@ export class App {}</code></pre>
 &lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
 
 &lt;mat-toolbar&gt;
-  
+
   &lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
+  &lt;button mat-button routerLink&#x3D;&quot;&quot;&gt;Home&lt;/button&gt;
+  &lt;button mat-button routerLink&#x3D;&quot;/projects&quot;&gt;Projects&lt;/button&gt;
+  &lt;button mat-button routerLink&#x3D;&quot;/blog&quot;&gt;Blog&lt;/button&gt;
+  &lt;button mat-button routerLink&#x3D;&quot;/docs&quot;&gt;Docs&lt;/button&gt;
+  
+  &lt;span class&#x3D;&quot;divider&quot;&gt;&lt;/span&gt;
+
   &lt;app-language-switcher&gt;&lt;/app-language-switcher&gt;
   &lt;app-theme-switcher&gt;&lt;/app-theme-switcher&gt;
 
 &lt;/mat-toolbar&gt;
 
 &lt;main class&#x3D;&quot;app-main&quot;&gt;
-  &lt;h1&gt;{{ &#x27;app.title&#x27; | translate }}&lt;/h1&gt;
-  &lt;p&gt;{{ &#x27;app.hello&#x27; | translate }}&lt;/p&gt;
-  &lt;app-download-resume-button&gt;&lt;/app-download-resume-button&gt;
+  &lt;router-outlet /&gt;
 &lt;/main&gt;
 
 &lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
@@ -268,9 +268,7 @@ export class App {}</code></pre>
 &lt;!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --&gt;
 &lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
 &lt;!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --&gt;
-&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;
-
-&lt;router-outlet /&gt;</code></pre>
+&lt;!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --&gt;</code></pre>
     </div>
 
 
@@ -299,8 +297,8 @@ export class App {}</code></pre>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><mat-toolbar>    <span class="spacer"></span>  <app-language-switcher></app-language-switcher>  <app-theme-switcher></app-theme-switcher></mat-toolbar><main class="app-main">  <h1>{{ \'app.title\' | translate }}</h1>  <p>{{ \'app.hello\' | translate }}</p>  <app-download-resume-button></app-download-resume-button></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><router-outlet /></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content below * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * Delete the template below * * * * * * * * * --><!-- * * * * * * * to get started with your project! * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><mat-toolbar>  <span class="spacer"></span>  <button mat-button routerLink="">Home</button>  <button mat-button routerLink="/projects">Projects</button>  <button mat-button routerLink="/blog">Blog</button>  <button mat-button routerLink="/docs">Docs</button>    <span class="divider"></span>  <app-language-switcher></app-language-switcher>  <app-theme-switcher></app-theme-switcher></mat-toolbar><main class="app-main">  <router-outlet /></main><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * * The content above * * * * * * * * * * * * --><!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * --><!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --><!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * --><!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'App'};
 </script>

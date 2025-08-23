@@ -1,6 +1,6 @@
 ## Object Design Document (ODD) for Software Engineer Portfolio
-Version: 1.3  
-Date: 2025-07-20  
+Version: 1.4  
+Date: 2025-08-17  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -86,7 +86,6 @@ This section outlines the decomposition of the application into packages and the
   - **docs:**
     - `docs.ts`: Documentation index or content view.
     - `document.model.ts`: Type definition for documentation entries.
-  - **pages.module.ts:** Aggregates all routed page modules into one importable module.
 
 - **routing:** Defined in `app.routes.ts`, centralizes application route configuration, enabling navigation within the Single-Page Application (SPA) context.
 

@@ -240,9 +240,7 @@ by delegating to <code>changeTheme()</code>.</p>
                                                     </td>
                                                     
                                                         <td>
-                                                                <ul>
-<li>Injected reference to the DOM <code>document</code> object.</li>
-</ul>
+                                                                <p>Injected reference to the DOM <code>document</code> object.</p>
 
                                                         </td>
                                                 </tr>
@@ -320,9 +318,7 @@ the selected theme to localStorage.</p>
 
 
                                             <td>
-                                                    <ul>
-<li>The new <code>Theme</code> to apply. An instance of the Entity Object &quot;Theme&quot; (model domain), mapped to the &quot;theme.model&quot; (source code domain).</li>
-</ul>
+                                                    <p>The new <code>Theme</code> to apply. An instance of the Entity Object &quot;Theme&quot; (model domain), mapped to the &quot;theme.model&quot; (source code domain).</p>
 
                                             </td>
                                         </tr>
@@ -445,9 +441,7 @@ If no match is found, this method will throw at runtime.</p>
 
 
                                             <td>
-                                                    <ul>
-<li>The code of the theme to retrieve.</li>
-</ul>
+                                                    <p>The code of the theme to retrieve.</p>
 
                                             </td>
                                         </tr>
@@ -652,7 +646,7 @@ export class ThemeService {
    * Loads the saved theme from localStorage if available and applies it
    * by delegating to &#x60;changeTheme()&#x60;.
    *
-   * @param document - Injected reference to the DOM &#x60;document&#x60; object.
+   * @param document Injected reference to the DOM &#x60;document&#x60; object.
    */
   constructor(@Inject(DOCUMENT) private document: Document) {
 
@@ -685,7 +679,7 @@ export class ThemeService {
   /**
    * Finds a theme by its unique string code.
    * 
-   * @param {string} code - The code of the theme to retrieve.
+   * @param {string} code The code of the theme to retrieve.
    * @returns {Theme} The &#x60;Theme&#x60; matching the code.
    * 
    * @remarks
@@ -702,7 +696,7 @@ export class ThemeService {
    * Handles updating the DOM body class, internal state, and saving
    * the selected theme to localStorage.
    *
-   * @param {Theme} theme - The new &#x60;Theme&#x60; to apply. An instance of the Entity Object &quot;Theme&quot; (model domain), mapped to the &quot;theme.model&quot; (source code domain).
+   * @param {Theme} theme The new &#x60;Theme&#x60; to apply. An instance of the Entity Object &quot;Theme&quot; (model domain), mapped to the &quot;theme.model&quot; (source code domain).
    * @returns {void}
    */
   public changeTheme(theme: Theme): void {

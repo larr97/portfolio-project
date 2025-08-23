@@ -1,6 +1,6 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.3  
-Date: 2025-07-20  
+Version: 2.4  
+Date: 2025-08-17  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -220,17 +220,17 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 - **Projects Subsystem – GetProjects**  
   This service retrieves and provides a list of portfolio projects for display. It sources data from preloaded or static resources and ensures users can view project content even in degraded network conditions.
 
+- **Routing Subsystem – RouterLink**  
+  This subsystem uses Angular’s built-in Router and the [`RouterLink`](https://angular.dev/api/router/RouterLink) directive to manage navigation within the application. [Routes](https://angular.dev/api/router/Route) are declared in `app.routes.ts`, and the RouterLink directive is applied directly in templates to enable smooth, declarative navigation between views. It automatically updates the URL, renders the corresponding component, and handles fallback scenarios (e.g., wildcards for invalid routes).
+
+- **Resume Subsystem – DownloadResume**  
+  This service enables users to download the author's resume in a selected format. It supports straightforward content delivery while handling potential download issues gracefully.
+
 - **Theming Subsystem – ChangeTheme**  
   This service handles user requests to switch between visual themes, such as light and dark mode. It updates the interface accordingly and ensures the selection persists across sessions using local storage mechanisms when available.
 
 - **Language Subsystem – ChangeLanguage**  
   This service allows users to switch the interface language. It updates displayed text dynamically and maintains language preferences between visits, defaulting to a primary language if needed.
-
-- **Routing Subsystem – ChangeRoute**  
-  This service manages navigation within the application by updating the route and rendering the corresponding view. It ensures smooth transitions between sections and handles fallback scenarios for invalid routes.
-
-- **Resume Subsystem – DownloadResume**  
-  This service enables users to download the author's resume in a selected format. It supports straightforward content delivery while handling potential download issues gracefully.
 
 ### 5. Glossary
 
