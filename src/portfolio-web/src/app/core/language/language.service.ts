@@ -1,7 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 import { Language } from './language.model';
-import { Title } from '@angular/platform-browser';
+import { TranslateTitleStrategy } from './translate-title-strategy.service';
+import { Router } from '@angular/router';
 
 /**
  * Control Object: "Languages Control" (model domain)
@@ -70,8 +71,12 @@ export class LanguageService {
    * @param {TranslateService} translate The ngx-translate service instance.
    * @param {Title} titleService The Angular Title service to set the document title.
    */
-  constructor(private translate: TranslateService, private titleService: Title) {
-      
+  constructor(
+    private translate: TranslateService, 
+    private titleStrategy: TranslateTitleStrategy,
+    private router: Router
+  ) {
+
     // Step 1: Check if a language is stored in localStorage
     let storedLang = this.currentLanguage().getCode(); // Default to the first language in the list
     if (typeof window !== 'undefined' && window.localStorage) {
@@ -139,11 +144,10 @@ export class LanguageService {
     }
     
     // Step 4: Use the new language in the translation service
-    this.translate.use(this.currentLanguage().getCode());
-
-    // Step 5: Set the browser title based on the current language
-    let title = this.translate.instant('app.title');
-    this.titleService.setTitle(title);
+    this.translate.use(this.currentLanguage().getCode()).subscribe(() => {
+      // Step 5: Set the browser title based on the current language and route
+      this.titleStrategy.updateTitle(this.router.routerState.snapshot);
+    });
 
   }
 

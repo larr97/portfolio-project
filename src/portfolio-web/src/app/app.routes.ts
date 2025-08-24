@@ -1,21 +1,40 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Projects } from './pages/projects/projects';
-import { ProjectDetail } from './pages/projects/project-detail/project-detail';
-import { Blog } from './pages/blog/blog';
-import { BlogPost } from './pages/blog/blog-post/blog-post';
-import { Docs } from './pages/docs/docs';
 
 export const routes: Routes = [
-  { path: '', component: Home },
+  
+  // Home (Eager)
+  { path: '', component: Home, title: 'app.route.home' },
 
-  { path: 'projects', component: Projects, title: 'Projects' },
-  { path: 'projects/:name', component: ProjectDetail, title: 'Project Detail' },
+  // Projects (Eager, since it’s core to the app)
+  { path: 'projects', component: Projects, title: 'app.route.projects' },
+  // Project Detail (Lazy, loads only if a specific project is visited)
+  { 
+    path: 'projects/:name', 
+    loadComponent: () => import('./pages/projects/project-detail/project-detail').then(m => m.ProjectDetail)
+    // no title here; will inherit parent route title
+  },
 
-  { path: 'blog', component: Blog, title: 'Blog' },
-  { path: 'blog/post', component: BlogPost, title: 'Blog Post' },
+  // Blog (Lazy, heavier and less frequently visited)
+  { 
+    path: 'blog', 
+    loadComponent: () => import('./pages/blog/blog').then(m => m.Blog), 
+    title: 'app.route.blog' 
+  },
+  { 
+    path: 'blog/post', 
+    loadComponent: () => import('./pages/blog/blog-post/blog-post').then(m => m.BlogPost)
+    // no title here; will inherit parent route title
+  },
 
-  { path: 'docs', component: Docs, title: 'Docs' },
+  // Docs (Lazy, not needed at startup)
+  { 
+    path: 'docs', 
+    loadComponent: () => import('./pages/docs/docs').then(m => m.Docs), 
+    title: 'app.route.docs' 
+  },
 
+  // Wildcard (Eager redirect)
   { path: '**', redirectTo: '' }
 ];

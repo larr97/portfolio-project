@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslatePipe } from "@ngx-translate/core";
 
 /**
  * The Projects component displays a gallery of projects.
@@ -10,7 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
  */
 @Component({
   selector: 'app-projects',
-  imports: [ MatCardModule, MatButtonModule ],
+  imports: [ 
+    MatCardModule, 
+    MatButtonModule, 
+    TranslatePipe
+  ],
   templateUrl: './projects.html',
   styleUrl: './projects.scss'
 })
