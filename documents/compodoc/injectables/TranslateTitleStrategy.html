@@ -79,115 +79,56 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Components</li>
-  <li class="breadcrumb-item"
-  >
-  Projects</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TranslateTitleStrategy</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a href="#info" class="nav-link active"
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#source" class="nav-link"
+            <a href="#source" 
+                class="nav-link"
+                
                 role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
-            <a href="#tree" class="nav-link"
-                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/pages/projects/projects.ts</code>
-</p>
-
-
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>The Projects component displays a gallery of projects.
-Each project card includes a button or clickable area that navigates
-to the corresponding project detail page.</p>
-
-    </p>
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/language/translate-title-strategy.service.ts</code>
+        </p>
 
 
 
-
-<section data-compodoc="block-metadata">
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
-        <tbody>
-
-
-
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code>TitleStrategy</code>
+            </p>
 
 
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-projects</code></td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                            <code>MatCardModule</code>
-                            <code>MatButtonModule</code>
-                            <code>TranslatePipe</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./projects.html</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./projects.scss</code></td>
-            </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section data-compodoc="block-index">
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -201,7 +142,8 @@ to the corresponding project detail page.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#goToDetail" >goToDetail</a>
+                                    <span class="modifier"></span>
+                                <a href="#updateTitle" >updateTitle</a>
                             </li>
                         </ul>
                     </td>
@@ -215,25 +157,23 @@ to the corresponding project detail page.</p>
     </table>
 </section>
 
-    <section data-compodoc="block-constructor">
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: Router)</code>
+<code>constructor(translate: TranslateService, title: Title)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/projects/projects.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:9</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Creates an instance of the Projects component.</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -242,25 +182,32 @@ to the corresponding project detail page.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>translate</td>
                                                   
                                                         <td>
-                                                                    <code>Router</code>
+                                                                    <code>TranslateService</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
                                                         <td>
-                                                                <p>Angular Router used for navigation to project details.</p>
-
+                                                                    <code>Title</code>
                                                         </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -271,11 +218,7 @@ to the corresponding project detail page.</p>
         </table>
 </section>
 
-
-
-
-
-    <section data-compodoc="block-methods">
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -284,33 +227,32 @@ to the corresponding project detail page.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="goToDetail"></a>
+                    <a name="updateTitle"></a>
                     <span class="name">
-                        <span ><b>goToDetail</b></span>
-                        <a href="#goToDetail"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                        <span ><b>updateTitle</b></span>
+                        <a href="#updateTitle"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>goToDetail(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTitle(snapshot: RouterStateSnapshot)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/pages/projects/projects.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:18</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Navigates to the detail page of a specific project.</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-html">this.goToDetail(&#39;portfolio&#39;);
-// Navigates to /projects/portfolio</code></pre></div></div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -321,14 +263,13 @@ to the corresponding project detail page.</p>
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
-                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>name</td>
+                                                <td>snapshot</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                                        <code>RouterStateSnapshot</code>
                                             </td>
 
                                             <td>
@@ -336,10 +277,6 @@ to the corresponding project detail page.</p>
                                             </td>
 
 
-                                            <td>
-                                                    <p>The unique identifier (slug) of the project to display.</p>
-
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -357,106 +294,38 @@ to the corresponding project detail page.</p>
     </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { MatCardModule } from &#x27;@angular/material/card&#x27;;
-import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
-import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { TitleStrategy, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
 
-/**
- * The Projects component displays a gallery of projects.
- * Each project card includes a button or clickable area that navigates
- * to the corresponding project detail page.
- */
-@Component({
-  selector: &#x27;app-projects&#x27;,
-  imports: [ 
-    MatCardModule, 
-    MatButtonModule, 
-    TranslatePipe
-  ],
-  templateUrl: &#x27;./projects.html&#x27;,
-  styleUrl: &#x27;./projects.scss&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class Projects {
+export class TranslateTitleStrategy extends TitleStrategy {
 
-  /**
-   * Creates an instance of the Projects component.
-   *
-   * @param router Angular Router used for navigation to project details.
-   */
-  constructor(private router: Router) {}
-
-  /**
-   * Navigates to the detail page of a specific project.
-   *
-   * @param name The unique identifier (slug) of the project to display.
-   *
-   * @example
-   * this.goToDetail(&#x27;portfolio&#x27;);
-   * // Navigates to /projects/portfolio
-   */
-  goToDetail(name: String) {
-    this.router.navigate([&#x27;/projects&#x27;, name]);
+  constructor(
+    private readonly translate: TranslateService,
+    private readonly title: Title
+  ) {
+    super();
   }
-  
+
+  override updateTitle(snapshot: RouterStateSnapshot): void {
+    const titleKey &#x3D; this.buildTitle(snapshot); // get &#x60;title&#x60; from route data
+    if (titleKey) {
+      const translated &#x3D; this.translate.instant(titleKey);
+      this.title.setTitle(translated);
+    }
+  }
 }</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;projects works!&lt;/p&gt;
-
-&lt;mat-card appearance&#x3D;&quot;outlined&quot;&gt;
-  &lt;mat-card-header&gt;
-    &lt;mat-card-title&gt;Angular&lt;/mat-card-title&gt;
-    &lt;mat-card-subtitle&gt;{{ &#x27;app.title&#x27; | translate }}&lt;/mat-card-subtitle&gt;
-  &lt;/mat-card-header&gt;
-  &lt;mat-card-actions&gt;
-    &lt;button matButton (click)&#x3D;&quot;goToDetail(&#x27;angular&#x27;)&quot;&gt;Learn More&lt;/button&gt;
-  &lt;/mat-card-actions&gt;
-&lt;/mat-card&gt;</code></pre>
-    </div>
-
-
-    <div class="tab-pane fade " id="tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><p>projects works!</p><mat-card appearance="outlined">  <mat-card-header>    <mat-card-title>Angular</mat-card-title>    <mat-card-subtitle>{{ \'app.title\' | translate }}</mat-card-subtitle>  </mat-card-header>  <mat-card-actions>    <button matButton (click)="goToDetail(\'angular\')">Learn More</button>  </mat-card-actions></mat-card></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'Projects'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -495,8 +364,8 @@ export class Projects {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'Projects.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TranslateTitleStrategy.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

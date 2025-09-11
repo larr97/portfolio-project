@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeSwitcher } from './shared/components/theme-switcher/theme-switcher';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 /**
  * The root component of the application.
@@ -22,7 +23,8 @@ import { RouterLink } from '@angular/router';
     MatToolbarModule,
     LanguageSwitcher,
     ThemeSwitcher,
-    RouterLink
+    RouterLink,
+    TranslatePipe
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

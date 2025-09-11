@@ -116,10 +116,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/LanguageService.html" data-type="entity-link" >LanguageService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ProjectsService.html" data-type="entity-link" >ProjectsService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ResumeService.html" data-type="entity-link" >ResumeService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ThemeService.html" data-type="entity-link" >ThemeService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/TranslateTitleStrategy.html" data-type="entity-link" >TranslateTitleStrategy</a>
                                 </li>
                             </ul>
                         </li>

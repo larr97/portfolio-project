@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Projects } from './pages/projects/projects';
+import { projectDetailGuard } from './core/projects/project-detail-guard';
 
 export const routes: Routes = [
   
@@ -12,8 +13,9 @@ export const routes: Routes = [
   // Project Detail (Lazy, loads only if a specific project is visited)
   { 
     path: 'projects/:name', 
-    loadComponent: () => import('./pages/projects/project-detail/project-detail').then(m => m.ProjectDetail)
+    loadComponent: () => import('./pages/projects/project-detail/project-detail').then(m => m.ProjectDetail),
     // no title here; will inherit parent route title
+    canActivate: [projectDetailGuard]
   },
 
   // Blog (Lazy, heavier and less frequently visited)

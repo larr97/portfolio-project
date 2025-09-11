@@ -207,12 +207,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(translate: TranslateService, titleService: Title)</code>
+<code>constructor(translate: TranslateService, titleStrategy: <a href="../injectables/TranslateTitleStrategy.html" target="_self">TranslateTitleStrategy</a>, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/language/language.service.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/core/language/language.service.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -251,10 +251,10 @@ localStorage or defaults to English.</p>
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>titleService</td>
+                                                        <td>titleStrategy</td>
                                                   
                                                         <td>
-                                                                    <code>Title</code>
+                                                                        <code><a href="../injectables/TranslateTitleStrategy.html" target="_self" >TranslateTitleStrategy</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -262,8 +262,20 @@ localStorage or defaults to English.</p>
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>The Angular Title service to set the document title.</p>
-
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -302,8 +314,8 @@ localStorage or defaults to English.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="128"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:128</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:133</a></div>
                         </td>
                     </tr>
 
@@ -383,8 +395,8 @@ mapped to the &quot;language.model&quot; (source code domain).</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="95"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:95</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:100</a></div>
                         </td>
                     </tr>
 
@@ -428,8 +440,8 @@ mapped to the &quot;language.model&quot; (source code domain).</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="114"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:114</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:119</a></div>
                         </td>
                     </tr>
 
@@ -505,8 +517,8 @@ mapped to the &quot;language.model&quot; (source code domain).</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="104"
-                                    class="link-to-prism">src/app/core/language/language.service.ts:104</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/core/language/language.service.ts:109</a></div>
                         </td>
                     </tr>
 
@@ -553,7 +565,7 @@ mapped to the &quot;language.model&quot; (source code domain).</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/core/language/language.service.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/core/language/language.service.ts:48</a></div>
                         </td>
                     </tr>
 
@@ -588,7 +600,7 @@ UI updates in any component that subscribes to it.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/language/language.service.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/core/language/language.service.ts:64</a></div>
                         </td>
                     </tr>
 
@@ -631,7 +643,7 @@ language changes without directly modifying the signal&#39;s value.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/language/language.service.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/core/language/language.service.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -655,7 +667,8 @@ which holds a list of available languages as Entity Objects &quot;Language&quot;
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, signal } from &#x27;@angular/core&#x27;;
 import { TranslateService } from &quot;@ngx-translate/core&quot;;
 import { Language } from &#x27;./language.model&#x27;;
-import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { TranslateTitleStrategy } from &#x27;./translate-title-strategy.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 /**
  * Control Object: &quot;Languages Control&quot; (model domain)
@@ -724,8 +737,12 @@ export class LanguageService {
    * @param {TranslateService} translate The ngx-translate service instance.
    * @param {Title} titleService The Angular Title service to set the document title.
    */
-  constructor(private translate: TranslateService, private titleService: Title) {
-      
+  constructor(
+    private translate: TranslateService, 
+    private titleStrategy: TranslateTitleStrategy,
+    private router: Router
+  ) {
+
     // Step 1: Check if a language is stored in localStorage
     let storedLang &#x3D; this.currentLanguage().getCode(); // Default to the first language in the list
     if (typeof window !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; window.localStorage) {
@@ -793,11 +810,10 @@ export class LanguageService {
     }
     
     // Step 4: Use the new language in the translation service
-    this.translate.use(this.currentLanguage().getCode());
-
-    // Step 5: Set the browser title based on the current language
-    let title &#x3D; this.translate.instant(&#x27;app.title&#x27;);
-    this.titleService.setTitle(title);
+    this.translate.use(this.currentLanguage().getCode()).subscribe(() &#x3D;&gt; {
+      // Step 5: Set the browser title based on the current language and route
+      this.titleStrategy.updateTitle(this.router.routerState.snapshot);
+    });
 
   }
 
