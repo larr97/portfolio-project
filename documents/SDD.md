@@ -1,5 +1,5 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.4  
+Version: 2.5  
 Date: 2025-08-17  
 Author: Luis Rodriguez
 
