@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'projects', component: Projects, title: 'app.route.projects' },
   // Project Detail (Lazy, loads only if a specific project is visited)
   { 
-    path: 'projects/:name', 
+    path: 'projects/:slug', 
     loadComponent: () => import('./pages/projects/project-detail/project-detail').then(m => m.ProjectDetail),
     // no title here; will inherit parent route title
     canActivate: [projectDetailGuard]

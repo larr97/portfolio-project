@@ -1,11 +1,11 @@
-<p>projects works!</p>
-
-<mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>Angular</mat-card-title>
-    <mat-card-subtitle>{{ 'app.title' | translate }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-    <button matButton (click)="goToDetail('angular')">Learn More</button>
-  </mat-card-actions>
-</mat-card>
+<div class="projects-body">
+  <div class="projects-container">
+    <p>Here are some of my projects:</p>
+    @for (project of getProjectsList(); track project.getId(); let e = $odd) {
+      <app-project-card 
+        [project]="project" 
+        [reverseLayout]="$odd">
+      </app-project-card>
+    }
+  </div>
+</div>

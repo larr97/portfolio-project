@@ -25,3 +25,11 @@
   height: 24px;
   margin: 0 12px;
 }
+
+.app-toolbar{
+  display: flex;
+  padding: 1rem 5rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.00);
+}

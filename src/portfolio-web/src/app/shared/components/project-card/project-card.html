@@ -1,0 +1,26 @@
+<div class="project-card-container" [class.reverse]="reverseLayout">
+  <div class="image-column">
+    <div class="image" (click)="navigateToProjectDetail(project.getSlug())">
+      <img [src]="project.getMediaCover()" alt="{{ project.getName() }}">
+    </div>
+  </div>
+  <div class="description-column">
+    <p class="project-name">{{ project.getName() }}</p>
+    <div class="project-description">
+      <p>{{ project.getSummary() }}</p>
+      <button mat-button (click)="navigateToProjectDetail(project.getSlug())">Learn more</button>
+    </div>
+    <div class="project-technologies">
+      @for (tech of project.getTechnologies(); track tech) {
+        <div class="tech-chip">{{ tech }}</div>
+      }
+    </div>
+    <div class="actions">
+      @if(project.getProjectUrl()) {
+        <button matIconButton class="link-icon" (click)="openProjectUrl(project.getProjectUrl()!)">
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+      } 
+    </div>
+  </div>
+</div>

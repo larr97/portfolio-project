@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslatePipe } from "@ngx-translate/core";
+import { ProjectCard } from '../../shared/components/project-card/project-card';
+import { Project } from '../../core/projects/project.model';
+import { ProjectsService } from '../../core/projects/projects.service';
 
 /**
  * The Projects component displays a gallery of projects.
@@ -14,6 +16,7 @@ import { TranslatePipe } from "@ngx-translate/core";
   imports: [ 
     MatCardModule, 
     MatButtonModule, 
+    ProjectCard,
     TranslatePipe
   ],
   templateUrl: './projects.html',
@@ -26,19 +29,15 @@ export class Projects {
    *
    * @param router Angular Router used for navigation to project details.
    */
-  constructor(private router: Router) {}
+  constructor(private projectsService: ProjectsService) {}
 
   /**
-   * Navigates to the detail page of a specific project.
+   * Gets the full list of available projects from the service.
    *
-   * @param name The unique identifier (slug) of the project to display.
-   *
-   * @example
-   * this.goToDetail('portfolio');
-   * // Navigates to /projects/portfolio
+   * @returns {Project[]} An array of `Project` objects.
    */
-  goToDetail(name: String) {
-    this.router.navigate(['/projects', name]);
-  }
+  public getProjectsList(): Project[] {
+    return this.projectsService.getProjects();
+  }   
   
 }
