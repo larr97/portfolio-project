@@ -1,6 +1,6 @@
 ## Object Design Document (ODD) for Software Engineer Portfolio
-Version: 1.5  
-Date: 2025-08-17  
+Version: 1.6  
+Date: 2025-10-12  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -54,35 +54,62 @@ Author: Luis Rodriguez
 This section outlines the decomposition of the application into packages and their corresponding roles within the codebase. Each package aligns with a functional subsystem or shared utility in the Angular project. The structure follows Angular’s recommended modular organization to improve scalability and maintainability.
 
 - **core:** Provides application-wide services and logic, organized into functional subsystems:
+  - **projects:** 
+    - `project.model.ts`: Type definition for a project entity.
+    - `projects.service.ts`: Handles project data retrieval.
+    - `project-detail-guard.ts`: Ensures that navigation to a specific project-detail view is allowed only if the project exists.
   - **resume:** Handles resume display logic and download functionality.
-  - **theme:** Manages light/dark mode switching and persistence.
+    - `resume.model.ts`: Type definition for resume data and structure.
+    - `resume.service.ts`: Provides methods to fetch, download, or update resume information.
+  - **theming:** Manages light/dark mode switching and persistence.
+    - `theme.model.ts`: Type definition for theme settings and structure.
+    - `theme.service.ts`: Handles theme switching, stores user preferences, and applies them across the application.
   - **language:** Manages internationalization and language switching.
+    - `language.model.ts`: Type definition for language options and translations.
+    - `language.service.ts`: Provides methods to get/set the current language and load translation resources.
+    - `translate-title-strategy.service.ts`: Updates the document title dynamically based on the active language and route.
 
 - **shared:** Contains reusable UI components and styling shared across multiple features:
   - **header, footer:** Layout components used throughout the application.
   - **components:** Reusable interactive elements including:
-    - **theme-switcher**
-    - **language-switcher**
+    - **project-card**
+      - `project-card.ts`: Displays a single project’s information as a card and handles card-specific interactions.
+      - `project-card.html`: Template for the project card layout, including title, summary, media, and action buttons.
+      - `project-card.scss`: Styles specific to the project card component.
     - **download-resume**
+      - `download-resume-button.ts`: Handles logic for downloading the resume.
+      - `download-resume-button.html`: Template for the download button layout.
+      - `download-resume-button.scss`: Styles for the download resume button component.  
+    - **theme-switcher**
+      - `theme-switcher.ts`: Manages light/dark mode toggling logic.
+      - `theme-switcher.html`: Template for the theme toggle interface.
+      - `theme-switcher.scss`: Styles for the theme-switcher component.
+    - **language-switcher**
+      - `language-switcher.ts`: Handles language selection logic and updates.
+      - `language-switcher.html`: Template for the language selection dropdown or toggle.
+      - `language-switcher.scss`: Styles for the language-switcher component.
 
 - **pages:** Contains routed feature modules representing distinct sections of the application:
   - **home:**
     - `home.ts`: The main landing view of the site.
     - `home.html`: Template for the home view layout.
-    - `home.css`: Styles for the home page.
+    - `home.scss`: Styles for the home page.
     - `education.model.ts`: Type definition for education items.
     - `certification.model.ts`: Type definition for certifications.
     - `job.model.ts`: Type definition for professional experience.
   - **project:** 
     - `project.ts`: Displays the project list.
-    - `project-detail.ts`: Displays detail for a specific project.
-    - `project.model.ts`: Type definition for a project entity.
-    - `projects.service.ts`: Handles project data retrieval.
+    - `project.html`: Template for the project list view layout.
+    - `project.scss`: Styles for the projects page.
+    - **project-detail:** 
+      - `project-detail.ts`: Displays detail for a specific project.
+      - `project-detail.html`: Template for the project detail layout, including description, media, and technologies.
+      - `project-detail.scss`: Styles specific to the project detail page.
   - **blog:** 
     - `blog.ts`: Blog list and summaries.
     - `blog-post.ts`: Displays full blog post content.
     - `blog-post.model.ts`: Type definition for blog entries.
-    - `blog.service.ts`: Fetches blog post data.
+    - `blog.service.ts`: Fetches blog post data from API or local storage.
   - **docs:**
     - `docs.ts`: Documentation index or content view.
     - `document.model.ts`: Type definition for documentation entries.

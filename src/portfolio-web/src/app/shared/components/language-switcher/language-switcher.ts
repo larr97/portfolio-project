@@ -53,7 +53,7 @@ export class LanguageSwitcher {
    *
    * @returns {Language[]} An array of `Language` objects.
    */
-  public getLanguageList(): Language[] {
+  public getLanguagesList(): Language[] {
     return this.languageService.getLanguages();
   }
 

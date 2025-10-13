@@ -75,6 +75,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/LanguageSwitcher.html" data-type="entity-link" >LanguageSwitcher</a>
                             </li>
                             <li class="link">
+                                <a href="components/ProjectCard.html" data-type="entity-link" >ProjectCard</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ProjectDetail.html" data-type="entity-link" >ProjectDetail</a>
                             </li>
                             <li class="link">
@@ -95,6 +98,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/Language.html" data-type="entity-link" >Language</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Project.html" data-type="entity-link" >Project</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Resume.html" data-type="entity-link" >Resume</a>

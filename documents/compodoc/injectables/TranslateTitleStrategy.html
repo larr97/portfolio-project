@@ -119,6 +119,19 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>A custom implementation of Angular&#39;s <a href="TitleStrategy">TitleStrategy</a> that integrates
+with <code>@ngx-translate/core</code> to provide translated page titles.</p>
+<p>This strategy retrieves the <code>title</code> key defined in route data,
+translates it instantly using the provided translation service,
+and updates the browser&#39;s document title accordingly.</p>
+<p>With this strategy, the document title will automatically be translated
+according to the currently active language in <code>TranslateService</code>.</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -168,12 +181,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of <code>TranslateTitleStrategy</code>.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -182,6 +197,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,6 +212,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The translation service used to fetch localized strings.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>title</td>
@@ -208,6 +228,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The Angular service used to set the document title.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -245,14 +269,22 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/core/language/translate-title-strategy.service.ts:46</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Overrides the default title update behaviour to apply translation.</p>
+<p>extract the route data and obtain the <code>title</code> key.</p>
+<ul>
+<li>Uses <code>buildTitle(snapshot)</code> to read the route&#39;s <code>title</code> property.</li>
+<li>Translates the retrieved key instantly with <code>translate.instant()</code>.</li>
+<li>Updates the document title via <code>Title.setTitle()</code>.</li>
+</ul>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -263,6 +295,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -277,6 +310,11 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The current <a href="RouterStateSnapshot">RouterStateSnapshot</a>, used to
+extract the route data and obtain the <code>title</code> key.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -303,11 +341,28 @@ import { TitleStrategy, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
 import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 
+/**
+ * A custom implementation of Angular&#x27;s {@link TitleStrategy} that integrates
+ * with &#x60;@ngx-translate/core&#x60; to provide translated page titles.
+ *
+ * This strategy retrieves the &#x60;title&#x60; key defined in route data,
+ * translates it instantly using the provided translation service,
+ * and updates the browser&#x27;s document title accordingly.
+ *
+ * With this strategy, the document title will automatically be translated
+ * according to the currently active language in &#x60;TranslateService&#x60;.
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class TranslateTitleStrategy extends TitleStrategy {
 
+  /**
+   * Creates an instance of &#x60;TranslateTitleStrategy&#x60;.
+   *
+   * @param translate The translation service used to fetch localized strings.
+   * @param title The Angular service used to set the document title.
+   */
   constructor(
     private readonly translate: TranslateService,
     private readonly title: Title
@@ -315,8 +370,19 @@ export class TranslateTitleStrategy extends TitleStrategy {
     super();
   }
 
+  /**
+   * Overrides the default title update behaviour to apply translation.
+   *
+   * @param snapshot The current {@link RouterStateSnapshot}, used to
+   * extract the route data and obtain the &#x60;title&#x60; key.
+   *
+   * @remarks
+   * - Uses &#x60;buildTitle(snapshot)&#x60; to read the route&#x27;s &#x60;title&#x60; property.
+   * - Translates the retrieved key instantly with &#x60;translate.instant()&#x60;.
+   * - Updates the document title via &#x60;Title.setTitle()&#x60;.
+   */
   override updateTitle(snapshot: RouterStateSnapshot): void {
-    const titleKey &#x3D; this.buildTitle(snapshot); // get &#x60;title&#x60; from route data
+    const titleKey &#x3D; this.buildTitle(snapshot); // Get &#x60;title&#x60; from route data
     if (titleKey) {
       const translated &#x3D; this.translate.instant(titleKey);
       this.title.setTitle(translated);

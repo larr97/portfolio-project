@@ -1,6 +1,6 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.5  
-Date: 2025-08-17  
+Version: 2.6  
+Date: 2025-10-12  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -96,33 +96,33 @@ Outside the UI, there are four independent top-level subsystems: Resume, Theming
 ![Diagram](SubsystemDescomposition.svg)
 
 - **User Interface Subsystem**
-    - **Home Subsystem**
-    - **Projects Subsystem**
-    - **Blog Subsystem**
-    - **Docs Subsystem**
     - **Shared UI Subsystem**
         - **Header Subsystem**
-         - **Footer Subsystem**
+        - **Footer Subsystem**
+    - **Home Subsystem**
+    - **Blog Subsystem**
+    - **Docs Subsystem**
+    - **Projects Subsystem**
+- **Routing Subsystem**
 - **Resume Subsystem**
 - **Theming Subsystem**
 - **Language Subsystem**
-- **Routing Subsystem**
 
-| **Subsystem**            | **Description** |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **User Interface Subsystem** | The UserInterfaceSubsystem is the main entry point of the application, composed of several feature-specific subsystems including Home, Projects, Blog, and Docs. It is responsible for rendering the user-facing parts of the software. |
-| **Home Subsystem**           | The HomeSubsystem is responsible for displaying the landing page of the portfolio, welcoming users and introducing the site. |
-| **Projects Subsystem**       | The ProjectsSubsystem showcases various software engineering projects, including details, technologies used, and links to source code or demos. |
-| **Blog Subsystem**           | The BlogSubsystem is responsible for presenting blog entries authored by the user, including technical posts, career reflections, and tutorials. |
-| **Docs Subsystem**           | The DocsSubsystem is responsible for providing structured documentation, such as API references, usage guides, or design documents. |
-| **Shared UI Subsystem**      | The SharedUISubsystem provides reusable UI components such as layout containers, buttons, and icons that are shared across all UI subsystems. |
-| **Header Subsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls. |
-| **Footer Subsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright. |
-| **Resume Subsystem**         | The ResumeSubsystem is responsible for hosting and allowing users to download the user’s professional resume in various formats. |
-| **Theming Subsystem**          | The ThemingSubsystem manages the visual theme of the application, such as light and dark mode toggling. |
-| **Language Subsystem**       | The LanguageSubsystem handles internationalization by allowing users to switch between supported languages. |
-| **Routing Subsystem**        | The RoutingSubsystem is responsible for handling page navigation and URL routing throughout the application, enabling users to move between subsystems seamlessly. |
-|                             |               |
+| **Subsystem**                | **Description**                                                                                                                                                           |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **User Interface Subsystem** | The UserInterfaceSubsystem is the main entry point of the application, composed of several feature-specific subsystems including Home, Projects, Blog, and Docs. It is responsible for rendering the user-facing parts of the software.                                                                                                                                           |
+| **Shared UI Subsystem**      | The SharedUISubsystem provides reusable UI components such as layout containers, buttons, and icons that are shared across all UI subsystems.                             |
+| **Header Subsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls.                                       |
+| **Footer Subsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright.                                                         |
+| **Home Subsystem**           | The HomeSubsystem is responsible for displaying the landing page of the portfolio, welcoming users and introducing the site.                                              |
+| **Blog Subsystem**           | The BlogSubsystem is responsible for presenting blog entries authored by the user, including technical posts, career reflections, and tutorials.                          |
+| **Docs Subsystem**           | The DocsSubsystem is responsible for providing structured documentation, such as API references, usage guides, or design documents.                                       |
+| **Projects Subsystem**       | The ProjectsSubsystem showcases various software engineering projects, including details, technologies used, and links to source code or demos.                           |
+| **Routing Subsystem**        | The RoutingSubsystem is responsible for handling page navigation and URL routing throughout the application, enabling users to move between subsystems seamlessly.        |
+| **Resume Subsystem**         | The ResumeSubsystem is responsible for hosting and allowing users to download the user’s professional resume in various formats.                                          |
+| **Theming Subsystem**        | The ThemingSubsystem manages the visual theme of the application, such as light and dark mode toggling.                                                                   |
+| **Language Subsystem**       | The LanguageSubsystem handles internationalization by allowing users to switch between supported languages.                                                               |
+|                              |                                                                                                                                                                           |
 
 #### 3.3 Hardware/software mapping
 
@@ -136,9 +136,9 @@ The **client node** is any user device running a web browser. All application lo
 
 - The **User Interface Subsystem**, including individual page subsystems (Home, Projects, Blog, Docs) and shared components like the Header and Footer.
 - The **Routing Subsystem**, responsible for determining which view to render based on user navigation.
+- The **Resume Subsystem**, which handles interactions for downloading resume files.
 - The **Theming Subsystem**, which manages the visual mode (e.g., light/dark).
 - The **Language Subsystem**, enabling dynamic content translation.
-- The **Resume Subsystem**, which handles interactions for downloading resume files.
 
 The **server node** is responsible for hosting and delivering static files such as HTML, JavaScript, stylesheets, media, translation data, and resume documents. It does not execute application logic—its role is purely to respond to HTTP requests with appropriate resources.
 
@@ -183,11 +183,11 @@ This system requires consideration of key boundary conditions such as configurat
 
 There are no server-side services or databases that require initialization or configuration at runtime. All application content (projects, blog posts, documents) is embedded as static files or JSON data. However, the following configuration-related decisions apply:
 
-| Configuration Use Case     | Description                                                                                     |
-|----------------------------|-------------------------------------------------------------------------------------------------|
-| PreSeploymentSetup        | Developers configure site settings, language files, and content (e.g., projects, blogs) before deployment. This involves organizing static files and defining the structure used by the application. |
-| AssetUpdateAndDeployment   | Changes to content, assets, or structure require a manual rebuild and re-upload to the hosting provider. |
-|                            |                                                                                                 |
+| Configuration Use Case     | Description                                                                                                                                                                 |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PreSeploymentSetup         | Developers configure site settings, language files, and content (e.g., projects, blogs) before deployment. This involves organizing static files and defining the structure used by the application.                                                                                                                                                                                   |
+| AssetUpdateAndDeployment   | Changes to content, assets, or structure require a manual rebuild and re-upload to the hosting provider.                                                                    |
+|                            |                                                                                                                                                                             |
 
 These actions are not user-facing but can be considered part of developer administration.
 
@@ -195,23 +195,23 @@ These actions are not user-facing but can be considered part of developer admini
 
 There are no active startup or shutdown processes at runtime. The portfolio initializes automatically when accessed via a web browser:
 
-| Start-Up/Shutdown Use Case | Description                                                                                                            |
-|----------------------------|------------------------------------------------------------------------------------------------------------------------|
-| StartClientApp             | Triggered when a user navigates to the site URL. The browser downloads and runs the application, initializing subsystems like routing and theming.  |
-| ShutdownClientApp          | Occurs when the browser tab is closed or reloaded. No state is saved except for preferences (e.g., theme, language) stored in `localStorage`.       |
-|                            |                                                                                                                        |
+| Start-Up/Shutdown Use Case | Description                                                                                                                                                                 |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| StartClientApp             | Triggered when a user navigates to the site URL. The browser downloads and runs the application, initializing subsystems like routing and theming.                          |
+| ShutdownClientApp          | Occurs when the browser tab is closed or reloaded. No state is saved except for preferences (e.g., theme, language) stored in `localStorage`.                               |
+|                            |                                                                                                                                                                             |
 
 **Exception Use Cases**
 
 Although the system avoids most failure scenarios typical of dynamic systems, several exceptions are still possible and must be accounted for:
 
-| Exception Use Case        | Description                                                                                                                                                               |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NetworkFailure            | If a user loses internet connectivity while accessing the site, previously loaded pages may still function (due to browser caching), but dynamic content such as resume downloads or JSON-based sections (e.g., blog entries) may fail to load. The UI should handle this failure by displaying a fallback message or "Content unavailable" notice and offering retry mechanisms where appropriate (e.g., for downloadable files). |
-| BrowserIncompatibility    | If a user accesses the site using an outdated or unsupported browser, some UI features may not behave as intended. The system includes minimal polyfills and avoids bleeding-edge APIs to ensure wide compatibility. However, fallback messages should still be provided to inform users of potential issues. |
-| StorageFailures           | In the rare case that `localStorage` is unavailable (e.g., disabled in the browser), theme and language preferences may not persist. The system should handle this by falling back to default settings and informing users that their preferences won’t be saved if relevant. |
-| CorruptedFilesOrAssets    | If a static file (e.g., a resume PDF or JSON content) becomes corrupted or fails to load, the system will catch the error via JavaScript and present a meaningful message to the user. Additionally, errors can optionally be logged to a developer console during development for troubleshooting. |
-|                           |                                                                                                                                                                           |
+| Exception Use Case        | Description                                                                                                                                                                  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NetworkFailure            | If a user loses internet connectivity while accessing the site, previously loaded pages may still function (due to browser caching), but dynamic content such as resume downloads or JSON-based sections (e.g., blog entries) may fail to load. The UI should handle this failure by displaying a fallback message or "Content unavailable" notice and offering retry mechanisms where appropriate (e.g., for downloadable files).                                                                                                                                                          |
+| BrowserIncompatibility    | If a user accesses the site using an outdated or unsupported browser, some UI features may not behave as intended. The system includes minimal polyfills and avoids bleeding-edge APIs to ensure wide compatibility. However, fallback messages should still be provided to inform users of potential issues.                                                                  |
+| StorageFailures           | In the rare case that `localStorage` is unavailable (e.g., disabled in the browser), theme and language preferences may not persist. The system should handle this by falling back to default settings and informing users that their preferences won’t be saved if relevant.                                                                                                            |
+| CorruptedFilesOrAssets    | If a static file (e.g., a resume PDF or JSON content) becomes corrupted or fails to load, the system will catch the error via JavaScript and present a meaningful message to the user. Additionally, errors can optionally be logged to a developer console during development for troubleshooting.                                                                                     |
+|                           |                                                                                                                                                                              |
 
 ### 4. Subsystem services
 
@@ -220,14 +220,23 @@ Although the system avoids most failure scenarios typical of dynamic systems, se
 - **Projects Subsystem – GetProjects**  
   This service retrieves and provides a list of portfolio projects for display. It sources data from preloaded or static resources and ensures users can view project content even in degraded network conditions.
 
+- **Projects Subsystem – GetProjectsSlugs**
+  This service retrieves a list of all project slugs, providing the unique, URL-friendly identifiers for each project. It is primarily used by the Project-Detail-Guard to validate that a requested project-detail route corresponds to an existing project, ensuring safe navigation and preventing access to invalid URLs.
+
 - **Routing Subsystem – RouterLink**  
   This subsystem uses Angular’s built-in Router and the [`RouterLink`](https://angular.dev/api/router/RouterLink) directive to manage navigation within the application. [Routes](https://angular.dev/api/router/Route) are declared in `app.routes.ts`, and the RouterLink directive is applied directly in templates to enable smooth, declarative navigation between views. It automatically updates the URL, renders the corresponding component, and handles fallback scenarios (e.g., wildcards for invalid routes).
+
+- **Routing Subsystem – routerState.snapshot**  
+  This service accesses the current state of the Angular Router at a given moment. It provides a snapshot of active routes, parameters, and data, allowing other subsystems (e.g., language or title management) to synchronise content and behaviour with the current navigation state.
 
 - **Resume Subsystem – DownloadResume**  
   This service enables users to download the author's resume in a selected format. It supports straightforward content delivery while handling potential download issues gracefully.
 
 - **Theming Subsystem – ChangeTheme**  
   This service handles user requests to switch between visual themes, such as light and dark mode. It updates the interface accordingly and ensures the selection persists across sessions using local storage mechanisms when available.
+
+- **Language Subsystem – GetCurrentLanguage**  
+  This service retrieves the currently active language setting used by the application. It ensures subsystems such as routing, title management, and content rendering always align with the user’s language preference, providing a consistent multilingual experience.
 
 - **Language Subsystem – ChangeLanguage**  
   This service allows users to switch the interface language. It updates displayed text dynamically and maintains language preferences between visits, defaulting to a primary language if needed.

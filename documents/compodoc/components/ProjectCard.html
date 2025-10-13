@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  ThemeSwitcher</li>
+  ProjectCard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,7 +116,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/components/theme-switcher/theme-switcher.ts</code>
+    <code>src/app/shared/components/project-card/project-card.ts</code>
 </p>
 
 
@@ -124,9 +124,10 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Component that provides a UI for switching the application&#39;s themes.</p>
-<p>Displays the current theme and allows the user to select a different one
-from the list of available themes.</p>
+        <p>Component to display a single project as a card.</p>
+<p>Shows project information such as title, summary, technologies, and media.
+Supports layout reversal and provides actions to navigate to project detail
+or open the project URL externally.</p>
 
     </p>
 
@@ -151,17 +152,17 @@ from the list of available themes.</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-theme-switcher</code></td>
+                <td class="col-md-9"><code>app-project-card</code></td>
             </tr>
 
 
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
-                            <code>MatButtonModule</code>
-                            <code>MatMenuModule</code>
+                            <code>MatCardModule</code>
+                            <code>MatChipsModule</code>
                             <code>MatIconModule</code>
-                            <code>TranslatePipe</code>
+                            <code>MatButtonModule</code>
                 </td>
             </tr>
 
@@ -170,14 +171,14 @@ from the list of available themes.</p>
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./theme-switcher.html</code></td>
+                <td class="col-md-9"><code>./project-card.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./theme-switcher.scss</code></td>
+                <td class="col-md-9"><code>./project-card.scss</code></td>
             </tr>
 
 
@@ -192,21 +193,6 @@ from the list of available themes.</p>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                <a href="#label" >label</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -218,20 +204,33 @@ from the list of available themes.</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getActiveTheme" >getActiveTheme</a>
+                                <a href="#navigateToProjectDetail" >navigateToProjectDetail</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getThemesList" >getThemesList</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#setTheme" >setTheme</a>
+                                <a href="#openProjectUrl" >openProjectUrl</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#project" >project</a>
+                            </li>
+                            <li>
+                                <a href="#reverseLayout" >reverseLayout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -246,19 +245,18 @@ from the list of available themes.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(themeService: <a href="../injectables/ThemeService.html" target="_self">ThemeService</a>)</code>
+<code>constructor(router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:41</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructs the theme switcher component.</p>
-<p>Initializes the display label using the currently active theme.</p>
+                            <div class="io-description"><p>Creates an instance of ProjectCard.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -273,10 +271,10 @@ from the list of available themes.</p>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>themeService</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/ThemeService.html" target="_self" >ThemeService</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -284,9 +282,7 @@ from the list of available themes.</p>
                                                     </td>
                                                     
                                                         <td>
-                                                                <ul>
-<li>Service that manages theme state and switching logic.</li>
-</ul>
+                                                                <p>Angular Router for navigation.</p>
 
                                                         </td>
                                                 </tr>
@@ -299,7 +295,75 @@ from the list of available themes.</p>
         </table>
 </section>
 
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="project"></a>
+                        <b>project</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Project.html" target="_self" >Project</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:33</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The project to display in this card.
+This input is required.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reverseLayout"></a>
+                        <b>reverseLayout</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:41</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Whether to reverse the layout of the card (e.g., image on left/right).
+Optional; defaults to false.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -312,123 +376,33 @@ from the list of available themes.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getActiveTheme"></a>
+                    <a name="navigateToProjectDetail"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getActiveTheme</b></span>
-                        <a href="#getActiveTheme"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>navigateToProjectDetail</b></span>
+                        <a href="#navigateToProjectDetail"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getActiveTheme()</code>
+                    <code>navigateToProjectDetail(slug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:56</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Gets the currently active theme from the service.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/Theme.html" target="_self" >Theme</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>The currently selected <code>Theme</code> object.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getThemesList"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>getThemesList</b></span>
-                        <a href="#getThemesList"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getThemesList()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:58</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Gets the full list of available themes from the service.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/Theme.html" target="_self" >Theme[]</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>An array of <code>Theme</code> objects.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="setTheme"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>setTheme</b></span>
-                        <a href="#setTheme"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>setTheme(theme: <a href="../classes/Theme.html" target="_self">Theme</a>)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="68"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:68</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Applies the selected theme and updates the label to reflect the new active theme.</p>
+                        <div class="io-description"><p>Navigates to the detail page of a specific project within the app.</p>
 </div>
 
                             <div class="io-description">
@@ -445,9 +419,9 @@ from the list of available themes.</p>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>theme</td>
+                                                <td>slug</td>
                                             <td>
-                                                            <code><a href="../classes/Theme.html" target="_self" >Theme</a></code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -456,7 +430,87 @@ from the list of available themes.</p>
 
 
                                             <td>
-                                                    <p>The selected theme.</p>
+                                                    <ul>
+<li>The unique identifier (slug) of the project to display.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openProjectUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openProjectUrl</b></span>
+                        <a href="#openProjectUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openProjectUrl(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens the given project URL in a new browser tab.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>url</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The external URL of the project to open.</li>
+</ul>
 
                                             </td>
                                         </tr>
@@ -475,144 +529,110 @@ from the list of available themes.</p>
         </tbody>
     </table>
 </section>
-    <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="label"></a>
-                    <span class="name">
-                            <span class="modifier">Protected</span>
-                        <span ><b>label</b></span>
-                        <a href="#label"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Label used to display the currently active theme.</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Theme } from &#x27;../../../core/theming/theme.model&#x27;;
-import { ThemeService } from &#x27;../../../core/theming/theme.service&#x27;;
-import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
-import { MatMenuModule } from &#x27;@angular/material/menu&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { Project } from &#x27;../../../core/projects/project.model&#x27;;
+import { MatCardModule } from &#x27;@angular/material/card&#x27;;
+import { MatChipsModule } from &#x27;@angular/material/chips&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import { TranslatePipe } from &#x27;@ngx-translate/core&#x27;;
+import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 /**
- * Component that provides a UI for switching the application&#x27;s themes.
- * 
- * Displays the current theme and allows the user to select a different one
- * from the list of available themes.
+ * Component to display a single project as a card.
+ *
+ * Shows project information such as title, summary, technologies, and media.
+ * Supports layout reversal and provides actions to navigate to project detail
+ * or open the project URL externally.
  *
  * @export
- * @component
+ * @class ProjectCard
  */
 @Component({
-  selector: &#x27;app-theme-switcher&#x27;,
-  imports: [MatButtonModule, MatMenuModule, MatIconModule, TranslatePipe],
-  templateUrl: &#x27;./theme-switcher.html&#x27;,
-  styleUrl: &#x27;./theme-switcher.scss&#x27;
+  selector: &#x27;app-project-card&#x27;,
+  imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule],
+  templateUrl: &#x27;./project-card.html&#x27;,
+  styleUrl: &#x27;./project-card.scss&#x27;
 })
-export class ThemeSwitcher {
-
+export class ProjectCard {
+  
   /**
-   * Label used to display the currently active theme.
-   * @protected
-   * @type {string}
+   * The project to display in this card.
+   * This input is required.
+   * 
+   * @type {Project}
    */
-  protected label: string;
+  @Input({ required: true }) public project!: Project;
 
   /**
-   * Constructs the theme switcher component.
+   * Whether to reverse the layout of the card (e.g., image on left/right).
+   * Optional; defaults to false.
    * 
-   * Initializes the display label using the currently active theme.
-   * 
-   * @param {ThemeService} themeService - Service that manages theme state and switching logic.
+   * @type {boolean}
    */
-  constructor(private themeService: ThemeService) {
-    this.label &#x3D; this.themeService.getCurrentTheme().getIcon();
-  }
+  @Input() reverseLayout &#x3D; false;
 
   /**
-   * Gets the currently active theme from the service.
-   * 
-   * @returns {Theme} The currently selected &#x60;Theme&#x60; object.
+   * Creates an instance of ProjectCard.
+   *
+   * @param {Router} router Angular Router for navigation.
    */
-  public getActiveTheme(): Theme {
-    return this.themeService.getCurrentTheme();
-  }
+  constructor(private router: Router) {}
 
   /**
-   * Gets the full list of available themes from the service.
-   * 
-   * @returns {Theme[]} An array of &#x60;Theme&#x60; objects.
-   */
-  public getThemesList(): Theme[] {
-    return this.themeService.getThemes();
-  }
-
-  /**
-   * Applies the selected theme and updates the label to reflect the new active theme.
-   * 
-   * @param {Theme} theme The selected theme.
+   * Navigates to the detail page of a specific project within the app.
+   *
+   * @param {string} slug - The unique identifier (slug) of the project to display.
    * @returns {void}
    */
-  public setTheme(theme: Theme): void {
-    this.themeService.changeTheme(theme);
-    this.label &#x3D; theme.getIcon();
+  public navigateToProjectDetail(slug: string): void {
+    this.router.navigate([&#x27;/projects&#x27;, slug]);
+  }
+
+  /**
+   * Opens the given project URL in a new browser tab.
+   *
+   * @param {string} url - The external URL of the project to open.
+   * @returns {void}
+   */
+  public openProjectUrl(url: string): void {
+    window.open(url, &#x27;_blank&#x27;, &#x27;noopener&#x27;);
   }
 
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Light/DarkMode Button&quot; (model domain) --&gt;
-&lt;!-- Theme Menu Trigger --&gt;
-&lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
-  &lt;mat-icon fontIcon&#x3D;&#x27;format_color_fill&#x27; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot;&gt;&lt;/mat-icon&gt;
-&lt;/button&gt;
-&lt;!-- Menu --&gt;
-&lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
-  @for (theme of getThemesList(); track theme.getId()) {
-    &lt;button mat-menu-item
-      (click)&#x3D;&quot;setTheme(theme)&quot;
-      [disabled]&#x3D;&quot;getActiveTheme() &#x3D;&#x3D;&#x3D; theme&quot; &gt;
-      &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot; fontIcon&#x3D;&quot;{{ theme.getIcon() }}&quot;&gt;&lt;/mat-icon&gt;
-      &lt;span&gt;{{ &#x27;app.shared.theme.&#x27; + theme.getCode() | translate }}&lt;/span&gt;
-    &lt;/button&gt;
-  } @empty {
-    &lt;button mat-menu-item disabled&gt;No themes available&lt;/button&gt;
-}
-&lt;/mat-menu&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;project-card-container&quot; [class.reverse]&#x3D;&quot;reverseLayout&quot;&gt;
+  &lt;div class&#x3D;&quot;image-column&quot;&gt;
+    &lt;div class&#x3D;&quot;image&quot; (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;&gt;
+      &lt;img [src]&#x3D;&quot;project.getMediaCover()&quot; alt&#x3D;&quot;{{ project.getName() }}&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;description-column&quot;&gt;
+    &lt;p class&#x3D;&quot;project-name&quot;&gt;{{ project.getName() }}&lt;/p&gt;
+    &lt;div class&#x3D;&quot;project-description&quot;&gt;
+      &lt;p&gt;{{ project.getSummary() }}&lt;/p&gt;
+      &lt;button mat-button (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;&gt;Learn more&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;project-technologies&quot;&gt;
+      @for (tech of project.getTechnologies(); track tech) {
+        &lt;div class&#x3D;&quot;tech-chip&quot;&gt;{{ tech }}&lt;/div&gt;
+      }
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;actions&quot;&gt;
+      @if(project.getProjectUrl()) {
+        &lt;button matIconButton class&#x3D;&quot;link-icon&quot; (click)&#x3D;&quot;openProjectUrl(project.getProjectUrl()!)&quot;&gt;
+        &lt;mat-icon&gt;open_in_new&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      } 
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
 
@@ -641,10 +661,10 @@ export class ThemeSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon=\'format_color_fill\' aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemesList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ \'app.shared.theme.\' + theme.getCode() | translate }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="project-card-container" [class.reverse]="reverseLayout">  <div class="image-column">    <div class="image" (click)="navigateToProjectDetail(project.getSlug())">      <img [src]="project.getMediaCover()" alt="{{ project.getName() }}">    </div>  </div>  <div class="description-column">    <p class="project-name">{{ project.getName() }}</p>    <div class="project-description">      <p>{{ project.getSummary() }}</p>      <button mat-button (click)="navigateToProjectDetail(project.getSlug())">Learn more</button>    </div>    <div class="project-technologies">      @for (tech of project.getTechnologies(); track tech) {        <div class="tech-chip">{{ tech }}</div>      }    </div>    <div class="actions">      @if(project.getProjectUrl()) {        <button matIconButton class="link-icon" (click)="openProjectUrl(project.getProjectUrl()!)">        <mat-icon>open_in_new</mat-icon>      </button>      }     </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ThemeSwitcher'};
+    var ACTUAL_COMPONENT = {'name': 'ProjectCard'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -690,7 +710,7 @@ export class ThemeSwitcher {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ThemeSwitcher.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectCard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

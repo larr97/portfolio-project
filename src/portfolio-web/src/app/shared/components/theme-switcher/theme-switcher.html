@@ -5,7 +5,7 @@
 </button>
 <!-- Menu -->
 <mat-menu #menu="matMenu">
-  @for (theme of getThemeList(); track theme.getId()) {
+  @for (theme of getThemesList(); track theme.getId()) {
     <button mat-menu-item
       (click)="setTheme(theme)"
       [disabled]="getActiveTheme() === theme" >

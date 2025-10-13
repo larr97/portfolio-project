@@ -119,6 +119,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service for managing projects in the portfolio application.</p>
+<p>Provides access to all projects, their slugs, and individual project lookup.</p>
+
+            </p>
 
 
 
@@ -152,7 +160,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getProjectNames" >getProjectNames</a>
+                                <a href="#getProjectBySlug" >getProjectBySlug</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getProjects" >getProjects</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getProjectsSlugs" >getProjectsSlugs</a>
                             </li>
                         </ul>
                     </td>
@@ -177,10 +193,17 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/projects/projects.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/core/projects/projects.service.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of ProjectsService.
+Initializes the projects list.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -194,37 +217,167 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getProjectNames"></a>
+                    <a name="getProjectBySlug"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getProjectNames</b></span>
-                        <a href="#getProjectNames"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getProjectBySlug</b></span>
+                        <a href="#getProjectBySlug"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getProjectNames()</code>
+                    <code>getProjectBySlug(slug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/app/core/projects/projects.service.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/core/projects/projects.service.ts:75</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Finds a project by its slug.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>slug</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The unique slug identifier of the project.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Project.html" target="_self" >Project</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The matching project.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProjects"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getProjects</b></span>
+                        <a href="#getProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProjects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/core/projects/projects.service.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Returns all projects.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Project.html" target="_self" >Project[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>List of projects.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProjectsSlugs"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getProjectsSlugs</b></span>
+                        <a href="#getProjectsSlugs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProjectsSlugs()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/core/projects/projects.service.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Returns an array of project slugs.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>string[]</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>List of project slugs.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -249,21 +402,22 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
+                        <i>Type : </i>        <code><a href="../classes/Project.html" target="_self" >Project[]</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[&#x27;angular&#x27;, &#x27;react&#x27;, &#x27;vue&#x27;]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/projects/projects.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/core/projects/projects.service.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>List of projects available in the portfolio.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -274,19 +428,83 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Project } from &#x27;../projects/project.model&#x27;;
 
+/**
+ * Service for managing projects in the portfolio application.
+ *
+ * Provides access to all projects, their slugs, and individual project lookup.
+ *
+ * @export
+ * @class ProjectsService
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class ProjectsService {
 
-  private projects: string[] &#x3D; [&#x27;angular&#x27;, &#x27;react&#x27;, &#x27;vue&#x27;];
+  /**
+   * List of projects available in the portfolio.
+   * @private
+   * @type {Project[]}
+   */
+  private projects: Project[];
 
-  constructor() { }
+  /**
+   * Creates an instance of ProjectsService.
+   * Initializes the projects list.
+   */
+  constructor() {
+    this.projects &#x3D; [
+      new Project(
+        1,
+        &#x27;Angular Portfolio&#x27;,
+        &#x27;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&#x27;,
+        &#x27;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#x27;, 
+        [&#x27;Angular&#x27;, &#x27;TypeScript&#x27;, &#x27;SCSS&#x27;, &#x27;HTML&#x27;, &#x27;Firebase&#x27;, &#x27;GitHub Actions&#x27;, &#x27;Material Design&#x27;, &#x27;Vercel&#x27;],
+        &#x27;https://www.taylorswift.com&#x27;,
+        &#x27;angular-portfolio&#x27;,
+        [&#x27;https://assets.newsweek.com/wp-content/uploads/2025/08/2539116-taylor-swift-posing.jpg?w&#x3D;1360&amp;quality&#x3D;75&amp;webp&#x3D;1&#x27;]
+      ),
+      new Project(
+        2,
+        &#x27;React Dashboard&#x27;,
+        &#x27;Admin dashboard with charts, user management, and real-time data updates. Built with React and Node.js. Features include authentication, role-based access, and responsive design.&#x27;,
+        &#x27;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#x27;, 
+        [&#x27;React&#x27;, &#x27;Node.js&#x27;, &#x27;Express&#x27;, &#x27;MongoDB&#x27;, &#x27;Material-UI&#x27;, &#x27;Chart.js&#x27;, &#x27;Heroku&#x27;, &#x27;GitHub&#x27;],
+        null,
+        &#x27;react-dashboard&#x27;,
+        [&#x27;https://publish.purewow.net/wp-content/uploads/sites/2/2024/10/taylor-swift-hub.jpg?resize&#x3D;720%2C780&#x27;]
+      ),
+    ];
+   }
 
-  public getProjectNames(): string[] {
+  /**
+   * Returns all projects.
+   * @returns {Project[]} List of projects.
+   */
+  public getProjects(): Project[] {
     return this.projects;
   }
+
+  /**
+   * Returns an array of project slugs.
+   * @returns {string[]} List of project slugs.
+   */
+  public getProjectsSlugs(): string[] {
+    return this.projects.map(p &#x3D;&gt; p.getSlug());
+  }
+
+  /**
+   * Finds a project by its slug.
+   *
+   * @param slug - The unique slug identifier of the project.
+   * @returns {Project} The matching project.
+   */
+  public getProjectBySlug(slug: string): Project {
+    return this.projects.find(p &#x3D;&gt; p.getSlug() &#x3D;&#x3D;&#x3D; slug)!;
+  }
+
 }</code></pre>
     </div>
 

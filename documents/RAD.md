@@ -1,6 +1,6 @@
 ## Requirements Analysis Document (RAD) for Software Engineer Portfolio
-Version: 3.7  
-Date: 2025-08-17  
+Version: 3.8  
+Date: 2025-10-12  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -106,7 +106,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
   - Include links to GitHub, LinkedIn, and Figma.
   - Implement a button to download the developer resume.
 
-- **Project Pages**:
+- **Projects Pages**:
 
   - Display detailed information about each project, including objectives, technologies used, and outcomes.
   - Include images, videos, or interactive elements demonstrating project features.
@@ -321,12 +321,12 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Entity Object Name**  | **Description**                                                                                                                                | **Angular Name**              |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| **Project**             | A piece of work or software developed by the Software Engineer to demonstrate skills and expertise. A project is identified by a unique ID and includes details such as title, description, technologies used, and a link to its live/demo version or repository.                                                                                         |                               |
 | **Job**                 | A professional role held by the developer in the past or present. A job entry is composed of a job title, company name, start and end dates, responsibilities, and achievements.                                                                                                                                                              |                               |
 | **Certification**       | A formal recognition of a skill or expertise obtained by the developer. Certifications are identified by titles, issuing organizations, issue dates, and optionally expiration dates.                                                                                                                                                                     |                               |
 | **Education**           | Details of the developer’s academic background. Education entries include institution names, degree or certification titles, majors or fields of study, and graduation years.                                                                                                                                                                     |                               |
 | **Blog Post**           | An article written by the developer about personal development, technical insights, or career experiences. Blog posts include titles, content, publication dates, and tags.                                                                                                                                                                      |                               |
 | **Document**            | A Software Project Document containing key attributes such as title, URL, and optionally version.                                              |                               |
+| **Project**             | A piece of work or software developed by the Software Engineer to demonstrate skills and expertise. A project is identified by a unique ID and slug, and also includes details such as name, a summary and a full description, technologies used, and a link to its live/demo version or repository.                                                      | `project.model`               |
 | **Route**               | Represents a navigational path within the application. Each route includes a unique path, name, and associated component or view used to structure the site.                                                                                                                                                                      | [`Route`](https://angular.dev/api/router/Route)|
 | **Resume**              | A downloadable document summarizing the developer’s qualifications, experience, education, and certifications. The resume is stored in PDF format and accessible via the portfolio.                                                                                                                                                                 | `resume.model`                |
 | **Theme**               | Represents the visual style preference selected by the user (e.g., light or dark mode). Includes the attribute name.                           | `theme.model`                 |
@@ -336,6 +336,9 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Boundary Object Name**     | **Description**                                                                                                                           | **Angular Name**              |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| **Projects Page**            | Page that displays a list of all projects in the portfolio.                                                                               | `projects` |
+| **Project Detail Page**      | Page that displays detailed information about a single project.                                                                           | `project-detail` |
+| **Project Card**             | A card that displays a single project’s information, including title, summary, technologies used, and media. Clicking on the card or its buttons can navigate to the project’s detail page or open the project’s external URL in a new tab.                                                                                                     | `project-card`.               |
 | **Navigation Button**        | A user interface button that allows users to navigate between different views of the application, such as Home, Projects, Docs, and Blog, by triggering route changes.                                                                                                                                                                   | [`mat-button`](https://material.angular.dev/components/button/overview) with [`RouterLink`](https://angular.dev/api/router/RouterLink)|
 | **Download Resume Button**   | A clickable interface element that allows visitors to download the developer's resume in PDF format. Includes a label and triggers the download action when clicked.                                                                                                                                                                   | `download-resume-button`      |
 | **Light/Dark Mode Button**   | A toggle that enables users to switch the portfolio’s theme between light and dark modes. Changes the website’s appearance without reloading the page.                                                                                                                                                                      | `theme-switcher`              |
@@ -345,7 +348,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Control Object Name**     | **Description**                                                                                                                            | **Angular Name**              |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
-| **Projects Control**        | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic.                                                                                                                     |                               |
+| **Projects Control**        | Handles the logic and interactions related to project data within the application. Responsible for retrieving, filtering, and organizing project entries, and coordinating updates between the user interface and internal logic.                                                                                                                     | `projects.service`            |
 | **Routing Control**         | Handles the application’s navigation logic. When triggered by a NavigationButton, it updates the current route and loads the corresponding view or component.                                                                                                                                                                 | `app.routes.ts`               |
 | **Resume Control**          | Processes the request to download the resume file. Ensures the file exists and triggers the file download process for the user.            | `resume.service`              |
 | **Themes Control**          | Manages the theme toggling functionality. Adjusts the portfolio’s visual style between light and dark modes and stores the user's preference.                                                                                                                                                                | `theme.service`               |

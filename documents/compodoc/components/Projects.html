@@ -160,6 +160,7 @@ to the corresponding project detail page.</p>
                 <td class="col-md-9">
                             <code>MatCardModule</code>
                             <code>MatButtonModule</code>
+                                <code><a href="../components/ProjectCard.html" target="_self" >ProjectCard</a></code>
                             <code>TranslatePipe</code>
                 </td>
             </tr>
@@ -201,7 +202,8 @@ to the corresponding project detail page.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#goToDetail" >goToDetail</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#getProjectsList" >getProjectsList</a>
                             </li>
                         </ul>
                     </td>
@@ -221,12 +223,12 @@ to the corresponding project detail page.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: Router)</code>
+<code>constructor(projectsService: <a href="../injectables/ProjectsService.html" target="_self">ProjectsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/projects/projects.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/projects/projects.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -242,25 +244,20 @@ to the corresponding project detail page.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>projectsService</td>
                                                   
                                                         <td>
-                                                                    <code>Router</code>
+                                                                        <code><a href="../injectables/ProjectsService.html" target="_self" >ProjectsService</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <p>Angular Router used for navigation to project details.</p>
-
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -284,72 +281,42 @@ to the corresponding project detail page.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="goToDetail"></a>
+                    <a name="getProjectsList"></a>
                     <span class="name">
-                        <span ><b>goToDetail</b></span>
-                        <a href="#goToDetail"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>getProjectsList</b></span>
+                        <a href="#getProjectsList"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>goToDetail(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProjectsList()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/pages/projects/projects.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/pages/projects/projects.ts:39</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Navigates to the detail page of a specific project.</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-html">this.goToDetail(&#39;portfolio&#39;);
-// Navigates to /projects/portfolio</code></pre></div></div>
+                        <div class="io-description"><p>Gets the full list of available projects from the service.</p>
+</div>
 
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                                <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>name</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                            <td>
-                                                    <p>The unique identifier (slug) of the project to display.</p>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/Project.html" target="_self" >Project[]</a></code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>An array of <code>Project</code> objects.</p>
+
                             </div>
                 </td>
             </tr>
@@ -362,10 +329,12 @@ to the corresponding project detail page.</p>
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
 import { MatCardModule } from &#x27;@angular/material/card&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
+import { ProjectCard } from &#x27;../../shared/components/project-card/project-card&#x27;;
+import { Project } from &#x27;../../core/projects/project.model&#x27;;
+import { ProjectsService } from &#x27;../../core/projects/projects.service&#x27;;
 
 /**
  * The Projects component displays a gallery of projects.
@@ -377,6 +346,7 @@ import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
   imports: [ 
     MatCardModule, 
     MatButtonModule, 
+    ProjectCard,
     TranslatePipe
   ],
   templateUrl: &#x27;./projects.html&#x27;,
@@ -389,36 +359,32 @@ export class Projects {
    *
    * @param router Angular Router used for navigation to project details.
    */
-  constructor(private router: Router) {}
+  constructor(private projectsService: ProjectsService) {}
 
   /**
-   * Navigates to the detail page of a specific project.
+   * Gets the full list of available projects from the service.
    *
-   * @param name The unique identifier (slug) of the project to display.
-   *
-   * @example
-   * this.goToDetail(&#x27;portfolio&#x27;);
-   * // Navigates to /projects/portfolio
+   * @returns {Project[]} An array of &#x60;Project&#x60; objects.
    */
-  goToDetail(name: String) {
-    this.router.navigate([&#x27;/projects&#x27;, name]);
-  }
+  public getProjectsList(): Project[] {
+    return this.projectsService.getProjects();
+  }   
   
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;projects works!&lt;/p&gt;
-
-&lt;mat-card appearance&#x3D;&quot;outlined&quot;&gt;
-  &lt;mat-card-header&gt;
-    &lt;mat-card-title&gt;Angular&lt;/mat-card-title&gt;
-    &lt;mat-card-subtitle&gt;{{ &#x27;app.title&#x27; | translate }}&lt;/mat-card-subtitle&gt;
-  &lt;/mat-card-header&gt;
-  &lt;mat-card-actions&gt;
-    &lt;button matButton (click)&#x3D;&quot;goToDetail(&#x27;angular&#x27;)&quot;&gt;Learn More&lt;/button&gt;
-  &lt;/mat-card-actions&gt;
-&lt;/mat-card&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;projects-body&quot;&gt;
+  &lt;div class&#x3D;&quot;projects-container&quot;&gt;
+    &lt;p&gt;Here are some of my projects:&lt;/p&gt;
+    @for (project of getProjectsList(); track project.getId(); let e &#x3D; $odd) {
+      &lt;app-project-card 
+        [project]&#x3D;&quot;project&quot; 
+        [reverseLayout]&#x3D;&quot;$odd&quot;&gt;
+      &lt;/app-project-card&gt;
+    }
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
 
@@ -447,8 +413,8 @@ export class Projects {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>projects works!</p><mat-card appearance="outlined">  <mat-card-header>    <mat-card-title>Angular</mat-card-title>    <mat-card-subtitle>{{ \'app.title\' | translate }}</mat-card-subtitle>  </mat-card-header>  <mat-card-actions>    <button matButton (click)="goToDetail(\'angular\')">Learn More</button>  </mat-card-actions></mat-card></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><div class="projects-body">  <div class="projects-container">    <p>Here are some of my projects:</p>    @for (project of getProjectsList(); track project.getId(); let e = $odd) {      <app-project-card         [project]="project"         [reverseLayout]="$odd">      </app-project-card>    }  </div></div></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Projects'};
 </script>

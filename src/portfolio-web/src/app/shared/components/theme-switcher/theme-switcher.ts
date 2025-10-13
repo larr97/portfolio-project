@@ -55,7 +55,7 @@ export class ThemeSwitcher {
    * 
    * @returns {Theme[]} An array of `Theme` objects.
    */
-  public getThemeList(): Theme[] {
+  public getThemesList(): Theme[] {
     return this.themeService.getThemes();
   }
 

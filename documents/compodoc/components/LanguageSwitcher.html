@@ -222,7 +222,7 @@ from the list of available languages.</p>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getLanguageList" >getLanguageList</a>
+                                <a href="#getLanguagesList" >getLanguagesList</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -356,18 +356,18 @@ from the list of available languages.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getLanguageList"></a>
+                    <a name="getLanguagesList"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getLanguageList</b></span>
-                        <a href="#getLanguageList"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getLanguagesList</b></span>
+                        <a href="#getLanguagesList"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getLanguageList()</code>
+                    <code>getLanguagesList()</code>
                 </td>
             </tr>
 
@@ -574,7 +574,7 @@ export class LanguageSwitcher {
    *
    * @returns {Language[]} An array of &#x60;Language&#x60; objects.
    */
-  public getLanguageList(): Language[] {
+  public getLanguagesList(): Language[] {
     return this.languageService.getLanguages();
   }
 
@@ -601,7 +601,7 @@ export class LanguageSwitcher {
 &lt;/button&gt;
 &lt;!-- Menu --&gt;
 &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
-  @for (lang of getLanguageList(); track lang.getId()) {
+  @for (lang of getLanguagesList(); track lang.getId()) {
     &lt;button mat-menu-item
       (click)&#x3D;&quot;setLanguage(lang)&quot;
       [disabled]&#x3D;&quot;getActiveLanguage() &#x3D;&#x3D;&#x3D; lang&quot; &gt;
@@ -642,8 +642,8 @@ export class LanguageSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label() }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguageList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label() }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguagesList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};
 </script>
