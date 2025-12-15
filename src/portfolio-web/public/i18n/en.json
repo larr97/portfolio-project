@@ -1,25 +1,42 @@
 {
+  
   "app": {
-
     "title": "Luis's Portfolio",
-    "hello": "Hi there! 👋🏻",
+    "hello": "Hi there! 👋🏻"
+  },
 
-    "shared": {
-      "download-resume-button": "Download Resume",
-      "theme": {
-        "light": "Light",
-        "hc-light": "Light High Contrast",
-        "dark": "Dark",
-        "hc-dark": "Dark High Contrast"
-      }
+  "shared": {
+    "download-resume-button": "Download Resume",
+    "theme": {
+      "light": "Light",
+      "hc-light": "Light High Contrast",
+      "dark": "Dark",
+      "hc-dark": "Dark High Contrast"
     },
-
-    "route": {
-      "home": "Home",
-      "projects": "Projects",
-      "blog": "Blog",
-      "docs": "Docs"
+    "project-card": {
+      "learn-more": "Learn More"
     }
+  },
 
+  "route": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "docs": "Docs"
+  },
+
+  "projects": {
+    "angularPortfolio": {
+      "name": "Angular Portfolio",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam. Sed nisi nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum praesent mauris fusce nec tellus sed augue semper porta. Mauris massa vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+    },
+    "reactDashboard": {
+      "name": "React Dashboard",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam. Sed nisi nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum praesent mauris fusce nec tellus sed augue semper porta. Mauris massa vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
   }
+  
 }

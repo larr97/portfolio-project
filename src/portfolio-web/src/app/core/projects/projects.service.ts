@@ -29,9 +29,9 @@ export class ProjectsService {
     this.projects = [
       new Project(
         1,
-        'Angular Portfolio',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 
+        'projects.angularPortfolio.name',
+        'projects.angularPortfolio.description',
+        'projects.angularPortfolio.summary',
         ['Angular', 'TypeScript', 'SCSS', 'HTML', 'Firebase', 'GitHub Actions', 'Material Design', 'Vercel'],
         'https://www.taylorswift.com',
         'angular-portfolio',
@@ -39,9 +39,9 @@ export class ProjectsService {
       ),
       new Project(
         2,
-        'React Dashboard',
-        'Admin dashboard with charts, user management, and real-time data updates. Built with React and Node.js. Features include authentication, role-based access, and responsive design.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 
+        'projects.reactDashboard.name',
+        'projects.reactDashboard.description',
+        'projects.reactDashboard.summary',
         ['React', 'Node.js', 'Express', 'MongoDB', 'Material-UI', 'Chart.js', 'Heroku', 'GitHub'],
         null,
         'react-dashboard',

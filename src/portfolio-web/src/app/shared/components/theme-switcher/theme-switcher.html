@@ -10,7 +10,7 @@
       (click)="setTheme(theme)"
       [disabled]="getActiveTheme() === theme" >
       <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>
-      <span>{{ 'app.shared.theme.' + theme.getCode() | translate }}</span>
+      <span>{{ 'shared.theme.' + theme.getCode() | translate }}</span>
     </button>
   } @empty {
     <button mat-menu-item disabled>No themes available</button>

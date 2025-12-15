@@ -1,124 +1,149 @@
 .project-card-container {
+    /* 
+    No need for display:flex — the .row inside already provides flex layout
     display: flex;
-    width: 1152px;
-    align-items: flex-start;
+    align-items: flex-start;  Only needed if you apply display:flex
+    
+    * this might be meaningful later, keep on eye on it when I create the projects pages UI
+    align-self: stretch;  Only meaningful if this container is inside a flex parent
+    */
+
     border-radius: 12px;
     background: var(--mat-sys-surface-bright);
     /* Drop Shadow/md */
-    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 
+                0 2px 2px 0 rgba(0, 0, 0, 0.06);
 
-    &.reverse {
-    flex-direction: row-reverse;
+    .row-reverse {
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
 
     .image-column {
-      // optional: adjust margin if needed
+        display: flex;
+        padding: 32px;
+        justify-content: center;
+        align-items: center;
+        // flex: 1 0 0; // Not needed because Bootstrap col-* handles column sizing
+        // align-self: stretch; // Optional — columns already stretch by default in a row
+
+        /* Large screens and up (≥992px) */
+        @media (min-width: 992px) {
+            padding: 48px; // more padding on desktop
+            
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 0;
+            border-radius: 12px;
+            /* Drop Shadow/lg */
+            box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.10), 
+                        0 10px 8px 0 rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+
+            img {
+                // width: 480px;        /* .img-fluid + width: 100% makes the image responsive */
+                width: 100%;            /* Fill container width; .img-fluid ensures max-width: 100% for better responsiveness */
+                height: 250px;          /* Fixed height for uniform card layout */
+                // flex: 1 0 0;         /* Not needed — <img> inside a flex container and .img-fluid handles sizing */
+                object-fit: cover;      /* Crop image without distortion for better responsiveness */ 
+                border-radius: inherit; /* Match parent container's rounded corners */
+                object-position: top;   /* Keeps top of image visible when cropped for better styling */
+
+                /* Large screens and up (≥992px) */
+                @media (min-width: 992px) {
+                    height: 350px; // larger height on desktop
+                }
+            }
+
+        }
     }
+
     .description-column {
-      // optional: adjust margin if needed
+        display: flex; 
+        padding: 32px; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+        // flex: 1 0 0;  // Not needed because Bootstrap col-* handles column sizing
+        align-self: stretch;
+
+        /* Large screens and up (≥992px) */
+        @media (min-width: 992px) {
+            padding: 48px; // more padding on desktop
+        }
+
+        .project-name {
+            overflow: hidden;
+            color: var(--mat-sys-on-surface);
+            text-overflow: ellipsis;
+            font-family: var(--mat-sys-title-large-font);
+            font-size: var(--mat-sys-title-large-size);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px; /* 127.273% */
+        }
+
+        .project-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+
+            .project-summary {
+                color: var(--mat-sys-on-surface-variant);
+                text-align: left;
+                font-family: var(--mat-sys-body-large-font, Roboto);
+                font-size: var(--mat-sys-body-large-size, 16px);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; /* 150% */
+            }
+        }
+
+        .project-technologies {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            gap: 8px;
+            align-self: stretch;
+            flex-wrap: wrap;
+
+            .tech-chip {
+                display: flex;
+                padding: 4px 20px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 12px;
+                background: var(--mat-sys-tertiary-container);
+                color: var(--mat-sys-on-tertiary-container);
+                font-family: var(--mat-sys-body-large-font, Roboto);
+                font-size: var(--mat-sys-body-large-size, 0.875rem);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 142.857% */
+            }
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            align-self: stretch;
+
+            .link-icon {
+                display: flex;
+                padding: 6px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+            }
+        }
     }
-  }
-
-}
-
-.image-column {
-    display: flex;
-    padding: 48px;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 12px 0 0 12px;
-    border-right: 1px solid var(--mat-sys-surface-container);
-}
-
-.image {
-    height: 384px;
-    flex: 1 0 0;
-    border-radius: 12px;
-    /* Drop Shadow/lg */
-    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.10), 0 10px 8px 0 rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-}
-
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;    /* fills parent, keeps ratio, crops edges */
-  border-radius: inherit;
-}
-
-.description-column {
-    display: flex;
-    padding: 48px;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 12px 0 0 12px;
-}
-
-.project-name {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-    align-self: stretch;
-    overflow: hidden;
-    color: var(--mat-sys-on-surface, #181C22);
-    text-overflow: ellipsis;
-    font-family: var(--mat-sys-title-large-font, Roboto);
-    font-size: var(--mat-sys-title-large-size, 22px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px; /* 127.273% */
-}
-
-.project-description{
-    align-self: stretch;
-    color: var(--mat-sys-on-surface-variant, #404753);
-    font-family: var(--mat-sys-body-large-font, Roboto);
-    font-size: var(--mat-sys-body-large-size, 16px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-}
-
-.project-technologies {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 0.5rem;
-    align-self: stretch;
-    flex-wrap: wrap;
-}
-
-.tech-chip {
-    display: flex;
-    padding: 0.25rem 1.25rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.75rem;
-    background: var(--mat-sys-tertiary-container);
-    color: var(--mat-sys-on-tertiary-container);
-    font-family: var(--mat-sys-body-large-font, Roboto);
-    font-size: var(--mat-sys-body-large-size, 0.875rem);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.25rem; /* 142.857% */
-}
-
-.actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    align-self: stretch;
-}
-
-.link-icon {
-    display: flex;
-    padding: 0.375rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
 }
