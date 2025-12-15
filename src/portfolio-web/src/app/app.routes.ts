@@ -6,10 +6,10 @@ import { projectDetailGuard } from './core/projects/project-detail-guard';
 export const routes: Routes = [
   
   // Home (Eager)
-  { path: '', component: Home, title: 'app.route.home' },
+  { path: '', component: Home, title: 'route.home' },
 
   // Projects (Eager, since it’s core to the app)
-  { path: 'projects', component: Projects, title: 'app.route.projects' },
+  { path: 'projects', component: Projects, title: 'route.projects' },
   // Project Detail (Lazy, loads only if a specific project is visited)
   { 
     path: 'projects/:slug', 
@@ -22,7 +22,7 @@ export const routes: Routes = [
   { 
     path: 'blog', 
     loadComponent: () => import('./pages/blog/blog').then(m => m.Blog), 
-    title: 'app.route.blog' 
+    title: 'route.blog' 
   },
   { 
     path: 'blog/post', 
@@ -34,7 +34,7 @@ export const routes: Routes = [
   { 
     path: 'docs', 
     loadComponent: () => import('./pages/docs/docs').then(m => m.Docs), 
-    title: 'app.route.docs' 
+    title: 'route.docs' 
   },
 
   // Wildcard (Eager redirect)

@@ -1,25 +1,42 @@
 {
+  
   "app": {
-
     "title": "El Portafolio de Luis",
-    "hello": "¡Hola! 👋🏻",
+    "hello": "¡Hola! 👋🏻"
+  },
 
-    "shared": {
-      "download-resume-button": "Descargar CV",
-      "theme": {
-        "light": "Claro",
-        "hc-light": "Claro de Alto Contraste",
-        "dark": "Oscuro",
-        "hc-dark": "Oscuro de Alto Contraste"
-      }
+  "shared": {
+    "download-resume-button": "Descargar CV",
+    "theme": {
+      "light": "Claro",
+      "hc-light": "Claro de Alto Contraste",
+      "dark": "Oscuro",
+      "hc-dark": "Oscuro de Alto Contraste"
     },
-
-    "route": {
-      "home": "Inicio",
-      "projects": "Proyectos",
-      "blog": "Blog",
-      "docs": "Documentación"
+    "project-card": {
+      "learn-more": "Aprender más"
     }
+  },
 
+  "route": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "docs": "Documentación"
+  },
+
+  "projects": {
+    "angularPortfolio": {
+      "name": "Portafolio en Angular",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam. Sed nisi nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum praesent mauris fusce nec tellus sed augue semper porta. Mauris massa vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+    },
+    "reactDashboard": {
+      "name": "Dashboard en React",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam. Sed nisi nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum praesent mauris fusce nec tellus sed augue semper porta. Mauris massa vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
   }
+
 }

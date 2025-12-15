@@ -5,6 +5,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 /**
  * Component to display a single project as a card.
@@ -18,7 +19,7 @@ import { Router } from '@angular/router';
  */
 @Component({
   selector: 'app-project-card',
-  imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule, TranslatePipe],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss'
 })

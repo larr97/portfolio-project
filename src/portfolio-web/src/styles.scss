@@ -4,6 +4,16 @@
 @use './_theme-colors' as my-theme; // location of generated file
 @use './_theme-colors-red' as my-theme-red; // location of generated file
 
+// Import required dependencies
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Import only the grid system
+@import "bootstrap/scss/grid";
+
 html {
   @include mat.theme((
     color: (
