@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LanguageSwitcher } from './shared/components/language-switcher/language-switcher';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,6 +27,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     TranslatePipe
 ],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'
 })
 export class App {}

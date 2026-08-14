@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { LanguageService } from '../../../core/language/language.service';
 import { Language } from '../../../core/language/language.model';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   selector: 'app-language-switcher',
   imports: [MatButtonModule, MatMenuModule, MatIconModule, MatGridListModule],
   templateUrl: './language-switcher.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './language-switcher.scss'
 })
 export class LanguageSwitcher {

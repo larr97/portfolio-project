@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ResumeService } from '../../../core/resume/resume.service';
 import { MatButton } from '@angular/material/button';
 import { TranslatePipe } from "@ngx-translate/core";
@@ -16,6 +16,7 @@ import { TranslatePipe } from "@ngx-translate/core";
   selector: 'app-download-resume-button',
   imports: [MatButton, TranslatePipe],
   templateUrl: './download-resume-button.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './download-resume-button.scss'
 })
 export class DownloadResumeButton {

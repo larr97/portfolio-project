@@ -1,11 +1,11 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withXhr } from "@angular/common/http";
 import { provideTranslateService, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { provideRouter, TitleStrategy } from '@angular/router';
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
 import { TranslateTitleStrategy } from './core/language/translate-title-strategy.service';
 
 /**
@@ -47,7 +47,7 @@ export const appConfig: ApplicationConfig = {
     // Optimised change detection with event coalescing
     provideZoneChangeDetection({ eventCoalescing: true }),
     // HTTP client provider for API and translation requests
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     // Translation service setup using ngx-translate and HTTP loader
     provideTranslateService({
       loader: {
@@ -61,6 +61,6 @@ export const appConfig: ApplicationConfig = {
     // Use custom title strategy that applies translated page titles
     { provide: TitleStrategy, useClass: TranslateTitleStrategy },
     // Enable client-side hydration with event replay (SSR support)
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration())
   ]
 };

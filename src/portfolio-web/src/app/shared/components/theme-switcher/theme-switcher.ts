@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Theme } from '../../../core/theming/theme.model';
 import { ThemeService } from '../../../core/theming/theme.service';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-theme-switcher',
   imports: [MatButtonModule, MatMenuModule, MatIconModule, TranslatePipe],
   templateUrl: './theme-switcher.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './theme-switcher.scss'
 })
 export class ThemeSwitcher {

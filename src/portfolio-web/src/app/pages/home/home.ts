@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DownloadResumeButton } from "../../shared/components/download-resume-button/download-resume-button";
 import { TranslatePipe } from "@ngx-translate/core";
 
@@ -9,6 +9,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     TranslatePipe
   ],
   templateUrl: './home.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.scss'
 })
 export class Home {}
