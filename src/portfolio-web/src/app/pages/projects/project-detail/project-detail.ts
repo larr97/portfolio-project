@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectsService } from '../../../core/projects/projects.service';
 import { Project } from '../../../core/projects/project.model';
@@ -12,6 +12,7 @@ import { Project } from '../../../core/projects/project.model';
   selector: 'app-project-detail',
   imports: [],
   templateUrl: './project-detail.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './project-detail.scss'
 })
 export class ProjectDetail {

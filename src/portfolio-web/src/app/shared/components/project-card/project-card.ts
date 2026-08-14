@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../../core/projects/project.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -21,6 +21,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-project-card',
   imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule, TranslatePipe],
   templateUrl: './project-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './project-card.scss'
 })
 export class ProjectCard {
