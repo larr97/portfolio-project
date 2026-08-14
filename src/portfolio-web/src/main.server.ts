@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection } from "@angular/core";
 import { bootstrapApplication, BootstrapContext } from '@angular/platform-browser';
 import { App } from './app/app';
 import { config } from './app/app.config.server';
@@ -18,7 +19,7 @@ import { config } from './app/app.config.server';
  * @see {@link bootstrapApplication} — Used to start a standalone Angular app.
  * @see {@link config} — Server configuration merged from app and SSR settings.
  */
-const bootstrap = (context: BootstrapContext) => bootstrapApplication(App, config, context);
+const bootstrap = (context: BootstrapContext) => bootstrapApplication(App, {...config, providers: [provideZoneChangeDetection(), ...config.providers]}, context);
 
 /**
  * Default export for the Angular server bootstrap function.
