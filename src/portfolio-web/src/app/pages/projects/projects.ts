@@ -1,23 +1,22 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
 import { TranslatePipe } from "@ngx-translate/core";
 import { ProjectCard } from '../../shared/components/project-card/project-card';
 import { Project } from '../../core/projects/project.model';
 import { ProjectsService } from '../../core/projects/projects.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
-/**
- * The Projects component displays a gallery of projects.
- * Each project card includes a button or clickable area that navigates
- * to the corresponding project detail page.
+/** 
+ * Displays the projects gallery. 
+ * 
+ * Retrieves the available projects from the ProjectsService and renders 
+ * each project using the ProjectCard component. 
  */
 @Component({
   selector: 'app-projects',
   imports: [ 
-    MatCardModule, 
-    MatButtonModule, 
     ProjectCard,
-    TranslatePipe
+    TranslatePipe,
+    MatPaginatorModule
   ],
   templateUrl: './projects.html',
   changeDetection: ChangeDetectionStrategy.Eager,

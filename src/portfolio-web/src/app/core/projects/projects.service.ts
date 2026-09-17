@@ -35,7 +35,7 @@ export class ProjectsService {
         ['Angular', 'TypeScript', 'SCSS', 'HTML', 'Firebase', 'GitHub Actions', 'Material Design', 'Vercel'],
         'https://www.taylorswift.com',
         'angular-portfolio',
-        ['https://assets.newsweek.com/wp-content/uploads/2025/08/2539116-taylor-swift-posing.jpg?w=1360&quality=75&webp=1']
+        ['https://cdn.abcotvs.com/dip/images/17508422_AP25224136692726.jpg']
       ),
       new Project(
         2,
@@ -45,7 +45,7 @@ export class ProjectsService {
         ['React', 'Node.js', 'Express', 'MongoDB', 'Material-UI', 'Chart.js', 'Heroku', 'GitHub'],
         null,
         'react-dashboard',
-        ['https://publish.purewow.net/wp-content/uploads/sites/2/2024/10/taylor-swift-hub.jpg?resize=720%2C780']
+        ['https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2181107453-20241209114519432.jpg?q=w_3000,c_fill/f_webp']
       ),
     ];
    }
