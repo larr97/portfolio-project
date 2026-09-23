@@ -47,6 +47,26 @@ export class ProjectsService {
         'react-dashboard',
         ['https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2181107453-20241209114519432.jpg?q=w_3000,c_fill/f_webp']
       ),
+      new Project(
+        3,
+        'projects.angularPortfolio.name',
+        'projects.angularPortfolio.description',
+        'projects.angularPortfolio.summary',
+        ['Angular', 'TypeScript', 'SCSS', 'HTML', 'Firebase', 'GitHub Actions', 'Material Design', 'Vercel'],
+        'https://www.taylorswift.com',
+        'angular-portfolio',
+        ['https://cdn.abcotvs.com/dip/images/17508422_AP25224136692726.jpg']
+      ),
+      new Project(
+        4,
+        'projects.reactDashboard.name',
+        'projects.reactDashboard.description',
+        'projects.reactDashboard.summary',
+        ['React', 'Node.js', 'Express', 'MongoDB', 'Material-UI', 'Chart.js', 'Heroku', 'GitHub'],
+        null,
+        'react-dashboard',
+        ['https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2181107453-20241209114519432.jpg?q=w_3000,c_fill/f_webp']
+      ),
     ];
    }
 
