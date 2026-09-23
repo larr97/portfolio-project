@@ -1,11 +1,34 @@
 <div class="projects-body">
+
   <div class="projects-container">
-    <p>Here are some of my projects:</p>
-    @for (project of getProjectsList(); track project.getId(); let e = $odd) {
+
+    <div class="projects-header">
+      <div class="page-title">
+          <p class="section-title">Projects</p>
+      </div>
+      <div class="page-description">
+       <p>Some of the noteworthy projects I have built:</p>
+      </div>
+    </div>
+    
+    <mat-paginator
+      [length]="getProjectsList().length"
+      [pageIndex]="pageIndex"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[3]"
+      [hidePageSize]="true"
+      (page)="onPageChange($event)"
+      showFirstLastButtons
+      aria-label="Select project page"
+      class="paginator-control">
+    </mat-paginator>
+
+    @for (project of getPaginatedProjects(); track project.getId()) {
       <app-project-card 
         [project]="project" 
         [reverseLayout]="$odd">
       </app-project-card>
     }
+
   </div>
 </div>

@@ -3,7 +3,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 import { ProjectCard } from '../../shared/components/project-card/project-card';
 import { Project } from '../../core/projects/project.model';
 import { ProjectsService } from '../../core/projects/projects.service';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 /** 
  * Displays the projects gallery. 
@@ -25,6 +25,16 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 export class Projects {
 
   /**
+   * Current page index.
+   */
+  public pageIndex = 0;
+
+  /**
+   * Number of projects displayed per page.
+   */
+  public pageSize = 3;
+
+  /**
    * Creates an instance of the Projects component.
    *
    * @param router Angular Router used for navigation to project details.
@@ -38,6 +48,28 @@ export class Projects {
    */
   public getProjectsList(): Project[] {
     return this.projectsService.getProjects();
-  }   
+  }
+
+  /**
+   * Gets the projects that should be displayed on the current page.
+   *
+   * @returns {Project[]} Projects for the current page.
+   */
+  public getPaginatedProjects(): Project[] {
+    const startIndex = this.pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+
+    return this.getProjectsList().slice(startIndex, endIndex);
+  }
+
+  /**
+   * Handles paginator page changes.
+   *
+   * @param event Paginator page event.
+   */
+  public onPageChange(event: PageEvent): void {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+  }
   
 }
