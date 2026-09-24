@@ -4,6 +4,7 @@ import { ProjectCard } from '../../shared/components/project-card/project-card';
 import { Project } from '../../core/projects/project.model';
 import { ProjectsService } from '../../core/projects/projects.service';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { SectionTitle } from '../../shared/components/section-title/section-title';
 
 /** 
  * Displays the projects gallery. 
@@ -16,7 +17,8 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
   imports: [ 
     ProjectCard,
     TranslatePipe,
-    MatPaginatorModule
+    MatPaginatorModule,
+    SectionTitle
   ],
   templateUrl: './projects.html',
   changeDetection: ChangeDetectionStrategy.Eager,
