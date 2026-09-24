@@ -1,6 +1,6 @@
 ## System Design Document (SDD) for Software Engineer Portfolio
-Version: 2.6  
-Date: 2025-10-12  
+Version: 2.7  
+Date: 2026-09-23  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -111,7 +111,7 @@ Outside the UI, there are four independent top-level subsystems: Resume, Theming
 | **Subsystem**                | **Description**                                                                                                                                                           |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **User Interface Subsystem** | The UserInterfaceSubsystem is the main entry point of the application, composed of several feature-specific subsystems including Home, Projects, Blog, and Docs. It is responsible for rendering the user-facing parts of the software.                                                                                                                                           |
-| **Shared UI Subsystem**      | The SharedUISubsystem provides reusable UI components such as layout containers, buttons, and icons that are shared across all UI subsystems.                             |
+| **Shared UI Subsystem** | The SharedUISubsystem provides reusable user interface components shared across multiple areas of the application. It includes site-wide structural components, such as the Header and Footer, as well as smaller reusable presentation and interaction components. Individual shared components are documented in the Object Design Document (ODD). |
 | **Header Subsystem**         | The HeaderSubsystem is responsible for rendering the top navigation bar, including branding, navigation links, and global controls.                                       |
 | **Footer Subsystem**         | The FooterSubsystem handles the display of site-wide footer content including contact info, links, and copyright.                                                         |
 | **Home Subsystem**           | The HomeSubsystem is responsible for displaying the landing page of the portfolio, welcoming users and introducing the site.                                              |

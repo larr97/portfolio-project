@@ -138,6 +138,10 @@ user&#39;s current language preference.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -226,7 +230,7 @@ user&#39;s current language preference.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -302,8 +306,8 @@ user&#39;s current language preference.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/shared/components/download-resume-button/download-resume-button.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -330,7 +334,7 @@ user&#39;s current language preference.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { ResumeService } from &#x27;../../../core/resume/resume.service&#x27;;
 import { MatButton } from &#x27;@angular/material/button&#x27;;
 import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
@@ -348,6 +352,7 @@ import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
   selector: &#x27;app-download-resume-button&#x27;,
   imports: [MatButton, TranslatePipe],
   templateUrl: &#x27;./download-resume-button.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./download-resume-button.scss&#x27;
 })
 export class DownloadResumeButton {
@@ -372,7 +377,7 @@ export class DownloadResumeButton {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- This corresponds the Boundary Object: &quot;Download Resume Button&quot; (model domain) --&gt;
-&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;{{ &#x27;app.shared.download-resume-button&#x27; | translate }}&lt;/button&gt;</code></pre>
+&lt;button matButton&#x3D;&quot;filled&quot; (click)&#x3D;&quot;requestResume()&quot;&gt;{{ &#x27;shared.download-resume-button&#x27; | translate }}&lt;/button&gt;</code></pre>
     </div>
 
 
@@ -401,8 +406,8 @@ export class DownloadResumeButton {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">{{ \'app.shared.download-resume-button\' | translate }}</button></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Download Resume Button" (model domain) --><button matButton="filled" (click)="requestResume()">{{ \'shared.download-resume-button\' | translate }}</button></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DownloadResumeButton'};
 </script>

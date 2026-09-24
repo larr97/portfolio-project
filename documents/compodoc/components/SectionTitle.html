@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  ProjectDetail</li>
+  SectionTitle</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,19 +116,10 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/pages/projects/project-detail/project-detail.ts</code>
+    <code>src/app/shared/components/section-title/section-title.ts</code>
 </p>
 
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>The ProjectDetail component displays details for a specific project.
-It reads the project <code>:name</code> parameter from the route and stores it
-in a reactive signal for use in the template.</p>
-
-    </p>
 
 
 
@@ -138,10 +129,6 @@ in a reactive signal for use in the template.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
-            </tr>
 
 
 
@@ -155,7 +142,7 @@ in a reactive signal for use in the template.</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-project-detail</code></td>
+                <td class="col-md-9"><code>app-section-title</code></td>
             </tr>
 
 
@@ -165,14 +152,14 @@ in a reactive signal for use in the template.</p>
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./project-detail.html</code></td>
+                <td class="col-md-9"><code>./section-title.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./project-detail.scss</code></td>
+                <td class="col-md-9"><code>./section-title.scss</code></td>
             </tr>
 
 
@@ -196,29 +183,27 @@ in a reactive signal for use in the template.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#currentProject" >currentProject</a>
+                                <a href="#title" >title</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Inputs</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#getCurrentProject" >getCurrentProject</a>
+                                <a href="#title" >title</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
-
 
 
 
@@ -227,80 +212,27 @@ in a reactive signal for use in the template.</p>
     </table>
 </section>
 
-    <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(projectsService: <a href="../injectables/ProjectsService.html" target="_self">ProjectsService</a>, activatedRoute: ActivatedRoute)</code>
+                        <a name="title"></a>
+                        <b>title</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
                     </td>
                 </tr>
                         <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:30</a></div>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/components/section-title/section-title.ts:10</a></div>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Creates an instance of <a href="../components/ProjectDetail.html">ProjectDetail</a>.</p>
-<p>Subscribes to changes in the route parameters and updates
-the <code>currentProject</code> signal whenever the <code>slug</code> parameter changes.</p>
-</div>
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>projectsService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ProjectsService.html" target="_self" >ProjectsService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Service used to retrieve project data.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>activatedRoute</td>
-                                                  
-                                                        <td>
-                                                                    <code>ActivatedRoute</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Provides access to the current route and its parameters.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -308,58 +240,6 @@ the <code>currentProject</code> signal whenever the <code>slug</code> parameter 
 
 
 
-
-    <section data-compodoc="block-methods">
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getCurrentProject"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>getCurrentProject</b></span>
-                        <a href="#getCurrentProject"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCurrentProject()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="53"
-                                    class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:53</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Retrieves the current project stored in the reactive signal.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/Project.html" target="_self" >Project</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>The currently selected project.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section data-compodoc="block-properties">
     
     <h3 id="inputs">
@@ -369,34 +249,19 @@ the <code>currentProject</code> signal whenever the <code>slug</code> parameter 
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="currentProject"></a>
+                    <a name="title"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>currentProject</b></span>
-                        <a href="#currentProject"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>signal&lt;Project | undefined&gt;(undefined)</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/projects/project-detail/project-detail.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/components/section-title/section-title.ts:10</a></div>
                         </td>
                     </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Reactive signal holding the currently selected project.</p>
-<p>Initially undefined until the route parameter (<code>slug</code>) is resolved.
-Once the corresponding project is found via <a href="../injectables/ProjectsService.html">ProjectsService</a>,
-the signal is updated, and the template automatically re-renders.</p>
-</div>
-                </td>
-            </tr>
 
         </tbody>
     </table>
@@ -406,69 +271,23 @@ the signal is updated, and the template automatically re-renders.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, signal, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { ProjectsService } from &#x27;../../../core/projects/projects.service&#x27;;
-import { Project } from &#x27;../../../core/projects/project.model&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, input } from &#x27;@angular/core&#x27;;
 
-/**
- * The ProjectDetail component displays details for a specific project.
- * It reads the project &#x60;:name&#x60; parameter from the route and stores it
- * in a reactive signal for use in the template.
- */
 @Component({
-  selector: &#x27;app-project-detail&#x27;,
+  selector: &#x27;app-section-title&#x27;,
   imports: [],
-  templateUrl: &#x27;./project-detail.html&#x27;,
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: &#x27;./project-detail.scss&#x27;
+  templateUrl: &#x27;./section-title.html&#x27;,
+  styleUrl: &#x27;./section-title.scss&#x27;,
 })
-export class ProjectDetail {
-  
-  /**
-   * Reactive signal holding the currently selected project.
-   * 
-   * Initially undefined until the route parameter (&#x60;slug&#x60;) is resolved.
-   * Once the corresponding project is found via {@link ProjectsService},
-   * the signal is updated, and the template automatically re-renders.
-   *
-   * @private
-   * @type {WritableSignal&lt;Project | undefined&gt;}
-   */
-  private currentProject &#x3D; signal&lt;Project | undefined&gt;(undefined);
-  
-  /**
-   * Creates an instance of {@link ProjectDetail}.
-   *
-   * Subscribes to changes in the route parameters and updates
-   * the &#x60;currentProject&#x60; signal whenever the &#x60;slug&#x60; parameter changes.
-   *
-   * @param {ProjectsService} projectsService - Service used to retrieve project data.
-   * @param {ActivatedRoute} activatedRoute - Provides access to the current route and its parameters.
-   */
-  constructor(private projectsService: ProjectsService, private activatedRoute: ActivatedRoute) {
-    // Access route parameters
-    this.activatedRoute.params.subscribe((params) &#x3D;&gt; {
-      this.currentProject.set(this.projectsService.getProjectBySlug(params[&#x27;slug&#x27;]));
-    });
-  }
-
-  /**
-   * Retrieves the current project stored in the reactive signal.
-   *
-   * @returns {Project} The currently selected project.
-   */
-  public getCurrentProject(): Project {
-    return this.currentProject()!;
-  }
-
+export class SectionTitle {
+  title &#x3D; input.required&lt;string&gt;();
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;project-detail works!&lt;/p&gt;
-
-&lt;h2&gt;{{ getCurrentProject().getName()}}&lt;/h2&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;p class&#x3D;&quot;section-title&quot;&gt;
+  {{ title() }}
+&lt;/p&gt;</code></pre>
     </div>
 
 
@@ -497,10 +316,10 @@ export class ProjectDetail {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>project-detail works!</p><h2>{{ getCurrentProject().getName()}}</h2></div>'
+        var COMPONENT_TEMPLATE = '<div><p class="section-title">  {{ title() }}</p></div>'
     var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ProjectDetail'};
+    var ACTUAL_COMPONENT = {'name': 'SectionTitle'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -546,7 +365,7 @@ export class ProjectDetail {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ProjectDetail.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SectionTitle.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

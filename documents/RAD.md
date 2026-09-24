@@ -1,6 +1,6 @@
 ## Requirements Analysis Document (RAD) for Software Engineer Portfolio
-Version: 3.8  
-Date: 2025-10-12  
+Version: 3.9  
+Date: 2026-09-23  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -336,6 +336,7 @@ The proposed Software Engineer Portfolio will be a dynamic and interactive platf
 
 | **Boundary Object Name**     | **Description**                                                                                                                           | **Angular Name**              |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| **Section Title** | A reusable user interface element that displays the title of a section using consistent styling across the application. The displayed title is provided to the component as an input, allowing the component to be reused by different sections.                                                                                                          | `section-title` |
 | **Projects Page**            | Page that displays a list of all projects in the portfolio.                                                                               | `projects` |
 | **Project Detail Page**      | Page that displays detailed information about a single project.                                                                           | `project-detail` |
 | **Project Card**             | A card that displays a single project’s information, including title, summary, technologies used, and media. Clicking on the card or its buttons can navigate to the project’s detail page or open the project’s external URL in a new tab.                                                                                                     | `project-card`.               |

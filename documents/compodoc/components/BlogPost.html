@@ -129,6 +129,10 @@
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -182,12 +186,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 
 @Component({
   selector: &#x27;app-blog-post&#x27;,
   imports: [],
   templateUrl: &#x27;./blog-post.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./blog-post.scss&#x27;
 })
 export class BlogPost {}</code></pre>
@@ -226,7 +231,7 @@ export class BlogPost {}</code></pre>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p>blog-post works!</p><h2>Custom Blog Post</h2></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogPost'};
 </script>
