@@ -124,9 +124,9 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>The Projects component displays a gallery of projects.
-Each project card includes a button or clickable area that navigates
-to the corresponding project detail page.</p>
+        <p>Displays the projects gallery.</p>
+<p>Retrieves the available projects from the ProjectsService and renders
+each project using the ProjectCard component.</p>
 
     </p>
 
@@ -138,6 +138,10 @@ to the corresponding project detail page.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -158,10 +162,10 @@ to the corresponding project detail page.</p>
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
-                            <code>MatCardModule</code>
-                            <code>MatButtonModule</code>
                                 <code><a href="../components/ProjectCard.html" target="_self" >ProjectCard</a></code>
                             <code>TranslatePipe</code>
+                            <code>MatPaginatorModule</code>
+                                <code><a href="../components/SectionTitle.html" target="_self" >SectionTitle</a></code>
                 </td>
             </tr>
 
@@ -192,6 +196,25 @@ to the corresponding project detail page.</p>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pageIndex" >pageIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pageSize" >pageSize</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -203,7 +226,15 @@ to the corresponding project detail page.</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getPaginatedProjects" >getPaginatedProjects</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getProjectsList" >getProjectsList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onPageChange" >onPageChange</a>
                             </li>
                         </ul>
                     </td>
@@ -228,7 +259,7 @@ to the corresponding project detail page.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/projects/projects.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/projects/projects.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -281,6 +312,51 @@ to the corresponding project detail page.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getPaginatedProjects"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getPaginatedProjects</b></span>
+                        <a href="#getPaginatedProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPaginatedProjects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/pages/projects/projects.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Gets the projects that should be displayed on the current page.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Project.html" target="_self" >Project[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Projects for the current page.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getProjectsList"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -299,8 +375,8 @@ to the corresponding project detail page.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/app/pages/projects/projects.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/pages/projects/projects.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -322,37 +398,207 @@ to the corresponding project detail page.</p>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPageChange"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onPageChange</b></span>
+                        <a href="#onPageChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPageChange(event: PageEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/pages/projects/projects.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles paginator page changes.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>PageEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Paginator page event.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageIndex"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>pageIndex</b></span>
+                        <a href="#pageIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/projects/projects.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Current page index.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>pageSize</b></span>
+                        <a href="#pageSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>3</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/projects/projects.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Number of projects displayed per page.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { MatCardModule } from &#x27;@angular/material/card&#x27;;
-import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { TranslatePipe } from &quot;@ngx-translate/core&quot;;
 import { ProjectCard } from &#x27;../../shared/components/project-card/project-card&#x27;;
 import { Project } from &#x27;../../core/projects/project.model&#x27;;
 import { ProjectsService } from &#x27;../../core/projects/projects.service&#x27;;
+import { MatPaginatorModule, PageEvent } from &#x27;@angular/material/paginator&#x27;;
+import { SectionTitle } from &#x27;../../shared/components/section-title/section-title&#x27;;
 
-/**
- * The Projects component displays a gallery of projects.
- * Each project card includes a button or clickable area that navigates
- * to the corresponding project detail page.
+/** 
+ * Displays the projects gallery. 
+ * 
+ * Retrieves the available projects from the ProjectsService and renders 
+ * each project using the ProjectCard component. 
  */
 @Component({
   selector: &#x27;app-projects&#x27;,
   imports: [ 
-    MatCardModule, 
-    MatButtonModule, 
     ProjectCard,
-    TranslatePipe
+    TranslatePipe,
+    MatPaginatorModule,
+    SectionTitle
   ],
   templateUrl: &#x27;./projects.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./projects.scss&#x27;
 })
 export class Projects {
+
+  /**
+   * Current page index.
+   */
+  public pageIndex &#x3D; 0;
+
+  /**
+   * Number of projects displayed per page.
+   */
+  public pageSize &#x3D; 3;
 
   /**
    * Creates an instance of the Projects component.
@@ -368,21 +614,66 @@ export class Projects {
    */
   public getProjectsList(): Project[] {
     return this.projectsService.getProjects();
-  }   
+  }
+
+  /**
+   * Gets the projects that should be displayed on the current page.
+   *
+   * @returns {Project[]} Projects for the current page.
+   */
+  public getPaginatedProjects(): Project[] {
+    const startIndex &#x3D; this.pageIndex * this.pageSize;
+    const endIndex &#x3D; startIndex + this.pageSize;
+
+    return this.getProjectsList().slice(startIndex, endIndex);
+  }
+
+  /**
+   * Handles paginator page changes.
+   *
+   * @param event Paginator page event.
+   */
+  public onPageChange(event: PageEvent): void {
+    this.pageIndex &#x3D; event.pageIndex;
+    this.pageSize &#x3D; event.pageSize;
+  }
   
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;projects-body&quot;&gt;
+
   &lt;div class&#x3D;&quot;projects-container&quot;&gt;
-    &lt;p&gt;Here are some of my projects:&lt;/p&gt;
-    @for (project of getProjectsList(); track project.getId(); let e &#x3D; $odd) {
+
+    &lt;div class&#x3D;&quot;projects-header&quot;&gt;
+      &lt;div class&#x3D;&quot;page-title&quot;&gt;
+          &lt;app-section-title title&#x3D;&quot;Projects&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;page-description&quot;&gt;
+       &lt;p&gt;Some of the noteworthy projects I have built:&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;mat-paginator
+      [length]&#x3D;&quot;getProjectsList().length&quot;
+      [pageIndex]&#x3D;&quot;pageIndex&quot;
+      [pageSize]&#x3D;&quot;pageSize&quot;
+      [pageSizeOptions]&#x3D;&quot;[3]&quot;
+      [hidePageSize]&#x3D;&quot;true&quot;
+      (page)&#x3D;&quot;onPageChange($event)&quot;
+      showFirstLastButtons
+      aria-label&#x3D;&quot;Select project page&quot;
+      class&#x3D;&quot;paginator-control&quot;&gt;
+    &lt;/mat-paginator&gt;
+
+    @for (project of getPaginatedProjects(); track project.getId()) {
       &lt;app-project-card 
         [project]&#x3D;&quot;project&quot; 
         [reverseLayout]&#x3D;&quot;$odd&quot;&gt;
       &lt;/app-project-card&gt;
     }
+
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -413,8 +704,8 @@ export class Projects {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="projects-body">  <div class="projects-container">    <p>Here are some of my projects:</p>    @for (project of getProjectsList(); track project.getId(); let e = $odd) {      <app-project-card         [project]="project"         [reverseLayout]="$odd">      </app-project-card>    }  </div></div></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><div class="projects-body">  <div class="projects-container">    <div class="projects-header">      <div class="page-title">          <app-section-title title="Projects" />      </div>      <div class="page-description">       <p>Some of the noteworthy projects I have built:</p>      </div>    </div>        <mat-paginator      [length]="getProjectsList().length"      [pageIndex]="pageIndex"      [pageSize]="pageSize"      [pageSizeOptions]="[3]"      [hidePageSize]="true"      (page)="onPageChange($event)"      showFirstLastButtons      aria-label="Select project page"      class="paginator-control">    </mat-paginator>    @for (project of getPaginatedProjects(); track project.getId()) {      <app-project-card         [project]="project"         [reverseLayout]="$odd">      </app-project-card>    }  </div></div></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Projects'};
 </script>

@@ -138,6 +138,10 @@ from the list of available languages.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -251,7 +255,7 @@ from the list of available languages.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -329,8 +333,8 @@ from the list of available languages.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="47"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:47</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:48</a></div>
                         </td>
                     </tr>
 
@@ -374,8 +378,8 @@ from the list of available languages.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="56"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:56</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:57</a></div>
                         </td>
                     </tr>
 
@@ -419,8 +423,8 @@ from the list of available languages.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="67"
-                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:67</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -499,7 +503,7 @@ Updates the language in the service and updates the label.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/language-switcher/language-switcher.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -519,7 +523,7 @@ Automatically updates when the language changes.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, signal } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, signal, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { LanguageService } from &#x27;../../../core/language/language.service&#x27;;
 import { Language } from &#x27;../../../core/language/language.model&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
@@ -540,6 +544,7 @@ import { MatGridListModule } from &#x27;@angular/material/grid-list&#x27;;
   selector: &#x27;app-language-switcher&#x27;,
   imports: [MatButtonModule, MatMenuModule, MatIconModule, MatGridListModule],
   templateUrl: &#x27;./language-switcher.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./language-switcher.scss&#x27;
 })
 export class LanguageSwitcher {
@@ -643,7 +648,7 @@ export class LanguageSwitcher {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Language Button" (model domain) --><!-- Language Menu Trigger --><button matButton [matMenuTriggerFor]="menu">  <mat-icon aria-hidden="false" aria-label="language icon" fontIcon="language"></mat-icon>  {{ label() }}</button><!-- Menu --><mat-menu #menu="matMenu">  @for (lang of getLanguagesList(); track lang.getId()) {    <button mat-menu-item      (click)="setLanguage(lang)"      [disabled]="getActiveLanguage() === lang" >      <mat-grid-list cols="4">        <mat-grid-tile [colspan]="1" [rowspan]="1" class="flag">{{ lang.getFlag() }}</mat-grid-tile>        <mat-grid-tile [colspan]="3" [rowspan]="1">{{ lang.getName() }}</mat-grid-tile>      </mat-grid-list>    </button>  } @empty {    <button mat-menu-item disabled>No languages available</button>  }</mat-menu></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LanguageSwitcher'};
 </script>

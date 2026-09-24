@@ -139,6 +139,10 @@ or open the project URL externally.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -163,6 +167,7 @@ or open the project URL externally.</p>
                             <code>MatChipsModule</code>
                             <code>MatIconModule</code>
                             <code>MatButtonModule</code>
+                            <code>TranslatePipe</code>
                 </td>
             </tr>
 
@@ -250,7 +255,7 @@ or open the project URL externally.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -318,7 +323,7 @@ or open the project URL externally.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:35</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -351,7 +356,7 @@ This input is required.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/components/project-card/project-card.ts:43</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -394,8 +399,8 @@ Optional; defaults to false.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="56"
-                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:56</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:58</a></div>
                         </td>
                     </tr>
 
@@ -472,8 +477,8 @@ Optional; defaults to false.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="66"
-                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:66</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/shared/components/project-card/project-card.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -534,13 +539,14 @@ Optional; defaults to false.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { Project } from &#x27;../../../core/projects/project.model&#x27;;
 import { MatCardModule } from &#x27;@angular/material/card&#x27;;
 import { MatChipsModule } from &#x27;@angular/material/chips&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { TranslatePipe } from &#x27;@ngx-translate/core&#x27;;
 
 /**
  * Component to display a single project as a card.
@@ -554,8 +560,9 @@ import { Router } from &#x27;@angular/router&#x27;;
  */
 @Component({
   selector: &#x27;app-project-card&#x27;,
-  imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule, TranslatePipe],
   templateUrl: &#x27;./project-card.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./project-card.scss&#x27;
 })
 export class ProjectCard {
@@ -607,31 +614,42 @@ export class ProjectCard {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;project-card-container&quot; [class.reverse]&#x3D;&quot;reverseLayout&quot;&gt;
-  &lt;div class&#x3D;&quot;image-column&quot;&gt;
-    &lt;div class&#x3D;&quot;image&quot; (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;&gt;
-      &lt;img [src]&#x3D;&quot;project.getMediaCover()&quot; alt&#x3D;&quot;{{ project.getName() }}&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container project-card-container&quot;&gt;
+
+  &lt;div class&#x3D;&quot;row row-reverse&quot; [class.reverse]&#x3D;&quot;reverseLayout&quot;&gt;
+
+    &lt;div class&#x3D;&quot;col-12 col-lg-6 image-column&quot;&gt;
+      &lt;div class&#x3D;&quot;image&quot; &gt;
+        &lt;img 
+          [src]&#x3D;&quot;project.getMediaCover()&quot;
+          class&#x3D;&quot;img-fluid&quot;
+          (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;
+        &gt;
+      &lt;/div&gt;
     &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;col-12 col-lg-6 description-column&quot;&gt;
+      &lt;p class&#x3D;&quot;project-name&quot;&gt;{{ project.getName() | translate }}&lt;/p&gt;
+      &lt;div class&#x3D;&quot;project-description&quot;&gt;
+        &lt;p class&#x3D;&quot;project-summary&quot;&gt;{{ project.getSummary() | translate }}&lt;/p&gt;
+        &lt;button mat-button (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;&gt;{{ &#x27;shared.project-card.learn-more&#x27; | translate }}&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;project-technologies&quot;&gt;
+        @for (tech of project.getTechnologies(); track tech) {
+          &lt;div class&#x3D;&quot;tech-chip&quot;&gt;{{ tech }}&lt;/div&gt;
+        }
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;actions&quot;&gt;
+        @if(project.getProjectUrl()) {
+          &lt;button matIconButton class&#x3D;&quot;link-icon&quot; (click)&#x3D;&quot;openProjectUrl(project.getProjectUrl()!)&quot;&gt;
+          &lt;mat-icon&gt;open_in_new&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        } 
+      &lt;/div&gt;
+    &lt;/div&gt;
+
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;description-column&quot;&gt;
-    &lt;p class&#x3D;&quot;project-name&quot;&gt;{{ project.getName() }}&lt;/p&gt;
-    &lt;div class&#x3D;&quot;project-description&quot;&gt;
-      &lt;p&gt;{{ project.getSummary() }}&lt;/p&gt;
-      &lt;button mat-button (click)&#x3D;&quot;navigateToProjectDetail(project.getSlug())&quot;&gt;Learn more&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;project-technologies&quot;&gt;
-      @for (tech of project.getTechnologies(); track tech) {
-        &lt;div class&#x3D;&quot;tech-chip&quot;&gt;{{ tech }}&lt;/div&gt;
-      }
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;actions&quot;&gt;
-      @if(project.getProjectUrl()) {
-        &lt;button matIconButton class&#x3D;&quot;link-icon&quot; (click)&#x3D;&quot;openProjectUrl(project.getProjectUrl()!)&quot;&gt;
-        &lt;mat-icon&gt;open_in_new&lt;/mat-icon&gt;
-      &lt;/button&gt;
-      } 
-    &lt;/div&gt;
-  &lt;/div&gt;
+
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -661,8 +679,8 @@ export class ProjectCard {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="project-card-container" [class.reverse]="reverseLayout">  <div class="image-column">    <div class="image" (click)="navigateToProjectDetail(project.getSlug())">      <img [src]="project.getMediaCover()" alt="{{ project.getName() }}">    </div>  </div>  <div class="description-column">    <p class="project-name">{{ project.getName() }}</p>    <div class="project-description">      <p>{{ project.getSummary() }}</p>      <button mat-button (click)="navigateToProjectDetail(project.getSlug())">Learn more</button>    </div>    <div class="project-technologies">      @for (tech of project.getTechnologies(); track tech) {        <div class="tech-chip">{{ tech }}</div>      }    </div>    <div class="actions">      @if(project.getProjectUrl()) {        <button matIconButton class="link-icon" (click)="openProjectUrl(project.getProjectUrl()!)">        <mat-icon>open_in_new</mat-icon>      </button>      }     </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container project-card-container">  <div class="row row-reverse" [class.reverse]="reverseLayout">    <div class="col-12 col-lg-6 image-column">      <div class="image" >        <img           [src]="project.getMediaCover()"          class="img-fluid"          (click)="navigateToProjectDetail(project.getSlug())"        >      </div>    </div>    <div class="col-12 col-lg-6 description-column">      <p class="project-name">{{ project.getName() | translate }}</p>      <div class="project-description">        <p class="project-summary">{{ project.getSummary() | translate }}</p>        <button mat-button (click)="navigateToProjectDetail(project.getSlug())">{{ \'shared.project-card.learn-more\' | translate }}</button>      </div>      <div class="project-technologies">        @for (tech of project.getTechnologies(); track tech) {          <div class="tech-chip">{{ tech }}</div>        }      </div>      <div class="actions">        @if(project.getProjectUrl()) {          <button matIconButton class="link-icon" (click)="openProjectUrl(project.getProjectUrl()!)">          <mat-icon>open_in_new</mat-icon>        </button>        }       </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProjectCard'};
 </script>

@@ -138,6 +138,10 @@ from the list of available themes.</p>
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Eager</code></td>
+            </tr>
 
 
 
@@ -251,7 +255,7 @@ from the list of available themes.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -330,8 +334,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -375,8 +379,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:58</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:59</a></div>
                         </td>
                     </tr>
 
@@ -420,8 +424,8 @@ from the list of available themes.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="68"
-                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:68</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:69</a></div>
                         </td>
                     </tr>
 
@@ -500,7 +504,7 @@ from the list of available themes.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/theme-switcher/theme-switcher.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -519,7 +523,7 @@ from the list of available themes.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { Theme } from &#x27;../../../core/theming/theme.model&#x27;;
 import { ThemeService } from &#x27;../../../core/theming/theme.service&#x27;;
 import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
@@ -540,6 +544,7 @@ import { TranslatePipe } from &#x27;@ngx-translate/core&#x27;;
   selector: &#x27;app-theme-switcher&#x27;,
   imports: [MatButtonModule, MatMenuModule, MatIconModule, TranslatePipe],
   templateUrl: &#x27;./theme-switcher.html&#x27;,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: &#x27;./theme-switcher.scss&#x27;
 })
 export class ThemeSwitcher {
@@ -607,7 +612,7 @@ export class ThemeSwitcher {
       (click)&#x3D;&quot;setTheme(theme)&quot;
       [disabled]&#x3D;&quot;getActiveTheme() &#x3D;&#x3D;&#x3D; theme&quot; &gt;
       &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;theme icon&quot; fontIcon&#x3D;&quot;{{ theme.getIcon() }}&quot;&gt;&lt;/mat-icon&gt;
-      &lt;span&gt;{{ &#x27;app.shared.theme.&#x27; + theme.getCode() | translate }}&lt;/span&gt;
+      &lt;span&gt;{{ &#x27;shared.theme.&#x27; + theme.getCode() | translate }}&lt;/span&gt;
     &lt;/button&gt;
   } @empty {
     &lt;button mat-menu-item disabled&gt;No themes available&lt;/button&gt;
@@ -641,8 +646,8 @@ export class ThemeSwitcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon=\'format_color_fill\' aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemesList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ \'app.shared.theme.\' + theme.getCode() | translate }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
-    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
+        var COMPONENT_TEMPLATE = '<div><!-- This corresponds the Boundary Object: "Light/DarkMode Button" (model domain) --><!-- Theme Menu Trigger --><button mat-icon-button [matMenuTriggerFor]="menu">  <mat-icon fontIcon=\'format_color_fill\' aria-hidden="false" aria-label="theme icon"></mat-icon></button><!-- Menu --><mat-menu #menu="matMenu">  @for (theme of getThemesList(); track theme.getId()) {    <button mat-menu-item      (click)="setTheme(theme)"      [disabled]="getActiveTheme() === theme" >      <mat-icon aria-hidden="false" aria-label="theme icon" fontIcon="{{ theme.getIcon() }}"></mat-icon>      <span>{{ \'shared.theme.\' + theme.getCode() | translate }}</span>    </button>  } @empty {    <button mat-menu-item disabled>No themes available</button>}</mat-menu></div>'
+    var COMPONENTS = [{'name': 'App', 'selector': 'app-root'},{'name': 'Blog', 'selector': 'app-blog'},{'name': 'BlogPost', 'selector': 'app-blog-post'},{'name': 'Docs', 'selector': 'app-docs'},{'name': 'DownloadResumeButton', 'selector': 'app-download-resume-button'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LanguageSwitcher', 'selector': 'app-language-switcher'},{'name': 'ProjectCard', 'selector': 'app-project-card'},{'name': 'ProjectDetail', 'selector': 'app-project-detail'},{'name': 'Projects', 'selector': 'app-projects'},{'name': 'SectionTitle', 'selector': 'app-section-title'},{'name': 'ThemeSwitcher', 'selector': 'app-theme-switcher'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ThemeSwitcher'};
 </script>

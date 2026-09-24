@@ -84,6 +84,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/Projects.html" data-type="entity-link" >Projects</a>
                             </li>
                             <li class="link">
+                                <a href="components/SectionTitle.html" data-type="entity-link" >SectionTitle</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ThemeSwitcher.html" data-type="entity-link" >ThemeSwitcher</a>
                             </li>
                         </ul>
