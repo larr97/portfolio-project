@@ -1,0 +1,17 @@
+.section-title {
+    display: flex;
+    margin: 0;
+    padding: 0.25rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.75rem;
+    background: var(--mat-sys-secondary);
+    
+    color: var(--mat-sys-on-secondary);
+    font-family: var(--mat-sys-title-small-font);
+    font-size: var(--mat-sys-title-small-size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem; /* 142.857% */
+}
