@@ -1,6 +1,6 @@
 ## Object Design Document (ODD) for Software Engineer Portfolio
-Version: 1.6  
-Date: 2025-10-12  
+Version: 1.7  
+Date: 2026-09-23  
 Author: Luis Rodriguez
 
 ### 1. Introduction
@@ -72,6 +72,10 @@ This section outlines the decomposition of the application into packages and the
 - **shared:** Contains reusable UI components and styling shared across multiple features:
   - **header, footer:** Layout components used throughout the application.
   - **components:** Reusable interactive elements including:
+    - **section-title**
+      - `section-title.ts`: Defines a reusable section title component and accepts the section title as an input.
+      - `section-title.html`: Template for displaying the section title.
+      - `section-title.scss`: Provides consistent styling for section titles across the application.
     - **project-card**
       - `project-card.ts`: Displays a single project’s information as a card and handles card-specific interactions.
       - `project-card.html`: Template for the project card layout, including title, summary, media, and action buttons.
