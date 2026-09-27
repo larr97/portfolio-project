@@ -19,7 +19,7 @@ In Week 4, significant progress was made in both the design and documentation of
 - Studied the [applicability of types, roles, and type settings](https://m3.material.io/styles/typography/applying-type), ensuring that typography aligns with design intent and usability principles.  
   - **Buttons** use the **Label Large** style for clear and readable action prompts.  
   - **Hyperlinked text** appearing on top of a surface color adopts the **Primary** color to maintain contrast and visibility.
-- Additionally, explored **UI kits for Figma** for Angular Material, such as: [Angular Material Kit 1](https://www.figma.com/community/file/1292454516527463513) and [Angular Material Kit 2](https://www.figma.com/community/file/967106164617088179)
+- Additionally, explored **UI kits for Figma** for Angular Material, such as: [Angular Material Kit](https://www.figma.com/community/file/967106164617088179)
 - Used the following Figma mockup files to showcase the prototype across Apple devices (iPhone, iPad, Mac):
   - [Apple Frames](https://www.figma.com/design/BGYSaAC8z4jMO6LNnBa9aF/Apple-Frames--Community-?t=mUPiYffmSJ7nw5vC-0)
   - [iPhone 16 Pro Max Mockup](https://www.figma.com/design/005i2ZAjYnkzKH9934l6Qj/iPhone-16-Pro-Max-mockup---Wallpapers--Community-?t=mUPiYffmSJ7nw5vC-0)
